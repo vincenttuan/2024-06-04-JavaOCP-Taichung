@@ -1,6 +1,6 @@
 package day01;
 
-// 方法的調用
+// 方法的調用 1
 public class MethodDemo1 {
 
 	public static void main(String[] args) {
