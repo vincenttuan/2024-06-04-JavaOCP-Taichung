@@ -10,6 +10,7 @@ public class MethodDemo1 {
 	
 	public static void printWords() {
 		System.out.println("she sell sea shell on the sea shore");
+		
 	} 
 
 }
