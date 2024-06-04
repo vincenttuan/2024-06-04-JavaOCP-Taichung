@@ -8,6 +8,11 @@ public class MethodDemo3 {
 		
 		printAdd(1, 2); // 可以印出 "1+2=3"
 		printAdd(3, 5); // 可以印出 "3+5=8"
+		
+		printDiv(10, 5); // 可以印出 "10/5=2"
+		printDiv(1, 2); //  可以印出 "1/2=0"
+		printDiv(3, 0); //  可以印出 "分母不可為0"
+		
 	}
 	
 	public static void printAdd(int x, int y) {
