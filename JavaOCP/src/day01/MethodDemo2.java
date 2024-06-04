@@ -14,7 +14,7 @@ public class MethodDemo2 {
 	}
 	
 	public static void helloPrint(String name) {
-		System.out.println("Hello " + name);
+		System.out.println("Hi " + name);
 	}
 
 }
