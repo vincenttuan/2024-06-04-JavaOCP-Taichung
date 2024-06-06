@@ -4,7 +4,7 @@ public class ArrayDemo1 {
 
 	public static void main(String[] args) {
 		int[] scores = {100, 75, 53, 98, 41};
-		System.out.println(scores[0]);
+		System.out.println(scores[0]); // "印出"指定維度的陣列元素內容
 		System.out.println(scores[1]);
 		System.out.println(scores[2]);
 		System.out.println(scores[3]);
