@@ -44,4 +44,10 @@ public class BevCalUtil {
 		return calLevel;
 	}
 	
+	// 印出飲料熱量的相關資訊
+	public static void printCal(String bevType, double ml, double cal, String calLevel) {
+		System.out.printf("飲料種類: %s 容量: %.1f 毫升 熱量: %.1f 千卡 熱量分類: %s%n",
+				bevType, ml, cal, calLevel);
+	} 
+	
 }
