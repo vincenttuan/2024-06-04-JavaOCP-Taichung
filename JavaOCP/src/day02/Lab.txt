@@ -9,6 +9,6 @@ sodaCaloriesPer100ml: 40.0 千卡
 juiceCaloriesPer100ml: 45.0 千卡
 
 工具類包含以下靜態變量，表示熱量分類：
-lowCal: "低熱量"
-medCal: "中熱量"
-highCal: "高熱量"
+0 <= lowCal < 50  : "低熱量"
+50 <= medCal < 100: "中熱量"
+>= 100 highCal    : "高熱量"
