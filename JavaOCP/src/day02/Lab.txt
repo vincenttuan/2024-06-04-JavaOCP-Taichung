@@ -2,13 +2,27 @@ Lab 1
 請設計一個 Java 工具類，用於計算不同飲料的熱量，並根據熱量對飲料進行分類。具體要求如下：
 
 工具類名為 BevCalUtil:
-工具類包含以下靜態變量，表示每種飲料每100毫升的熱量（千卡）：
+工具類包含以下類別屬性，表示每種飲料每100毫升的熱量（千卡）：
 coffeeCaloriesPer100ml: 2.0 千卡
 teaCaloriesPer100ml: 1.0 千卡
 sodaCaloriesPer100ml: 40.0 千卡
 juiceCaloriesPer100ml: 45.0 千卡
 
-工具類包含以下靜態變量，表示熱量分類：
-0 <= lowCal < 50  : "低熱量"
-50 <= medCal < 100: "中熱量"
->= 100 highCal    : "高熱量"
+熱量分類：
+0 <= "低熱量" < 50  
+50 <= "中熱量" < 100
+>= 100 "高熱量"
+
+工具類的類別方法
+1.根據飲料的類型與容量來計算熱量
+  getCal(String bevType, double ml): double
+  範例: double cal = getCal("coffee", 1000);
+2.根據熱量進行分類
+  getCalLevel(double cal): String
+  範例: String calLevel = getCalLevel(80.0);
+3.印出相關熱量資訊
+  printCal(String bevType, double ml, double cal, String calLevel): void  
+
+  
+
+
