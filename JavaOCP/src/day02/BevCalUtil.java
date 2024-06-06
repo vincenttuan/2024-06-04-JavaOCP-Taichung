@@ -2,15 +2,15 @@ package day02;
 
 public class BevCalUtil {
 	// 定義每一種飲料每100ml(千卡)
-	public static double coffeeCalPer100ml = 2.0;
-	public static double teaCalPer100ml = 1.0;
-	public static double sodaCalPer100ml = 40.0;
-	public static double juiceCalPer100ml = 45.0;
+	private static double coffeeCalPer100ml = 2.0;
+	private static double teaCalPer100ml = 1.0;
+	private static double sodaCalPer100ml = 40.0;
+	private static double juiceCalPer100ml = 45.0;
 	
 	// 定義熱量文字
-	public static String lowCal = "低熱量";
-	public static String medCal = "中熱量";
-	public static String highCal = "高熱量";
+	private static String lowCal = "低熱量";
+	private static String medCal = "中熱量";
+	private static String highCal = "高熱量";
 	
 	// 根據飲料的類型與容量來計算熱量
 	public static double getCal(String bevType, double ml) {
