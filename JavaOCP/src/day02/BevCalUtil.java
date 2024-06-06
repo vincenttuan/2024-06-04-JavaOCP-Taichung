@@ -3,9 +3,9 @@ package day02;
 public class BevCalUtil {
 	// 定義每一種飲料每100ml(千卡)
 	public static double coffeeCalPer100ml = 2.0;
-	public static double teaCalPer100ml = 2.0;
-	public static double sodaCalPer100ml = 2.0;
-	public static double juiceCalPer100ml = 2.0;
+	public static double teaCalPer100ml = 1.0;
+	public static double sodaCalPer100ml = 40.0;
+	public static double juiceCalPer100ml = 45.0;
 	
 	// 定義熱量文字
 	public static String lowCal = "低熱量";
