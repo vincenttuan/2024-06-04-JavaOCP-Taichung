@@ -35,13 +35,11 @@ public class BevCalUtil {
 	
 	// 根據熱量進行分類
 	public static String getCalLevel(double cal) {
-		String calLevel = ""; // 預設值
+		String calLevel = medCal; // 預設值
 		if(cal >= 100) {
 			calLevel = highCal;
 		} else if(cal < 50) {
 			calLevel = lowCal;
-		} else {
-			calLevel = medCal;
 		}
 		return calLevel;
 	}
