@@ -2,6 +2,11 @@ package day02;
 
 // BMI 工具
 public class BMIUtil {
+	public static double bmiMax = 23.0;
+	public static double bmiMin = 18.0;
+	public static String normal = "正常";
+	public static String overWeight = "過重";
+	public static String lossWeight = "過輕";
 	
 	// 計算並取得 BMI
 	public static double getBMI(double height, double weight) {
@@ -11,7 +16,7 @@ public class BMIUtil {
 	
 	// 診斷 BMI
 	public static String getResult(double bmi) {
-		String result = bmi > 23 ? "過重" : bmi <= 18 ? "過輕" : "正常";
+		String result = bmi > bmiMax ? overWeight : bmi <= bmiMin ? lossWeight : normal;
 		return result;
 	}
 	
