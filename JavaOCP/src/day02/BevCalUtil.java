@@ -12,6 +12,25 @@ public class BevCalUtil {
 	public static String medCal = "中熱量";
 	public static String highCal = "高熱量";
 	
-	
+	// 根據飲料的類型與容量來計算熱量
+	public static double getCal(String bevType, double ml) {
+		double calPer100ml = 0; // 預設值
+		switch(bevType) {
+			case "coffee":
+				calPer100ml = ml * coffeeCalPer100ml;
+				break;
+			case "tea":
+				calPer100ml = ml * teaCalPer100ml;
+				break;
+			case "soda":
+				calPer100ml = ml * sodaCalPer100ml;
+				break;
+			case "juice":
+				calPer100ml = ml * juiceCalPer100ml;
+				break;	
+		}
+		
+		return calPer100ml;
+	}
 	
 }
