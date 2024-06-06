@@ -1,5 +1,7 @@
 package day02;
 
+import java.util.Arrays;
+
 public class ArrayDemo2 {
 
 	public static void main(String[] args) {
@@ -35,6 +37,14 @@ public class ArrayDemo2 {
 			System.out.println(score);
 		}
 		System.out.println("-----"); // 分隔線
+		
+		// 利用 Arrays.toString(scores) 將 scores 陣列單純以字串方式輸出
+		// 一般用於觀察陣列元素時使用
+		System.out.println(Arrays.toString(scores));
+		
+		scores[3] = 89;
+		scores[4] = 65;
+		System.out.println(Arrays.toString(scores));
 	}
 
 }
