@@ -20,7 +20,7 @@ public class ArrayDemo1 {
 		int lens = scores.length; // 取得陣列長度
 		System.out.printf("陣列長度: %d%n", lens);
 		
-		
+		System.out.println(scores[5]); // 超出陣列的最大維度(會發生錯誤)
 	}
 
 }
