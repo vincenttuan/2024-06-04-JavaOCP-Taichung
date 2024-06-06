@@ -16,7 +16,12 @@ public class ArrayDemo2 {
 		for(int i=0;i<=4;i++) { // i 用來表示維度
 			System.out.println(scores[i]);
 		}
-
+		System.out.println("-----"); // 分隔線
+		for(int i=0;i<scores.length;i++) { // i 用來表示維度
+			System.out.println(scores[i]);
+		}
+		System.out.println("-----"); // 分隔線
+		
 	}
 
 }
