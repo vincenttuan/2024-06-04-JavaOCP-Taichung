@@ -10,10 +10,11 @@ public class ArrayDemo3 {
 		System.out.println(Arrays.toString(scores));
 		// 指定元素內容
 		scores[1] = 99;
+		scores[2] = 77;
 		scores[3] = 88;
 		// 印出陣列元素
 		System.out.println(Arrays.toString(scores));
-
+		
 	}
 
 }
