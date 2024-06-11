@@ -25,7 +25,7 @@ public class ArrayDemo4 {
 		// 平均 = ?
 		double avg = (double)sum / scores.length;
 		System.out.printf("平均: %.1f%n", avg);
-				
+		
 	}
 
 }
