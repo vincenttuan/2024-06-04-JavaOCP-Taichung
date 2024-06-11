@@ -17,10 +17,14 @@ public class ArrayDemo4 {
 		
 		// 總分 = ?
 		int sum = 0;
-		
+		for(int i=0, lens=scores.length ; i<lens ; i++) {
+			sum += scores[i]; // sum = sum + scores[i];
+		}
+		System.out.printf("總分: %d%n", sum);
 		
 		// 平均 = ?
-		double avg = 0; // 0.0
+		double avg = (double)sum / scores.length;
+		System.out.printf("平均: %.1f%n", avg);
 		
 						
 				
