@@ -50,8 +50,15 @@ public class IntArrayUtil {
 	
 	// 6. 計算並回傳標準差
 	public static double getSD(int[] array) {
-		
-		
+		int lens = array.length;
+		double avg = getAvg(array);
+		double sum = 0;
+		for(int i=0 ; i<lens ; i++) {
+			sum += Math.pow(array[i] - avg, 2);
+		}
+		// 標準差
+		double sd = Math.sqrt(sum / lens);
+		return sd;
 	}
 	
 }
