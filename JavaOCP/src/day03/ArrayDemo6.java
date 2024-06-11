@@ -15,7 +15,10 @@ public class ArrayDemo6 {
 		// A 班標準差
 		double sdA = Math.sqrt(sumA / scoreA.length);
 		System.out.printf("A 班標準差: %.1f%n", sdA);
-
+		
+		double avgB
+		
+		
 	}
 
 }

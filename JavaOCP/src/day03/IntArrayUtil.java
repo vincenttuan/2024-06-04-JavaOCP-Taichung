@@ -47,4 +47,11 @@ public class IntArrayUtil {
 		}
 		return min;
 	}
+	
+	// 6. 計算並回傳標準差
+	public static double getSD(int[] array) {
+		
+		
+	}
+	
 }
