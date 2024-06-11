@@ -17,6 +17,11 @@ public class ArrayDemo3 {
 		// 陣列複製
 		int[] newScores = new int[3]; // 預設內容 => {0, 0, 0}
 		System.out.println("newScores:" + Arrays.toString(newScores));
+		// 利用 System.arraycopy 來複製元素
+		// API: arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+		System.arraycopy(scores, 1, newScores, 0, 3);
+		System.out.println("newScores:" + Arrays.toString(newScores));
+		
 	}
 
 }
