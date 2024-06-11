@@ -16,8 +16,13 @@ public class ArrayDemo6 {
 		double sdA = Math.sqrt(sumA / scoreA.length);
 		System.out.printf("A 班標準差: %.1f%n", sdA);
 		
-		double avgB
+		// B 班標準差
+		double sdB = IntArrayUtil.getSD(scoreB);
+		System.out.printf("B 班標準差: %.1f%n", sdB);
 		
+		// 集中度判斷
+		String result = sdA < sdB ? "A班" : "B班";
+		System.out.printf("%s分數較集中%n", result);
 		
 	}
 
