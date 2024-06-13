@@ -1,5 +1,7 @@
 package day04;
 
+import java.util.stream.IntStream;
+
 //陣列分析的方法
 //1. for-loop
 //2. for-each
@@ -24,6 +26,9 @@ public class ArrayDemo9 {
 			}
 		}
 		System.out.printf("及格總分: %d%n", sum2);
+		//-------------------------------------------------
+		int sum3 = IntStream.of(scores).filter(score -> score >= 60).sum();
+		System.out.printf("及格總分: %d%n", sum3);
 
 	}
 
