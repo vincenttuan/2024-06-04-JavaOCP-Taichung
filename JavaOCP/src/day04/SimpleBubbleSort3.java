@@ -14,5 +14,23 @@ public class SimpleBubbleSort3 {
 		System.out.println("排序後:" + Arrays.toString(scores));
 		
 	}
+	
+	// 泡沫排序陣列
+	// asc: true 由小到大, false: 由大到小
+	public static void bubbleSort(int[] array, boolean asc) {
+		int n = array.length;
+		//---------------------------------------------------------
+		for(int j=0;j<n-1;j++) {
+			for(int i=0;i<n-1-j;i++) {
+				if(asc ? array[i] > array[i+1] : array[i] < array[i+1]) {
+					// 資料互換
+					int tmp = array[i+1];
+					array[i+1] = array[i];
+					array[i] = tmp;
+				}
+			}
+		}
+		//---------------------------------------------------------
+	}
 
 }
