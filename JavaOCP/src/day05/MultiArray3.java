@@ -15,7 +15,7 @@ public class MultiArray3 {
 				System.out.printf("[%d][%d]=%d%n", i, k, x[i][k]);
 			}
 		}
-		// 請找出最大值 = ?
+		// 請找出最大值 = ? for-loop
 		int max = Integer.MIN_VALUE;
 		System.out.printf("max 初始值 = %d%n", max);
 		for(int i=0 ; i<x.length ; i++) {
@@ -26,6 +26,17 @@ public class MultiArray3 {
 			}
 		}
 		System.out.printf("max 最終值 = %d%n", max);
+		
+		// 請找出最大值 = ? for-each
+		int max2 = Integer.MIN_VALUE;
+		for(int[] array : x) {
+			for(int value : array) {
+				if(value > max2) {
+					max2 = value;
+				}
+			}
+		}
+		System.out.printf("max2 最終值 = %d%n", max2);
 		
 	}
 }
