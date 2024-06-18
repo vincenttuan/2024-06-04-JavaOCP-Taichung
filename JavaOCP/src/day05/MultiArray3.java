@@ -32,7 +32,7 @@ public class MultiArray3 {
 		for(int[] array : x) {
 			for(int value : array) {
 				if(value > max2) {
-					max2 = value;
+					max2 = value; // 替換最大值 
 				}
 			}
 		}
