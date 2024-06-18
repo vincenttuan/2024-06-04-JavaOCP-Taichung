@@ -1,5 +1,8 @@
 package day05;
 
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class MyltiArray6 {
 	public static void main(String[] args) {
 		int[][] x = {
@@ -28,5 +31,18 @@ public class MyltiArray6 {
 			}
 		}
 		System.out.printf("總分: %d%n", sum2);
+		
+		int sum3 = Stream.of(x)
+						 .flatMapToInt(array -> IntStream.of(array))
+						 .filter(value -> value >= 0)
+						 .sum();
+		System.out.printf("總分: %d%n", sum3);
+		
+		int sum4 = Stream.of(x)
+						 .flatMapToInt(array -> IntStream.of(array).filter(value -> value >= 0))
+						 .sum();
+		System.out.printf("總分: %d%n", sum4);
+		
+		
 	}
 }
