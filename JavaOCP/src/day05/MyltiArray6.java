@@ -18,16 +18,19 @@ public class MyltiArray6 {
 		// 個別取得 score >= 0 的總分
 		
 		int sumX = Stream.of(x)
-						 .flatMapToInt(array -> IntStream.of(array).filter(value -> value >= 0))
+						 .flatMapToInt(array -> getPassingScores(array))
 						 .sum();
 		System.out.printf("x總分: %d%n", sumX);
 		
 		int sumY = Stream.of(y)
-				 .flatMapToInt(array -> IntStream.of(array).filter(value -> value >= 0))
-				 .sum();
+				 		 .flatMapToInt(array -> getPassingScores(array))
+				 		 .sum();
 		System.out.printf("y總分: %d%n", sumY);
 		
-		
-		
 	}
+	
+	private static IntStream getPassingScores(int[] array) {
+		return IntStream.of(array).filter(value -> value >= 0);
+	}
+	
 }
