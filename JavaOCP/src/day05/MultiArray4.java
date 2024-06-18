@@ -20,9 +20,14 @@ public class MultiArray4 {
 		*/
 		int max = Arrays.stream(x) // 將 x 二維陣列轉串流
 					 	.flatMapToInt(array -> IntStream.of(array)) // 一維陣列轉int串流
+					 	//.peek(value -> System.out.print(value + " "))
 					 	.max()
 					 	.getAsInt();
 		
 		System.out.printf("max 最大值 = %d%n", max);
+		
+//		Arrays.stream(x)
+//			  .flatMapToInt(array -> IntStream.of(array))
+//			  .forEach(value -> System.out.print(value + " "));
 	}
 }
