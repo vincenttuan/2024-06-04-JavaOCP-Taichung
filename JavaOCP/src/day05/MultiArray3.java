@@ -8,6 +8,11 @@ public class MultiArray3 {
 						{70, 50, 60}
 					};
 		// 請找出最大值 = ?
-		
+		for(int i=0 ; i<x.length ; i++) {
+			// x[i] 是一維陣列
+			for(int k=0 ; k < x[i].length ; k++) {
+				System.out.printf("[%d][%d]=%d%n", i, k, x[i][k]);
+			}
+		}
 	}
 }
