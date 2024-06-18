@@ -16,5 +16,16 @@ public class MultiArray3 {
 			}
 		}
 		// 請找出最大值 = ?
+		int max = Integer.MIN_VALUE;
+		System.out.printf("max 初始值 = %d%n", max);
+		for(int i=0 ; i<x.length ; i++) {
+			for(int k=0 ; k < x[i].length ; k++) {
+				if(x[i][k] > max) {
+					max = x[i][k]; // 替換最大值 
+				}
+			}
+		}
+		System.out.printf("max 最終值 = %d%n", max);
+		
 	}
 }
