@@ -2,6 +2,7 @@ package day05;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class MultiArray4 {
 	public static void main(String[] args) {
@@ -18,7 +19,7 @@ public class MultiArray4 {
 			  {70, 50, 60}    flatMap
 			};
 		*/
-		int max = Arrays.stream(x) // 將 x 二維陣列轉串流
+		int max = Stream.of(x) // 將 x 二維陣列轉串流
 					 	.flatMapToInt(array -> IntStream.of(array)) // 一維陣列轉int串流
 					 	//.peek(value -> System.out.print(value + " "))
 					 	.max()
