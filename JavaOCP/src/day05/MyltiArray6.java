@@ -22,11 +22,15 @@ public class MyltiArray6 {
 						 .sum();
 		System.out.printf("x總分: %d%n", sumX);
 		
-		int sumY = Stream.of(y)
-				 		 .flatMapToInt(array -> getPassingScores(array))
-				 		 .sum();
+		int sumY = getSum(y);
 		System.out.printf("y總分: %d%n", sumY);
 		
+	}
+	
+	private static int getSum(int[][] multiArray) {
+		return Stream.of(multiArray)
+		 		 .flatMapToInt(array -> getPassingScores(array))
+		 		 .sum();
 	}
 	
 	private static IntStream getPassingScores(int[] array) {
