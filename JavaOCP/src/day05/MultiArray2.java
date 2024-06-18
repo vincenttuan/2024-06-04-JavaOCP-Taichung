@@ -14,6 +14,7 @@ public class MultiArray2 {
 		//System.out.println(Arrays.toString(x[1]));
 		
 		for(int i=0,lens=x.length ; i<lens ; i++) {
+			System.out.println(x[i].length);
 			System.out.println(Arrays.toString(x[i]));
 		}
 		
