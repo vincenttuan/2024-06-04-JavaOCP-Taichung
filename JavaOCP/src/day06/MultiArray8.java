@@ -1,5 +1,7 @@
 package day06;
 
+import java.util.Arrays;
+
 /**
  * 使用三維陣列 double[][][] 來表示一棟大樓中各個房間的溫度。
  * 假設這棟大樓有 3 層，每層有 4 個房間，每個房間有 2 個測量點。
@@ -44,6 +46,24 @@ public class MultiArray8 {
 		// 第1層第2個房間溫度: 23, 24 平均: 23.5
 		// ...
 		// 第3層第4個房間溫度: 43, 44 平均: 43.5
+		// 1.使用 for-loop
+		for(int i=0;i<temperatures.length;i++) { // 拆樓層
+			for(int j=0;j<temperatures[i].length;j++) { // 拆房間
+				double sum = 0;
+				for(int k=0;k<temperatures[i][j].length;k++) { // 拆測量點
+					sum += temperatures[i][j][k]; // 測量點的溫度值
+				}
+				double average = sum/temperatures[i][j].length;
+				System.out.printf("第 %d 層第 %d 個房間溫度: %s 平均: %.1f%n",
+						i+1, j+1, Arrays.toString(temperatures[i][j]), average);
+			}
+		}
+		
+		// 2.使用 for-each
+		
+		
+		// 3.使用 Stream
+		
 	}
 
 }
