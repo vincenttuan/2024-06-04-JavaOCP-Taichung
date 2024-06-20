@@ -61,12 +61,20 @@ public class MultiArray8 {
 		}
 		
 		// 2.使用 for-each
+		int floorNumber = 1;
 		for(double[][] floors : temperatures) { // 拆樓層
+			int roomNumber = 1;
 			for(double[] rooms : floors) { // 拆房間
+				double sum = 0;
 				for(double temp : rooms) { // 拆測量點
-					
+					sum += temp;
 				}
+				double average = sum/rooms.length;
+				System.out.printf("第 %d 層第 %d 個房間溫度: %s 平均: %.1f%n",
+						floorNumber, roomNumber, Arrays.toString(rooms), average);
+				roomNumber++;
 			}
+			floorNumber++;
 		}
 		
 		// 3.使用 Stream
