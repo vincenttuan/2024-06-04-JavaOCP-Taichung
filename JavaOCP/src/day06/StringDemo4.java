@@ -15,7 +15,11 @@ public class StringDemo4 {
 		System.out.println(words.length());
 		// 第19個位置的資料
 		System.out.println(words.charAt(19));
-		
+		// 字串連結
+		//words = words.concat(" by vincent");
+		//words = words + " by vincent";
+		words += " by vincent";
+		System.out.println(words);
 	}
 
 }
