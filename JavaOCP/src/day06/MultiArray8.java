@@ -86,6 +86,10 @@ public class MultiArray8 {
 		
 		IntStream.range(0, 3).forEach(i -> System.out.println(i + " Java"));
 		
+		IntStream.range(0, 3).forEach(i -> {
+			System.out.println(i + " Java");
+		});
+		
 		IntStream.range(0, temperatures.length).forEach(i -> { // 拆樓層
 			IntStream.range(0, temperatures[i].length).forEach(j -> { // 拆房間
 				double average = DoubleStream.of(temperatures[i][j])
