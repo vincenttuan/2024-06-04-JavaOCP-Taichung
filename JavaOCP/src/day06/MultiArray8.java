@@ -2,6 +2,7 @@ package day06;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.stream.IntStream;
 
 /**
  * 使用三維陣列 double[][][] 來表示一棟大樓中各個房間的溫度。
@@ -78,6 +79,11 @@ public class MultiArray8 {
 		}
 		
 		// 3.使用 Stream
+		for(int i=0;i<3;i++) {
+			System.out.println(i + " Java");
+		}
+		
+		IntStream.range(0, 3).forEach(i -> System.out.println(i + " Java"));
 		
 	}
 
