@@ -20,7 +20,7 @@ import java.util.stream.IntStream;
  * 
  */
 public class MultiArray8 {
-
+	 
 	public static void main(String[] args) {
 		//double[][][] temperatures = new double[3][4][2];
 		double[][][] temperatures = { // [3][4][2]
