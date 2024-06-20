@@ -14,7 +14,7 @@ package day06;
  * 打印出每個測量點的溫度，輸出格式應包含樓層、房間和測量點的信息。
  * 
  */
-public class MyltiArray8 {
+public class MultiArray8 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
