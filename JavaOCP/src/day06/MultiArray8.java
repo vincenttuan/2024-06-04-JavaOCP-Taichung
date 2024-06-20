@@ -2,6 +2,7 @@ package day06;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 /**
@@ -84,6 +85,16 @@ public class MultiArray8 {
 		}
 		
 		IntStream.range(0, 3).forEach(i -> System.out.println(i + " Java"));
+		
+		IntStream.range(0, temperatures.length).forEach(i -> { // 拆樓層
+			IntStream.range(0, temperatures[i].length).forEach(j -> { // 拆房間
+				double average = DoubleStream.of(temperatures[i][j])
+									   .average()
+									   .getAsDouble();
+				System.out.printf("第 %d 層第 %d 個房間溫度: %s 平均: %.1f%n",
+						i+1, j+1, Arrays.toString(temperatures[i][j]), average);		
+			});
+		});
 		
 	}
 
