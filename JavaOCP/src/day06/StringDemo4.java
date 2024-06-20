@@ -13,7 +13,8 @@ public class StringDemo4 {
 		System.out.println(words.indexOf("water"));
 		// words 字串長度
 		System.out.println(words.length());
-		
+		// 第19個位置的資料
+		System.out.println(words.charAt(19));
 		
 	}
 
