@@ -3,7 +3,7 @@ package day05;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class MyltiArray7 {
+public class MultiArray7 {
 	public static void main(String[] args) {
 		int[][] x = {
 						{100, -10, 70},
