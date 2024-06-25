@@ -19,7 +19,8 @@ public class WrapperDemo4 {
 		// 計算總分: Stream
 		int sum2 =  Arrays.stream(scores) // Integer 串流
 						  .filter(score -> score != null) // Integer 串流
-						  .mapToInt(score -> score.intValue()) // int 串流: IntStream
+						  //.mapToInt(score -> score.intValue()) // int 串流: IntStream
+						  .mapToInt(score -> score) // int 串流: IntStream + Auto-Unboxing
 						  .sum();
 		System.out.println(sum2);
 	}
