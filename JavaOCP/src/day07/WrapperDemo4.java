@@ -1,6 +1,7 @@
 package day07;
 
 import java.util.Arrays;
+import static java.lang.System.out;
 
 public class WrapperDemo4 {
 
@@ -28,7 +29,9 @@ public class WrapperDemo4 {
 		// 印出所有有註冊的分數
 		Arrays.stream(scores)
 			  .filter(score -> score != null)
-			  .forEach(score -> System.out.println(score));
+			  //.forEach(score -> System.out.println(score));
+			  //.forEach(System.out::println);
+			  .forEach(out::println);
 		
 	}
 
