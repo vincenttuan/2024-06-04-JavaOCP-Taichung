@@ -29,8 +29,7 @@ public class WrapperDemo4 {
 		Arrays.stream(scores)
 			  .filter(score -> score != null)
 			  .forEach(score -> System.out.println(score));
-			  
-			  
+		
 	}
 
 }
