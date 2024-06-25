@@ -5,7 +5,7 @@ public class StringDemo1 {
 		// 字串 immutable
 		String s = "Java";
 		System.out.println(s);
-		s = s + "OCP";
+		s = s.concat("OCP");
 		System.out.println(s);
 		
 		
