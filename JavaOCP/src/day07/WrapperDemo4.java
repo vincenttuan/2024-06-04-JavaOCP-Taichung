@@ -24,6 +24,13 @@ public class WrapperDemo4 {
 						  .mapToInt(Integer::intValue) // 利用方法參考::
 						  .sum();
 		System.out.println(sum2);
+		
+		// 印出所有有註冊的分數
+		Arrays.stream(scores)
+			  .filter(score -> score != null)
+			  .forEach(score -> System.out.println(score));
+			  
+			  
 	}
 
 }
