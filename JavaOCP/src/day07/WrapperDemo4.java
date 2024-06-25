@@ -20,7 +20,8 @@ public class WrapperDemo4 {
 		int sum2 =  Arrays.stream(scores) // Integer 串流
 						  .filter(score -> score != null) // Integer 串流
 						  //.mapToInt(score -> score.intValue()) // int 串流: IntStream
-						  .mapToInt(score -> score) // int 串流: IntStream + Auto-Unboxing
+						  //.mapToInt(score -> score) // int 串流: IntStream + Auto-Unboxing
+						  .mapToInt(Integer::intValue) // 利用方法參考::
 						  .sum();
 		System.out.println(sum2);
 	}
