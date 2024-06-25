@@ -4,7 +4,12 @@ import java.util.Arrays;
 import static java.lang.System.out;
 
 public class WrapperDemo4 {
-
+	
+	// 有分數
+	public static boolean haveScore(Integer score) {
+		return score != null;
+	}
+	
 	public static void main(String[] args) {
 		Integer[] scores = {100, null, 90, null, 80}; // Auto-Boxing
 		// 計算總分: for-each
@@ -28,7 +33,9 @@ public class WrapperDemo4 {
 		
 		// 印出所有有註冊的分數
 		Arrays.stream(scores)
-			  .filter(score -> score != null)
+			  //.filter(score -> score != null)
+			  //.filter(score -> haveScore(score))
+			  .filter(WrapperDemo4::haveScore)
 			  //.forEach(score -> System.out.println(score));
 			  //.forEach(System.out::println);
 			  .forEach(out::println);
