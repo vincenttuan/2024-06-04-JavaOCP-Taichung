@@ -8,6 +8,12 @@ public class StringDemo7 {
 		sb.append("OCP");
 		System.out.println(sb);
 		//System.out.println(sb.toString());
+		
+		String s = "JavaOCP";
+		
+		// StringBuffer 與 String 比較
+		System.out.println(s.equals(sb));
+		System.out.println(s.equals(sb.toString()));
 	}
 
 }
