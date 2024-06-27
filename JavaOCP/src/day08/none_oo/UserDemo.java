@@ -24,7 +24,7 @@ public class UserDemo {
 	}
 	
 	public static void displayUserInfo(String name, double height, double weight, double bmi) {
-		System.out.printf("姓名: %s 身高: %.1f 體重: %.1f BMI: %.2f%n",
+		System.out.printf("姓名: %-5s 身高: %.1f 體重: %.1f BMI: %.2f%n",
 				name, height, weight, bmi);
 	}
 
