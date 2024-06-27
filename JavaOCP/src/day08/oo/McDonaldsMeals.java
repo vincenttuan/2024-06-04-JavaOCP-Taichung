@@ -12,8 +12,8 @@ public class McDonaldsMeals {
 		meal1.setPrice(150);
 		
 		// 點餐
-		//Meal[] meals = {meal1, meal1, meal3, meal4, meal1, meal2, meal3, meal4, meal4};
-		Meal[] meals = {meal1};
+		Meal[] meals = {meal1, meal1, meal3, meal4, meal1, meal2, meal3, meal4, meal4};
+		//Meal[] meals = {meal1};
 		
 		// 份數
 		System.out.printf("份數: %d%n", meals.length);
@@ -21,6 +21,11 @@ public class McDonaldsMeals {
 		// 顯示所有餐點資料
 		for(Meal meal : meals) {
 			meal.displayMealInfo();
+		}
+		
+		// 顯示所有餐名與價格
+		for(Meal meal : meals) {
+			System.out.printf("%s餐 $%d%n", meal.getName(), meal.getPrice());
 		}
 		
 	}
