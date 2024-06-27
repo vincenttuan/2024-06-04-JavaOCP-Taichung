@@ -21,6 +21,7 @@ public class UserDemo {
 		double weight3 = 85.0;
 		double bmi3 = weight3 / Math.pow(height3/100, 2);
 		displayUserInfo(name3, height3, weight3, bmi3);
+		
 	}
 	
 	public static void displayUserInfo(String name, double height, double weight, double bmi) {
