@@ -8,6 +8,9 @@ public class McDonaldsMeals {
 		Meal meal3 = new Meal("3號", 100, "麥克雞塊", "雪碧", "蘋果派");
 		Meal meal4 = new Meal("50元超值", 50, "吉士漢堡", "小可", null);
 		
+		// 1號餐飲料改
+		
+		
 		// 點餐
 		Meal[] meals = {meal1, meal1, meal3, meal4, meal1, meal2, meal3, meal4, meal4};
 		// 份數

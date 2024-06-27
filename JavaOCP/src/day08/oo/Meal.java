@@ -25,6 +25,10 @@ public class Meal {
 		this.sideMealName = sideMealName;
 	}
 	
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
 	public void displayMealInfo() {
 		System.out.printf("%s餐 價格: %d 漢堡: %s 飲料: %s 副餐: %s%n", 
 				name, price, hamburgerName, beverageName, sideMealName);
