@@ -16,6 +16,14 @@ public class Meal {
 		this.beverageName = beverageName;
 		this.sideMealName = sideMealName;
 	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
 
 	public void setBeverageName(String beverageName) {
 		this.beverageName = beverageName;
