@@ -8,6 +8,7 @@ public class UserDemo2 {
 		
 		user1.name = "Jack";
 		//user1.height = 190;
+		user1.setHeight(190);
 		user1.printUserInfo();
 		
 	}
