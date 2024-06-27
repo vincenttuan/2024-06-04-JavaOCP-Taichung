@@ -4,7 +4,7 @@ package day08.oo;
 public class User {
 	// 物件屬性
 	String name; // 姓名
-	double height; // 身高
+	private double height; // 身高 (private 表示私有, 不允許外界直接操作)
 	double weight; // 體重
 	double bmi; // bmi值
 	
@@ -21,6 +21,17 @@ public class User {
 	public void printUserInfo() { 
 		System.out.printf("姓名: %-5s 身高: %.1f 體重: %.1f BMI: %.2f%n",
 				name, height, weight, bmi);
+	}
+	
+	// 物件方法, 變更/設定身高用
+	public void setHeight(double height) {
+		if(height < 0) {
+			return;
+		}
+		// 重設 height
+		this.height = height;
+		// 重算 bmi
+		this.bmi = weight / Math.pow(height/100, 2); // 設定 bmi 物件屬性的內容 
 	}
 	
 }
