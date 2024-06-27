@@ -17,7 +17,7 @@ public class User {
 		this.bmi = weight / Math.pow(height/100, 2); // 設定 bmi 物件屬性的內容
 	}
 	
-	// 物件方法, 直接可以取用物件變數的內容
+	// 物件方法, 直接可以取用物件屬性的內容
 	public void printUserInfo() { 
 		System.out.printf("姓名: %-5s 身高: %.1f 體重: %.1f BMI: %.2f%n",
 				name, height, weight, bmi);
