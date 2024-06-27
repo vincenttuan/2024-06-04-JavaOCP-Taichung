@@ -30,6 +30,4 @@ public class Meal {
 				name, price, hamburgerName, beverageName, sideMealName);
 	}
 	
-	
-	
 }
