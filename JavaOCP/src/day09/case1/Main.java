@@ -9,8 +9,15 @@ public class Main {
 		friedRice1.setRiceAmount(0.5);
 		friedRice1.cook();
 		
+		System.out.println("--------------------------------");
+
 		FriedRice friedRice2 = new FriedRice(12.5, 4, 1.2);
 		friedRice2.cook();
+		
+		System.out.println("--------------------------------");
+		
+		System.out.println(friedRice1);
+		System.out.println(friedRice2);
 	}
 
 }
