@@ -19,6 +19,18 @@ public class FriedRice {
 		this.rice = rice;
 	}
 	
+	// 取得炒飯的價格
+	public Double getPrice() {
+		if(ham == null) {
+			return egg.getAmount() * egg.getPrice() +
+				   rice.getWeight() * rice.getPrice();
+		} else {
+			return ham.getWeight() * ham.getPrice() +
+				   egg.getAmount() * egg.getPrice() +
+				   rice.getWeight() * rice.getPrice();
+		}
+	}
+	
 	public void cook() {
 		// 印出炒飯的種類與價格
 		if(ham == null) { // 沒有火腿-蛋炒飯
