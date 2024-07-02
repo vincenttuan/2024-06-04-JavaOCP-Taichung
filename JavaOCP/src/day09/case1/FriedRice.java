@@ -44,6 +44,12 @@ public class FriedRice {
 	
 	// 炒飯邏輯
 	public void cook() {
+		// 判斷物件變數內容是否合理 ?
+		if(hamAmount <= 0 || eggAmount <= 0 || riceAmount <= 0) {
+			System.out.println("材料尚未準備齊全");
+			return;
+		}
+		
 		System.out.println("準備開始炒火腿蛋炒飯");
 		System.out.printf("火腿: %.1f 克%n", hamAmount);
 		System.out.printf("雞蛋: %d 顆%n", eggAmount);
