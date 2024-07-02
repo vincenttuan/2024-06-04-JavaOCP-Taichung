@@ -8,7 +8,9 @@ public class Main {
 		friedRice1.setEggAmount(3);
 		friedRice1.setRiceAmount(0.5);
 		friedRice1.cook();
-
+		
+		FriedRice friedRice2 = new FriedRice(12.5, 4, 1.2);
+		friedRice2.cook();
 	}
 
 }
