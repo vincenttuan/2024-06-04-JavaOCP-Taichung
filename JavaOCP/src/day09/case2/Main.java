@@ -14,7 +14,14 @@ public class Main {
 		System.out.printf("雞蛋 %d 顆 每顆 %d 元%n", egg.getAmount(), egg.getPrice());
 		System.out.printf("米飯 %.1f 克 每克 %d 元%n", rice.getWeight(), rice.getPrice());
 		
-
+		// 蛋炒飯
+		FriedRice eggFriedRice = new FriedRice(egg, rice);
+		// 金華火腿蛋炒飯
+		FriedRice hamFriedRice = new FriedRice(ham1, egg, rice);
+		
+		// cook 與計價
+		eggFriedRice.cook();
+		hamFriedRice.cook();
 	}
 
 }
