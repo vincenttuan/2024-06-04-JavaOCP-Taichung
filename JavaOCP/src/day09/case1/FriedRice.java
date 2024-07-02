@@ -4,7 +4,7 @@ package day09.case1;
 public class FriedRice {
 	private double hamAmount; // 火腿的重量(g)
 	private int eggAmount; // 蛋的數量(個)
-	private double riceAmount;      // 米的容量(杯)
+	private double riceAmount; // 米的容量(杯)
 	
 	// 建構子封裝
 	public FriedRice() {
