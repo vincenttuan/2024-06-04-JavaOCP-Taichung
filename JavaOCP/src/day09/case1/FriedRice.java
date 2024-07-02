@@ -48,7 +48,8 @@ public class FriedRice {
 		System.out.printf("火腿: %.1f 克%n", hamAmount);
 		System.out.printf("雞蛋: %d 顆%n", eggAmount);
 		System.out.printf("米飯: %.1f 杯%n", riceAmount);
-		
+		System.out.println("開始炒...");
+		System.out.println("火腿蛋炒飯完成");
 	}
 	
 	
