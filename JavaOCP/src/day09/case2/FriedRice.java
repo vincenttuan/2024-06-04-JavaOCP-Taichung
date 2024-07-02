@@ -25,13 +25,13 @@ public class FriedRice {
 			double price = egg.getAmount() * egg.getPrice() +
 						   rice.getWeight() * rice.getPrice();
 			
-			System.out.printf("蛋炒飯 $.0f%n", price);
+			System.out.printf("蛋炒飯 $%.0f%n", price);
 		} else { // 有火腿-火腿蛋炒飯
 			double price = ham.getWeight() * ham.getPrice() +
 						   egg.getAmount() * egg.getPrice() +
 					   	   rice.getWeight() * rice.getPrice();
 			
-			System.out.printf("%s火腿蛋炒飯 $.0f%n", ham.getName(), price);
+			System.out.printf("%s火腿蛋炒飯 $%.0f%n", ham.getName(), price);
 		}
 	}
 	
