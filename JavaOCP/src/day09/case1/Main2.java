@@ -6,7 +6,13 @@ public class Main2 {
 		FriedRice friedRice = new FriedRice();
 		friedRice.cook();
 		System.out.println(friedRice);
-
+		
+		System.out.println("-----------------");
+		
+		FriedRice friedRice2 = friedRice;
+		friedRice2.cook();
+		System.out.println(friedRice2);
+		
 	}
 
 }
