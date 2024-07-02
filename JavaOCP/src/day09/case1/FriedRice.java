@@ -4,17 +4,17 @@ package day09.case1;
 public class FriedRice {
 	private double hamAmount; // 火腿的重量(g)
 	private int eggAmount; // 蛋的數量(個)
-	private double rice;      // 米的容量(杯)
+	private double riceAmount;      // 米的容量(杯)
 	
 	// 建構子封裝
 	public FriedRice() {
 		
 	}
 	
-	public FriedRice(double hamAmount, int eggAmount, double rice) {
+	public FriedRice(double hamAmount, int eggAmount, double riceAmount) {
 		this.hamAmount = hamAmount;
 		this.eggAmount = eggAmount;
-		this.rice = rice;
+		this.riceAmount = riceAmount;
 	}
 	
 	// 方法封裝
@@ -34,15 +34,22 @@ public class FriedRice {
 		this.eggAmount = eggAmount;
 	}
 
-	public double getRice() {
-		return rice;
+	public double getRiceAmount() {
+		return riceAmount;
 	}
 
-	public void setRice(double rice) {
-		this.rice = rice;
+	public void setRiceAmount(double riceAmount) {
+		this.riceAmount = riceAmount;
 	}
 	
-	
+	// 炒飯邏輯
+	public void cook() {
+		System.out.println("準備開始炒火腿蛋炒飯");
+		System.out.printf("火腿: %.1f 克%n", hamAmount);
+		System.out.printf("雞蛋: %d 顆%n", eggAmount);
+		System.out.printf("米飯: %.1f 杯%n", riceAmount);
+		
+	}
 	
 	
 }
