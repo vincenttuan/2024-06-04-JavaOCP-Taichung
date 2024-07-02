@@ -19,5 +19,13 @@ public class FriedRice {
 		this.rice = rice;
 	}
 	
+	public void cook() {
+		// 印出炒飯的種類與價格
+		if(ham == null) { // 沒有火腿-蛋炒飯
+			System.out.printf("蛋炒飯%n");
+		} else { // 有火腿-火腿蛋炒飯
+			System.out.printf("%s火腿蛋炒飯%n", ham.getName());
+		}
+	}
 	
 }
