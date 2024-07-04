@@ -11,4 +11,8 @@ public class Clothing extends Product {
 		this.size = size;
 	}
 	
+	public void displayInfo() {
+		System.out.printf("衣服: %s 尺寸: %s 金額: $%,d%n", getName(), getSize(), getPrice());
+	}
+	
 }

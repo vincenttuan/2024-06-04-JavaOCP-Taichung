@@ -11,5 +11,7 @@ public class Shoes extends Product {
 		this.color = color;
 	}
 	
-	
+	public void displayInfo() {
+		System.out.printf("鞋子: %s 顏色: %s 金額: $%,d%n", getName(), getColor(), getPrice());
+	}
 }

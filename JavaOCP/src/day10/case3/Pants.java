@@ -11,5 +11,7 @@ public class Pants extends Product {
 		this.length = length;
 	}
 	
-	
+	public void displayInfo() {
+		System.out.printf("褲子: %s 長度: %s 金額: $%,d%n", getName(), getLength(), getPrice());
+	}
 }
