@@ -1,5 +1,6 @@
 package day10.case2;
 
+// 類別物件: 設計用來建立物件的 
 public class Car {
 	// 物件變數
 	private String model; // 型號
