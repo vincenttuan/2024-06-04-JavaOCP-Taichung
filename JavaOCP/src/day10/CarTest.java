@@ -11,6 +11,7 @@ public class CarTest {
 		car2.displayInfo();
 		car3.displayInfo();
 		
+		System.out.println(Car.totalCars);
 
 	}
 
