@@ -31,4 +31,8 @@ public class Car {
 		Car.discountRate = discountRate;
 	}
 	
+	public static int getTotalCars() {
+		return totalCars; // Car.totalCars
+	}
+	
 }

@@ -7,13 +7,13 @@ public class CarTest {
 		Car car2 = new Car("A100", "Blue", 180, 250);
 		Car car3 = new Car("T200", "Yellow", 300, 450);
 		// 統一設定折扣
-		Car.discountRate = 0.8;
+		Car.setDiscountRate(0.8);
 		
 		car1.displayInfo();
 		car2.displayInfo();
 		car3.displayInfo();
 		
-		System.out.println(Car.totalCars);
+		System.out.println(Car.getTotalCars());
 
 	}
 
