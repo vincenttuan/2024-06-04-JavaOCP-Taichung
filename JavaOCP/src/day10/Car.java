@@ -8,7 +8,7 @@ public class Car {
 	private Integer price; // 價格
 	// 類別變數(靜態變數) 
 	static int totalCars; // 用於計算所有創建的汽車總數  
-	static double discountRate; // 用於計算統一折扣
+	static double discountRate = 1.0; // 用於計算統一折扣
 	
 	public Car(String model, String color, Integer maxSpeed, Integer price) {
 		this.model = model;
