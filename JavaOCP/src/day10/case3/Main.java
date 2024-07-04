@@ -23,6 +23,9 @@ public class Main {
 		System.out.printf("褲子: %s 長度: %s 金額: $%,d%n", pants.getName(), pants.getLength(), pants.getPrice());
 		System.out.printf("鞋子: %s 顏色: %s 金額: $%,d%n", shoes.getName(), shoes.getColor(), shoes.getPrice());
 		
+		clothing.displayInfo(); // 印出 => 衣服: 冰鋒衣 尺寸: L 金額: $800
+		pants.displayInfo(); // 褲子: 牛仔褲 長度: 110 金額: $1,000
+		shoes.displayInfo(); // 鞋子: 洞洞鞋 顏色: 白 金額: $500
 		
 	}
 
