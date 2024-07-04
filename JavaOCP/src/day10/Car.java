@@ -23,7 +23,7 @@ public class Car {
 				model, color, maxSpeed, price, (price * discountRate));
 	}
 	
-	// 設計一個可以變更類別變數的類別方法
+	// 設計一個可以變更類別變數 discountRate 的類別方法
 	public static void setDiscountRate(double discountRate) {
 		if(discountRate < 0 || discountRate >= 1) {
 			return;
@@ -31,6 +31,7 @@ public class Car {
 		Car.discountRate = discountRate;
 	}
 	
+	// 設計一個可以取得類別變數 totalCars 的類別方法
 	public static int getTotalCars() {
 		return totalCars; // Car.totalCars
 	}
