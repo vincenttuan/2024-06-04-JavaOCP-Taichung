@@ -1,4 +1,4 @@
-package day10;
+package day10.case1;
 
 public class CarTest {
 

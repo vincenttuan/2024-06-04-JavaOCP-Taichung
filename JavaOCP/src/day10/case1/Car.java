@@ -1,4 +1,4 @@
-package day10;
+package day10.case1;
 
 public class Car {
 	// 物件變數
