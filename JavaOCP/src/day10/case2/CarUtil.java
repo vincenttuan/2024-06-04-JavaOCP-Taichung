@@ -9,8 +9,8 @@ public class CarUtil {
 		return totalCars;
 	}
 	
-	public static void setTotalCars(int totalCars) {
-		CarUtil.totalCars = totalCars;
+	public static void addTotalCars() {
+		CarUtil.totalCars++;
 	}
 	
 	public static double getDiscountRate() {
