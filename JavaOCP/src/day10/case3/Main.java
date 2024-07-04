@@ -19,9 +19,9 @@ public class Main {
 		shoes.setPrice(500);
 		shoes.setColor("白");
 		
-		System.out.printf("衣服: %s 尺寸: %s 金額: $%d%n", clothing.getName(), clothing.getSize(), clothing.getPrice());
-		System.out.printf("褲子: %s 長度: %s 金額: $%d%n", pants.getName(), pants.getLength(), pants.getPrice());
-		System.out.printf("鞋子: %s 顏色: %s 金額: $%d%n", shoes.getName(), shoes.getColor(), shoes.getPrice());
+		System.out.printf("衣服: %s 尺寸: %s 金額: $%,d%n", clothing.getName(), clothing.getSize(), clothing.getPrice());
+		System.out.printf("褲子: %s 長度: %s 金額: $%,d%n", pants.getName(), pants.getLength(), pants.getPrice());
+		System.out.printf("鞋子: %s 顏色: %s 金額: $%,d%n", shoes.getName(), shoes.getColor(), shoes.getPrice());
 		
 		
 	}
