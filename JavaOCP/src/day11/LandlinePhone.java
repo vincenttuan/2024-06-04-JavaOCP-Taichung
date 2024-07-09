@@ -23,6 +23,10 @@ public class LandlinePhone extends Phone {
 			System.out.println("本裝置不支援答錄");
 		}
 	}
+	
+	public void setHasAnswering(boolean hasAnswering) {
+		this.hasAnswering = hasAnswering;
+	}
 	 
 }
  
