@@ -20,5 +20,15 @@ public class Phone {
 	public void makeCall(String number) {
 		System.out.printf("%s %s Calling: %s%n", brand, model, number);
 	}
+	
+	// 設定品牌
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
+	// 設定型號
+	public void setModel(String model) {
+		this.model = model;
+	}
 
 }
