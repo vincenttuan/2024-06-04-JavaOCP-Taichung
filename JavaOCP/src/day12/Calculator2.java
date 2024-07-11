@@ -20,8 +20,8 @@ public class Calculator2 {
 	}
 	
 	public static void main(String[] args) {
-		calc(100);
-		calc('A'); // 100 改為 100.0, B
+		calc(2200000000L);
+		calc('A'); // 'A' = 65
 		calc(Integer.valueOf(200));
 	}
 	
