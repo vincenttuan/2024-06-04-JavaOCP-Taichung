@@ -4,7 +4,8 @@ package day12;
 public class Coffee {
 	int basePrice; // 咖啡價格
 	
-	public Coffee(int basePrice) { // 建構子: 設定/注入咖啡價格
+	// 建構子: 設定/注入咖啡價格
+	public Coffee(int basePrice) {
 		this.basePrice = basePrice;
 	}
 	
