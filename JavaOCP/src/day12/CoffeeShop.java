@@ -2,9 +2,9 @@ package day12;
 
 public class CoffeeShop {
 	public static void main(String[] args) {
-		Coffee coffee = new Coffee(50);
-		System.out.printf("咖啡價格:$%d%n", coffee.calculatePrice());
-		coffee.description();
+		Coffee americano = new Coffee(50);
+		System.out.printf("美式價格:$%d%n", americano.calculatePrice());
+		americano.description();
 		
 		Latte latte = new Latte(50, 15);
 		System.out.printf("拿鐵價格:$%d%n", latte.calculatePrice());
@@ -13,5 +13,13 @@ public class CoffeeShop {
 		Mocca mocca = new Mocca(50, 15, 10);
 		System.out.printf("摩卡價格:$%d%n", mocca.calculatePrice());
 		mocca.description();
+		
+		Coffee[] coffees = {americano, latte, mocca};
+		int sum = 0;
+		for(Coffee coffee : coffees) {
+			sum += coffee.calculatePrice();
+		}
+		System.out.printf("總價:$%d%n", sum);
+		
 	}
 }
