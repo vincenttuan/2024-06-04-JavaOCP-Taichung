@@ -1,5 +1,7 @@
 package day12;
 
+import java.util.Arrays;
+
 public class CoffeeShop {
 	public static void main(String[] args) {
 		Coffee americano = new Coffee(50);
@@ -21,5 +23,9 @@ public class CoffeeShop {
 		}
 		System.out.printf("總價:$%d%n", sum);
 		
+		int sum2 = Arrays.stream(coffees) // [americano, latte, mocca] Stream (物件串流)
+						 .mapToInt(coffee -> coffee.calculatePrice()) // [50, 65, 75] intStream (int 串流) 
+						 .sum();
+		System.out.printf("總價:$%d%n", sum2);
 	}
 }
