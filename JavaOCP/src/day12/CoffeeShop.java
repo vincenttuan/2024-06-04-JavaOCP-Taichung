@@ -27,5 +27,10 @@ public class CoffeeShop {
 						 .mapToInt(coffee -> coffee.calculatePrice()) // [50, 65, 75] intStream (int 串流) 
 						 .sum();
 		System.out.printf("總價:$%d%n", sum2);
+		
+		int sum3 = Arrays.stream(coffees) // [americano, latte, mocca] Stream (物件串流)
+				 		 .mapToInt(Coffee::calculatePrice) // [50, 65, 75] intStream (int 串流) 
+				 		 .sum();
+		System.out.printf("總價:$%d%n", sum3);
 	}
 }
