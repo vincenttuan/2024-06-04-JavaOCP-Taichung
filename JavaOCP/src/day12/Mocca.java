@@ -18,6 +18,4 @@ public class Mocca extends Coffee {
 		System.out.println("這是一杯摩卡咖啡");
 	}
 	
-	
-	
 }
