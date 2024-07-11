@@ -1,16 +1,16 @@
 package day12;
 
-public class Mocca extends Coffee {
+public class Mocca extends Latte {
 	private int chocolatePrice;
 	
-	public Mocca(int basePrice, int chocolatePrice) {
-		super(basePrice);
+	public Mocca(int basePrice, int milkPrice, int chocolatePrice) {
+		super(basePrice, milkPrice);
 		this.chocolatePrice = chocolatePrice;
 	}
 
 	@Override
 	public int calculatePrice() {
-		return basePrice + chocolatePrice;
+		return basePrice + milkPrice + chocolatePrice;
 	}
 
 	@Override
