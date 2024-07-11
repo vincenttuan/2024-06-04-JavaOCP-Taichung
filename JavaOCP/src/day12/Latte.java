@@ -10,10 +10,12 @@ public class Latte extends Coffee {
 		this.milkPrice = milkPrice;
 	}
 	
+	@Override
 	public int calculatePrice() { // 計算並得到咖啡+牛奶的價格
 		return basePrice + milkPrice;
 	}
 	
+	@Override
 	public void description() {
 		System.out.println("這是一杯拿鐵咖啡");
 	}
