@@ -29,8 +29,15 @@ class Cat extends Animal {
 
 public class PolyDemo {
 	public static void main(String[] args) {
-		Dog dog = new Dog();
+		Animal dog = new Dog();
 		dog.makeSound();
-		dog.fetch();
+		// 利用轉型來調用 Dog 專屬成員
+		((Dog)dog).fetch();
+		
+		Animal cat = new Cat();
+		cat.makeSound();
+		// 利用轉型來調用 Cat 專屬成員
+		((Cat)cat).scratch();
+		
 	}
 }
