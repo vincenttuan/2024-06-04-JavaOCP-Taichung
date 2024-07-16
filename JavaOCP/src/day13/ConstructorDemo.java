@@ -18,8 +18,9 @@ class Foo {
 	}
 }
 
-class Bar {
+class Bar extends Foo {
 	Bar(char c) {
+		super(c);
 		System.out.println('C');
 	}
 	Bar() {
@@ -31,8 +32,8 @@ class Bar {
 public class ConstructorDemo {
 
 	public static void main(String[] args) {
-		Foo foo = new Foo('B');
-		//Bar bar = new Bar();
+		//Foo foo = new Foo('B');
+		Bar bar = new Bar();
 	}
 
 }
