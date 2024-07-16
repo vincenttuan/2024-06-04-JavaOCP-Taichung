@@ -2,17 +2,14 @@ package day13;
 
 // 建構子 this() 與 super() 調用
 class Foo {
-	
 	Foo() {
 		this(100);
 		System.out.println("A");
 	}
-
 	Foo(char c) {
 		this();
 		System.out.println(c);
 	}
-	
 	Foo(int x) {
 		System.out.println(x);
 	}
@@ -27,7 +24,6 @@ class Bar extends Foo {
 		this('B');
 	}
 }
-
 
 public class ConstructorDemo {
 
