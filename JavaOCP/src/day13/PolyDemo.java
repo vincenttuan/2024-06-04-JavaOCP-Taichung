@@ -39,5 +39,9 @@ public class PolyDemo {
 		// 利用轉型來調用 Cat 專屬成員
 		((Cat)cat).scratch();
 		
+		// 狗轉貓
+		((Cat)dog).makeSound();
+		((Cat)dog).scratch();
+		
 	}
 }
