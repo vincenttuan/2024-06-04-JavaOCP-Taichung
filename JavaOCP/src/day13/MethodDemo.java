@@ -32,7 +32,8 @@ class Son extends Father {
 
 public class MethodDemo {
 	public static void main(String[] args) {
-		Son son = new Son();
-		son.printInfo();
+		//Son son = new Son();
+		//son.printInfo();
+		new Son().printInfo();
 	}
 }
