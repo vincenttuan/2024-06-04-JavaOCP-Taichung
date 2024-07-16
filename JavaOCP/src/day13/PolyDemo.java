@@ -27,6 +27,30 @@ class Cat extends Animal {
 	}
 }
 
+class Bird extends Animal {
+	@Override
+	public void makeSound() {
+		System.out.println("鳥叫: 啾啾");
+	}
+	public void fly() {
+		System.out.println("鳥會飛");
+	}
+}
+
+class Ostrich extends Bird {
+	@Override
+	public void makeSound() {
+		System.out.println("鴕鳥: 低沉的鳴叫");
+	}
+	@Override
+	public void fly() {
+		System.out.println("鴕鳥不會飛");
+	}
+	public void run() {
+		System.out.println("鴕鳥會跑");
+	}
+}
+
 public class PolyDemo {
 	public static void main(String[] args) {
 		Animal dog = new Dog();
@@ -40,8 +64,25 @@ public class PolyDemo {
 		((Cat)cat).scratch();
 		
 		// 狗轉貓
-		((Cat)dog).makeSound();
-		((Cat)dog).scratch();
+		if(dog instanceof Cat) {
+			((Cat)dog).makeSound();
+			((Cat)dog).scratch();
+		} else {
+			System.out.println("dog 不可轉 Cat");
+		}
+		
+		Bird bird1 = new Bird();
+		Bird bird2 = new Ostrich();
+		bird1.makeSound();
+		bird1.fly();
+		bird2.makeSound();
+		bird2.fly();
+		if(bird2 instanceof Ostrich) {
+			((Ostrich)bird2).run();
+		}
+		// 得到該物件實際的型態
+		System.out.println(bird1.getClass().getSimpleName());
+		System.out.println(bird2.getClass().getSimpleName());
 		
 	}
 }
