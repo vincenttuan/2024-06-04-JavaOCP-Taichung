@@ -13,7 +13,6 @@ class Foo {
 		System.out.println(c);
 	}
 	
-	
 	Foo(int x) {
 		System.out.println(x);
 	}
