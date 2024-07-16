@@ -6,7 +6,9 @@ public class PolyDemo3 {
 	public static Animal getAnimal(int i) {
 		switch (i) {
 			case 1:
-				return new Dog();
+				//return new Dog();
+				Dog dog = new Dog();
+				return dog;
 			case 2:
 				return new Cat();
 			case 3:
