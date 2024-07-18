@@ -8,5 +8,10 @@ public class Ball {
 		this.color = color;
 		this.price = price;
 	}
+
+	@Override
+	public String toString() {
+		return "Ball [color=" + color + ", price=" + price + "]";
+	}
 	
 }
