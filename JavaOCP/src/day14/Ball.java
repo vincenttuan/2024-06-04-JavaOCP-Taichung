@@ -26,6 +26,8 @@ public class Ball {
 			return false;
 		Ball other = (Ball) obj;
 		return Objects.equals(color, other.color) && price == other.price;
+		//return color.equals(other.color) && price == other.price;
+		
 	}
 
 
