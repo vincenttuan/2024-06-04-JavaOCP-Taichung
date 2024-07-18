@@ -24,7 +24,6 @@ public class ArgsLoginDemo2 {
 		for(String[] user : users) {
 			// user[0] 使用者名稱, user[1] 使用者密碼
 			if(user[0].equals(username) && user[1].equals(password)) {
-				System.out.println("登入成功");
 				isLogin = true; // 改變登入狀態
 				break; // 跳出迴圈
 			}
@@ -32,6 +31,7 @@ public class ArgsLoginDemo2 {
 		
 		// 檢測登入狀態
 		if(isLogin) {
+			System.out.println("登入成功");
 			System.out.println("可以使用此程式所提供的服務");
 		} else {
 			System.out.println("登入失敗不可以使用此程式");
