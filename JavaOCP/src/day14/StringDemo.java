@@ -8,6 +8,7 @@ public class StringDemo {
 		System.out.println(s1 == s2);
 		System.out.println(s1.hashCode());
 		System.out.println(s2.hashCode());
+		// String 自己有實作 equals() 而非使用 Object 的 equals()
 		System.out.println(s1.equals(s2));
 		
 	}
