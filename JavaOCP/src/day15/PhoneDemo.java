@@ -20,9 +20,8 @@ public class PhoneDemo {
 		if(p2 instanceof Android) {
 			((Android)p2).installApp("憤怒鳥");
 		} else {
-			System.out.println(p2.getClass() + "無法轉 Android");
+			System.out.println(p2.getClass() + " 無法轉 Android");
 		}
-		
 
 	}
 
