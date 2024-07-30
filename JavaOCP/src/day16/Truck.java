@@ -1,7 +1,7 @@
 package day16;
 
 public class Truck extends Car {
-	private int doors;
+	private int doors; // 門
 	
 	public Truck(int speed, int doors) {
 		super(speed);
