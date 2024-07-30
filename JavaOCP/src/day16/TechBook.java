@@ -18,5 +18,6 @@ public class TechBook implements Book {
 	public Integer getPrice() {
 		return price;
 	}
+	
 
 }
