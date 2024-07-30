@@ -15,6 +15,8 @@ public abstract class Car { // 抽象類別
 		this.speed = speed;
 	}
 	
-	public abstract void carInfo(); // 抽象類別裡的抽象方法一定要加入 abstract 修飾
+	// 抽象類別裡的抽象方法一定要加入 abstract 修飾
+	// 權限可以是 public, protected 與預設(無修飾), 唯獨 private 不行
+	public abstract void carInfo(); 
 	
 }	
