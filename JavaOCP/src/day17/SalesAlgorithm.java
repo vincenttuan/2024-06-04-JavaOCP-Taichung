@@ -4,12 +4,14 @@ public class SalesAlgorithm {
 	private int x;
 	private int y;
 	private int price;
+	private String name;
 	private int amount;
 	
-	public SalesAlgorithm(int x, int y, int price, int amount) {
+	public SalesAlgorithm(int x, int y, int price, String name, int amount) {
 		this.x = x;
 		this.y = y;
 		this.price = price;
+		this.name = name;
 		this.amount = amount;
 	}
 	
@@ -21,8 +23,8 @@ public class SalesAlgorithm {
 	
 	// 列印帳單明細
 	public void printBill() {
-		System.out.printf("飲料: %d 元 (買 %d 送 %d) 總共買: %d 瓶 應付: %d 元%n",
-				price, x, y, amount, getTotal());
+		System.out.printf("%s飲料: %d 元 (買 %d 送 %d) 總共買: %d 瓶 應付: %d 元%n",
+				name, price, x, y, amount, getTotal());
 	}
 	
 	// 計算要付幾瓶的私有方法(演算法)
