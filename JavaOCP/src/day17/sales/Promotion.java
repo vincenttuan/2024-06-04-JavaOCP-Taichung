@@ -10,8 +10,16 @@ public class Promotion {
 		this.y = y;
 	}
 	
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
 	// 計算要付幾瓶的私有方法(演算法)
-	private int getBottles(int amount) {
+	public int getBottles(int amount) {
 		// 計算要支付費用的瓶數 
 		int bottles = amount / (x+y) * x + amount % (x+y);
 		return bottles;
