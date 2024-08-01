@@ -3,7 +3,7 @@ package day17;
 public class Algorithm2 {
 	// 買 x 送 y
 	// 銷售策略
-	static int x = 3; // 買
+	static int x = 1; // 買
 	static int y = 1; // 送
 	
 	static int getBottles(int amount) {
@@ -13,6 +13,8 @@ public class Algorithm2 {
 	}
 	
 	public static void main(String[] args) {
+		x = 3;
+		y = 1;
 		int price = 10; // 飲料價格
 		int amount = 5; // 買入數量
 		// 支付費用的瓶數
@@ -20,6 +22,8 @@ public class Algorithm2 {
 		// 計算費用
 		int total = bottles * price;
 		System.out.println(bottles + ", $" + total);
+		
+		// 因為變數共用, 無法保留之前買幾送幾的狀態
 		//-----------------------------------------------
 		x = 5;
 		y = 3;
