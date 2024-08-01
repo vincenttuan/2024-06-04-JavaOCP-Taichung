@@ -22,7 +22,7 @@ public class SalesAlgorithm {
 	// 列印帳單
 	public void printBill() {
 		System.out.printf("%s飲料促銷: 買 %d 送 %d%n", product.getName(), promotion.getX(), promotion.getY());
-		System.out.printf("%s每瓶價格: %d%n", product.getPrice());
+		System.out.printf("%s每瓶價格: %d%n", product.getName(), product.getPrice());
 		System.out.printf("總購買數量: %d 瓶%n", amount);
 		System.out.printf("應付金額: %d 元%n", getTotal());
 		
