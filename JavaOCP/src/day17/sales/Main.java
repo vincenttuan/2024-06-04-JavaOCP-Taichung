@@ -16,10 +16,5 @@ public class Main {
 		SalesAlgorithm sa1 = new SalesAlgorithm(oolongTea, promotion3, 10);
 		sa1.printBill();
 		
-		
-		
-		
-		
-		
 	}
 }
