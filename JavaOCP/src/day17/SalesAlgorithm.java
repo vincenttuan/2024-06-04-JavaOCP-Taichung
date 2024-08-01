@@ -1,11 +1,11 @@
 package day17;
 
 public class SalesAlgorithm {
-	private int x;
-	private int y;
-	private int price;
-	private String name;
-	private int amount;
+	private int x; // 策略: 買幾
+	private int y; // 策略: 送幾
+	private int price; // 商品: 價格
+	private String name; // 商品: 名稱
+	private int amount; // 銷售: 數量
 	
 	public SalesAlgorithm(int x, int y, int price, String name, int amount) {
 		this.x = x;
