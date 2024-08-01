@@ -21,6 +21,8 @@ public class Algorithm2 {
 		int total = bottles * price;
 		System.out.println(bottles + ", $" + total);
 		//-----------------------------------------------
+		x = 5;
+		y = 3;
 		int price2 = 15;
 		int amount2 = 15;
 		int bottles2 = getBottles(amount2);
