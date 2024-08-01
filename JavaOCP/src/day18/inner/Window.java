@@ -10,4 +10,12 @@ public class Window { // 視窗類
 		
 	}
 	
+	public class Open { // 開啟
+		
+		public void click() {
+			System.out.println("開啟視窗");
+		}
+		
+	}
+	
 }

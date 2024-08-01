@@ -6,7 +6,10 @@ public class Main {
 		Window win = new Window();
 		Window.Close winClose = win.new Close();
 		winClose.click();
-
+		//----------------------------------------
+		Window.Open winOpen = win.new Open();
+		winOpen.click();
+		
 	}
 
 }
