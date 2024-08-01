@@ -15,9 +15,7 @@ public class Algorithm {
 		
 		// 計算費用
 		int total = bottles * price;
-		
 		System.out.println(total);
-		
 		
 	}
 }
