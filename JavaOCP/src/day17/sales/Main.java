@@ -13,7 +13,7 @@ public class Main {
 		Promotion promotion3 = new Promotion(1, 1);
 		
 		// 銷售(針對商品與銷售策略)
-		SalesAlgorithm sa1 = new SalesAlgorithm(oolongTea, promotion3, 100);
+		SalesAlgorithm sa1 = new SalesAlgorithm(oolongTea, promotion3, 10);
 		sa1.printBill();
 		
 		
