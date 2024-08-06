@@ -27,13 +27,15 @@ public class MusicPlayer {
 		AudioConverter(String name) {
 			this.name = name;
 		}
+		
+		public void play() {
+			System.out.println("音頻時播放" + name);
+		}
+		// ------------------------------------------------------------
 		// 將指定的音頻文件轉換成指定格式
 		// 不需要存取 MusicPlayer 的成員資料
 		public static void convert(String file, String encode) {
 			System.out.println("將" + file + "轉換成" + encode + "格式");
-		}
-		public void play() {
-			System.out.println("音頻時播放" + name);
 		}
 	}
 	
