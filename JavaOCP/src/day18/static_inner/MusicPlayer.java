@@ -20,7 +20,13 @@ public class MusicPlayer {
 	
 	// 音頻格式轉換器
 	public static class AudioConverter {
-		String name = "倒帶";
+		private String name = "倒帶";
+		AudioConverter() {
+			
+		}
+		AudioConverter(String name) {
+			this.name = name;
+		}
 		// 將指定的音頻文件轉換成指定格式
 		// 不需要存取 MusicPlayer 的成員資料
 		public static void convert(String file, String encode) {

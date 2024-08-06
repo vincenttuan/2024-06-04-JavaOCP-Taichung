@@ -8,5 +8,10 @@ public class MusicPlayerTest {
 		//----------------------------------------------------------
 		MusicPlayer.AudioConverter.convert("Take on me", "mp3");
 		
+		MusicPlayer.AudioConverter converter1 = new MusicPlayer.AudioConverter();
+		converter1.play();
+		
+		MusicPlayer.AudioConverter converter2 = new MusicPlayer.AudioConverter("千里之外");
+		converter2.play();
 	}
 }
