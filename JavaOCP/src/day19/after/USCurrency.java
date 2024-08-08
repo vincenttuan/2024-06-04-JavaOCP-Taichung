@@ -11,7 +11,7 @@ public enum USCurrency {
 	
 	private int value;
 	
-	private USCurrency(int value) {
+	USCurrency(int value) { // enum 建構子的權限一定是 private, 不寫也是 private
 		this.value = value;
 	}
 	
