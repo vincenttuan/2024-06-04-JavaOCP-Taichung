@@ -24,5 +24,19 @@ public class SetDemo2 {
 				System.out.println(obj);
 			}
 		}
+		System.out.println("-------");
+		// 計算總分與平均
+		int sum = 0;   // 總分
+		int count = 0; // 個數
+		for(Object obj : set) {
+			if(obj instanceof Integer) {
+				int score = (Integer)obj;
+				sum += score;
+				count++;
+			}
+		}
+		System.out.printf("總分: %d 平均: %.1f%n", sum, (double)sum/count);
+		
+		
 	}
 }
