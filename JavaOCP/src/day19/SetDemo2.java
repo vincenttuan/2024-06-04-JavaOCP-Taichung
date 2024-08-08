@@ -31,6 +31,7 @@ public class SetDemo2 {
 		for(Object obj : set) {
 			if(obj instanceof Integer) {
 				int score = (Integer)obj;
+				//int score = (int)obj;
 				sum += score;
 				count++;
 			}
