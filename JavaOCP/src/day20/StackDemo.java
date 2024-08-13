@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class StackDemo {
 	public static void main(String[] args) {
-		// Stack 堆疊 FIFO
+		// Stack 堆疊 FILO
 		Stack<Integer> stack = new Stack<>();
 		stack.push(90);
 		stack.push(80);
