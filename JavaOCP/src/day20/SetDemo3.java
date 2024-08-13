@@ -13,6 +13,7 @@ public class SetDemo3 {
 		Set<Integer> scores = new TreeSet<>(); // Java 7.0 <> 自動推斷是 Integer
 		scores.add(100);   // Integer
 		scores.add(90);    // Integer
+		scores.add(10);    // Integer
 		scores.add(85);    // Integer
 		System.out.println(scores);
 		
