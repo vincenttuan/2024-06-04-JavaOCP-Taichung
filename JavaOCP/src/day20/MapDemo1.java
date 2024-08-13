@@ -1,6 +1,9 @@
 package day20;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -26,6 +29,12 @@ public class MapDemo1 {
 		for(String name : names) {
 			System.out.printf("姓名: %s 年齡: %d%n", name, students.get(name));
 		}
+		// 取得所有學生成績 1
+		Collection<Integer> scores = students.values();
+		System.out.println(scores);
+		// 取得所有學生成績 2
+		List<Integer> scoreList = new ArrayList<>(students.values());
+		System.out.println(scoreList);
 	}
 
 }
