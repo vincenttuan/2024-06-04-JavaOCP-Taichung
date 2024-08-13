@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class SetDemo2 {
 	public static void main(String[] args) {
+		
 		// HashSet 無序集合(根據資料的 hashcode 來決定擺放位置)
 		// 放入資料快
 		Set set = new HashSet();
