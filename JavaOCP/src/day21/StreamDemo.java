@@ -22,11 +22,12 @@ public class StreamDemo {
 		
 		scores.stream()  // 轉串流是為了可以進行分析
 			  .filter((score) -> score >= 60)  // 過濾成績
-			  .forEach(System.out::println);
+			  .forEach(System.out::println);  // 方法參考 ::
 		System.out.println("------");
 		
 		Predicate<Integer> passScore = (score) -> score >= 60;
 		Consumer<Integer> printScore = (score) -> System.out.println(score);
+		//Consumer<Integer> printScore = System.out::println;
 		scores.stream()
 			  .filter(passScore)
 			  .forEach(printScore);
