@@ -1,6 +1,8 @@
 package day21;
 
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class StreamDemo {
 	public static void main(String[] args) {
@@ -21,6 +23,13 @@ public class StreamDemo {
 		scores.stream()  // 轉串流是為了可以進行分析
 			  .filter((score) -> score >= 60)  // 過濾成績
 			  .forEach(System.out::println);
-	
+		System.out.println("------");
+		
+		Predicate<Integer> passScore = (score) -> score >= 60;
+		Consumer<Integer> printScore = (score) -> System.out.println(score);
+		scores.stream()
+			  .filter(passScore)
+			  .forEach(printScore);
+			  
 	}
 }
