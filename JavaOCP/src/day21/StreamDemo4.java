@@ -1,5 +1,6 @@
 package day21;
 
+import java.util.IntSummaryStatistics;
 import java.util.List;
 
 public class StreamDemo4 {
@@ -13,6 +14,17 @@ public class StreamDemo4 {
 						.mapToInt(Integer::intValue)
 						.sum();	
 		System.out.println(sum);
+		
+		// 統計資料(總和, 平均, 最大, 最小, 個數)
+		IntSummaryStatistics stat = scores.stream()
+										  .mapToInt(Integer::intValue)
+										  .summaryStatistics();
+		System.out.println("總和:" + stat.getSum());
+		System.out.println("平均:" + stat.getAverage());
+		System.out.println("最大:" + stat.getMax());
+		System.out.println("最小:" + stat.getMin());
+		System.out.println("個數:" + stat.getCount());
+		
 
 	}
 
