@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 public class ConsumerDemo {
 
 	public static void main(String[] args) {
-		
+		// 利用 匿名內部類別 來實現
 		Consumer<Integer> consumer1 = new Consumer<>() {
 			@Override
 			public void accept(Integer t) {
