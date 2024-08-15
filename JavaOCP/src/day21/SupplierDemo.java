@@ -8,7 +8,8 @@ public class SupplierDemo {
 
 	public static void main(String[] args) {
 		// 利用 Lambda 實現 Supplier (單行實作)
-		Supplier<Date> today = () -> new Date();
+		//Supplier<Date> today = () -> new Date();
+		Supplier<Date> today = () -> {return new Date();};
 		System.out.println(today.get());
 		
 		// 利用 Lambda 實現 Supplier (多行實作)
