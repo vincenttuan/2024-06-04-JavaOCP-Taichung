@@ -14,7 +14,8 @@ public class LoginDemo3 {
 			System.out.println(e.getMessage());
 			System.out.println("請重新執行後再登入");
 			e.how2Do();
-		} finally { // 不論是否有例外發生, 一定都會執行的區塊
+			//System.out.println(10/0);
+		} finally { // 不論是否有例外發生, 一定都會執行的區塊 (保證執行區段)
 			System.out.println("登入結束");
 		}
 		System.out.println("程式結束");
