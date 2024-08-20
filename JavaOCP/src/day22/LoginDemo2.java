@@ -8,10 +8,11 @@ public class LoginDemo2 {
 	public static void main(String[] args) {
 		System.out.println(userMap);
 		try {
-			boolean loginCheck = login("john", "12345");
+			boolean loginCheck = login("john2", "1234");
 			System.out.println("登入: " + loginCheck);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+			System.out.println("請重新執行都入後再登入");
 		}
 		
 	}
