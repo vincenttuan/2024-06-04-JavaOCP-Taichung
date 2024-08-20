@@ -7,16 +7,11 @@ import java.nio.file.Paths;
 
 public class ReadFileDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Path path = Paths.get("src/day22", "data.txt");
 		System.out.printf("檔案路徑: %s%n", path);
-		try {
-			String content = Files.readString(path);
-			System.out.printf("檔案內容: %s%n", content);
-		} catch (IOException e) {
-			System.out.println("檔案不存在或檔案已損毀");
-			System.out.println("錯誤原因: " + e.getMessage());
-		}
+		String content = Files.readString(path);
+		System.out.printf("檔案內容: %s%n", content);
 		System.out.println("讀取結束");
 	}
 
