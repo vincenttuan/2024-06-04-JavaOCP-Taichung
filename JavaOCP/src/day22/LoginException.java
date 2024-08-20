@@ -1,5 +1,6 @@
 package day22;
 
+// 自訂錯誤訊息
 public class LoginException extends Exception {
 	
 	public LoginException(String errorMessage) {
