@@ -10,27 +10,28 @@ public class LoginDemo3 {
 		try {
 			boolean loginCheck = login("john", "1234");
 			System.out.println("登入: " + loginCheck);
-		} catch (Exception e) {
+		} catch (LoginException e) {
 			System.out.println(e.getMessage());
 			System.out.println("請重新執行後再登入");
+			e.how2Do();
 		}
 		
 	}
 	
 	// 登入
-	public static boolean login(String username, String password) throws Exception {
+	public static boolean login(String username, String password) throws LoginException {
 		// 判斷是否有此使用者
 		if(userMap.containsKey(username)) { // userMap 是否有此使用者
 			if(userMap.get(username).equals(password)) {
 				return true;
 			} else {
 				//return false; // username 對, password 不對
-				Exception re = new Exception("password 不對"); // 自行建立一個錯誤物件
+				LoginException re = new LoginException("password 不對"); // 自行建立一個錯誤物件
 				throw re; // 將此錯誤拋出
 			}
 		} else {
 			//return false; // username 不對
-			Exception re = new Exception("username 不對"); // 自行建立一個錯誤物件
+			LoginException re = new LoginException("username 不對"); // 自行建立一個錯誤物件
 			throw re; // 將此錯誤拋出
 		}
 		
