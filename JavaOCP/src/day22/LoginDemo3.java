@@ -12,7 +12,7 @@ public class LoginDemo3 {
 			System.out.println("登入: " + loginCheck);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			System.out.println("請重新執行都入後再登入");
+			System.out.println("請重新執行後再登入");
 		}
 		
 	}
