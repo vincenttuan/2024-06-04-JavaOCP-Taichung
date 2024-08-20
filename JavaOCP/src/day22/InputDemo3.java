@@ -1,12 +1,32 @@
 package day22;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class InputDemo3 {
 
 	public static void main(String[] args) {
-		input();
+		try {
+			input();
+		} catch (InputMismatchException e) {
+			System.out.println("輸入錯誤");
+		} catch (ArithmeticException e) {
+			System.out.println("人數不可為 0");
+		}
+		// -----------------------------------
+		try {
+			input();
+		} catch (InputMismatchException | ArithmeticException e) {
+			System.out.println("錯了~ 不是輸入錯誤就是人數不可為 0 的錯誤");
+		}
+		// -----------------------------------
+		try {
+			input();
+		} catch (RuntimeException e) {
+			System.out.println("執行時期錯誤: 錯誤原因:" + e);
+		}
+		
 	}
 	
 	// 使用者輸入人數可以計算出每一個人可以分得幾顆蘋果
