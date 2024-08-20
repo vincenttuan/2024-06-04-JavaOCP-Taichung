@@ -14,6 +14,7 @@ public class ReadFileDemo {
 			String content = Files.readString(path);
 			System.out.printf("檔案內容: %s%n", content);
 		} catch (IOException e) {
+			System.out.println("檔案不存在或檔案已損毀");
 			System.out.println("錯誤原因: " + e.getMessage());
 		}
 		System.out.println("讀取結束");
