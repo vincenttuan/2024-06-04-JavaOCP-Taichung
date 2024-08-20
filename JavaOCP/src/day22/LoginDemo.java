@@ -6,6 +6,7 @@ public class LoginDemo {
 	private static Map<String, String> userMap = Map.of("john", "1234", "mary", "5678");
 	
 	public static void main(String[] args) {
+		System.out.println(userMap);
 		boolean loginCheck = login("john", "1234");
 		System.out.println("登入: " + loginCheck);
 	}
