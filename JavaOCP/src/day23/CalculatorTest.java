@@ -3,6 +3,9 @@ package day23;
 public class CalculatorTest {
 
 	public static void main(String[] args) {
+		// 取得目前的執行緒名稱
+		String threadName = Thread.currentThread().getName();
+		System.out.println(threadName + "在執行 main() 程式");
 		// 測試 Calculator
 		testAdd();
 		System.out.println("測試通過");
@@ -10,6 +13,9 @@ public class CalculatorTest {
 	
 	// 測試加法器
 	private static void testAdd() {
+		// 取得目前的執行緒名稱
+		String threadName = Thread.currentThread().getName();
+		System.out.println(threadName + "在執行 testAdd() 程式");
 		// 1. Arrange(準備)
 		Calculator calculator = new Calculator();
 		int x = 5;  // 測試資料
