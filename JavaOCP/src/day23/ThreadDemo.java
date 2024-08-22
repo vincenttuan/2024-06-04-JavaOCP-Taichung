@@ -27,6 +27,14 @@ public class ThreadDemo {
 			System.out.printf("現在時刻: %s%n", sdf.format(tody));
 		};
 		
+		// 建立二條執行緒
+		Thread t1 = new Thread(lotto); // 執行 Lotto 數字工作
+		Thread t2 = new Thread(now); // 執行 現在時刻工作
+		
+		// 啟動
+		t1.start();
+		t2.start();
+		
 		
 
 	}
