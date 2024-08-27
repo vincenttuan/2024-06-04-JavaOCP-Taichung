@@ -9,10 +9,10 @@ public class Account {
 	
 	// 提款(amount: 提款金額)
 	public void withdraw(int amount) {
-		String tName = Thread.currentThread().getName();
-		System.out.printf("%s 要提款$ %d%n", tName, amount);
 		// 取得目前最新餘額
 		int currentBalance= balance;
+		String tName = Thread.currentThread().getName();
+		System.out.printf("%s 要提款$ %d%n", tName, amount);
 		if(currentBalance >= amount) {
 			int newBalance = currentBalance - amount; // 新的帳戶餘額
 			// 模擬提款程序所花費的時間
