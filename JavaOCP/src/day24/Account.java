@@ -8,7 +8,7 @@ public class Account {
 	}
 	
 	// 提款(amount: 提款金額)
-	public void withdraw(int amount) {
+	public synchronized void withdraw(int amount) {
 		// 取得目前最新餘額
 		int currentBalance= balance;
 		String tName = Thread.currentThread().getName();
