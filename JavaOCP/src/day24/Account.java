@@ -14,7 +14,7 @@ public class Account {
 		if(balance >= amount) {
 			int newBalance = balance - amount; // 新的帳戶餘額
 			// 模擬提款程序所花費的時間
-			for(int i=1;i<=Integer.MAX_VALUE;i++) {
+			for(int i=1;i<=1000;i++) {
 				// 模擬提款程序
 			}
 			balance = newBalance; // 更新帳戶餘額
