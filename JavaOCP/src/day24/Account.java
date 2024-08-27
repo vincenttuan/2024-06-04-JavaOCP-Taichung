@@ -24,5 +24,6 @@ public class Account {
 		} else {
 			System.out.printf("%s 提款 $ %d 失敗, 帳戶餘額 $ %d%n", tName, amount, balance);
 		}
+		System.out.println("--------------------------------");
 	}
 }
