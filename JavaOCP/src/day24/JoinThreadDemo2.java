@@ -16,7 +16,10 @@ public class JoinThreadDemo2 {
 		Thread eat = new Thread(job2);
 		
 		man.start();
+		System.out.println("before join man isAlive:" + man.isAlive());
 		man.join();
+		System.out.println("after join man isAlive:" + man.isAlive());
+		// man 執行緒在此進行其他設定是無意義的
 		eat.start();
 		
 	}
