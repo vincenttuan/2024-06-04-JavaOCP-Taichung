@@ -26,4 +26,15 @@ public class Account {
 		}
 		System.out.println("--------------------------------");
 	}
+
+	
+	public synchronized void printBalance() {
+		System.out.printf("帳戶餘額$ %d%n", balance);
+	}
+	
+	public void copyRight() {
+		String name = "ABC 公司";
+		System.out.printf("版權所有:" + name);
+	}
+	
 }
