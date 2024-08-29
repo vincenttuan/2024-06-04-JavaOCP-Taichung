@@ -25,8 +25,8 @@ public class TaskDemo {
 		int activeCount = Thread.activeCount(); // 執行緒數量
 		System.out.printf("執行緒數量: %d%n", activeCount);
 		// 關閉服務
-		//service.shutdown();
-		service.shutdownNow();
+		service.shutdown();
+		//service.shutdownNow();
 		
 	}
 
