@@ -21,6 +21,8 @@ public class TaskDemo {
 		service.submit(r4); // 啟動長任務
 		service.submit(r5); // 啟動短任務
 		
+		// 關閉服務
+		service.shutdown();
 		
 	}
 
