@@ -10,7 +10,7 @@ public class LongTask implements Runnable {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			System.out.println("執行緒被中斷:" + e.getMessage());
 		}
 		//---------------------------------
 		System.out.println("長任務結束");
