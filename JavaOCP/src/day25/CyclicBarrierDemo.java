@@ -12,13 +12,14 @@ public class CyclicBarrierDemo {
 		Runnable eat = () -> System.out.println("吃彰化肉圓");
 		Runnable ktv = () -> System.out.println("唱 ktv");
 		// 建立循環屏障物件
-		CyclicBarrier cyclicBarrier = new CyclicBarrier(4, eat);
+		CyclicBarrier cyclicBarrier1 = new CyclicBarrier(4, eat);
+		CyclicBarrier cyclicBarrier2 = new CyclicBarrier(4, ktv);
 		// -------------------------------------------------------
 		
-		Runnable car1 = new Car(cyclicBarrier);
-		Runnable car2 = new Car(cyclicBarrier);
-		Runnable car3 = new Car(cyclicBarrier);
-		Runnable car4 = new Car(cyclicBarrier);
+		Runnable car1 = new Car(cyclicBarrier1, cyclicBarrier2);
+		Runnable car2 = new Car(cyclicBarrier1, cyclicBarrier2);
+		Runnable car3 = new Car(cyclicBarrier1, cyclicBarrier2);
+		Runnable car4 = new Car(cyclicBarrier1, cyclicBarrier2);
 		
 		/** 傳統寫法
 		Thread t1 = new Thread(car1);

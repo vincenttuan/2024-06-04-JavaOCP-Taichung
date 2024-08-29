@@ -5,10 +5,12 @@ import java.util.concurrent.CyclicBarrier;
 
 public class Car implements Runnable {
 	
-	private CyclicBarrier cyclicBarrier;
+	private CyclicBarrier cyclicBarrier1;
+	private CyclicBarrier cyclicBarrier2;
 	
-	public Car(CyclicBarrier cyclicBarrier) {
-		this.cyclicBarrier = cyclicBarrier;
+	public Car(CyclicBarrier cyclicBarrier1, CyclicBarrier cyclicBarrier2) {
+		this.cyclicBarrier1 = cyclicBarrier1;
+		this.cyclicBarrier2 = cyclicBarrier2;
 	}
 	
 	@Override
@@ -19,12 +21,21 @@ public class Car implements Runnable {
 		try {
 			Thread.sleep(random.nextInt(5000)); //0~4999 ms
 			System.out.printf("%s 到了彰化%n", tName);
-			cyclicBarrier.await(); // 等待其他人
+			cyclicBarrier1.await(); // 等待其他人
 		} catch (Exception e) {
 			System.out.printf("%s 發生中斷停止前進%n", tName);
 			return;
 		}
-		System.out.printf("%s 回台中%n", tName);
+		// ------------------------------------------------
+		try {
+			Thread.sleep(random.nextInt(5000)); //0~4999 ms
+			System.out.printf("%s 回台中%n", tName);
+			cyclicBarrier2.await();
+		} catch (Exception e) {
+			System.out.printf("%s 發生中斷停止前進%n", tName);
+			return;
+		}
+		
 	}
 	
 }
