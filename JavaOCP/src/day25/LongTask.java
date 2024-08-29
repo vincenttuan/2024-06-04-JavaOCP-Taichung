@@ -8,7 +8,7 @@ public class LongTask implements Runnable {
 		System.out.println("長任務開始");
 		//-- 模擬任務所花費的時間 ---------------
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
