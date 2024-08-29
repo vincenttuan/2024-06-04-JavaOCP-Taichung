@@ -4,6 +4,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Account {
 	private int balance;
+	// 取代傳統 synchronized
 	private final ReentrantLock relock = new ReentrantLock();
 	
 	public Account(int balance) {
