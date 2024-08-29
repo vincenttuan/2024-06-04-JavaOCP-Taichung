@@ -5,10 +5,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Account {
 	private int balance;
 	// 取代傳統 synchronized
-	private final ReentrantLock relock = new ReentrantLock();
+	private final ReentrantLock relock;
 	
 	public Account(int balance) {
 		this.balance = balance;
+		this.relock = new ReentrantLock();
 	}
 	
 	// 提款(amount: 提款金額)
