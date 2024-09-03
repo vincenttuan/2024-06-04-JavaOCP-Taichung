@@ -10,7 +10,7 @@ public class FileFilter {
 		Path path = Path.of("src", "day26", "score.txt");
 		// 過濾出有 "7" 的資料
 		Files.lines(path)
-			 .filter(row -> row.contains("7"))
+			 .filter(row -> row.contains("7")) // 過濾出每一筆資料含有"7"的內容
 			 .forEach(System.out::println);
 	}
 
