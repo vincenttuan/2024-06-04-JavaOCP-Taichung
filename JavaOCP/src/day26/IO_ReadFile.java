@@ -14,7 +14,8 @@ public class IO_ReadFile {
 			System.out.println("------------------");
 			
 			while (fr.read(buffer) != -1) {
-				System.out.print(buffer[0]);
+				//System.out.print(buffer[0]);
+				System.out.print(new String(buffer));
 			}
 			
 		} catch (IOException e) {
