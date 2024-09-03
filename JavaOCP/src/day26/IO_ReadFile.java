@@ -7,7 +7,7 @@ public class IO_ReadFile {
 
 	public static void main(String[] args) {
 		char[] buffer = new char[1]; // 讀資料暫存區(一次讀一個字元)
-		
+		// try() <-- 會自動關閉檔案
 		try(FileReader fr = new FileReader("src/day26/data.txt");) {
 			
 			System.out.println("讀取 data.txt 檔案內容");
