@@ -12,6 +12,10 @@ public class BigFileRead {
 		Path filePath = Path.of("src", "day26", "bigdata.txt");
 		
 		try(BufferedReader reader = Files.newBufferedReader(filePath, StandardCharsets.UTF_8)) {
+			String line = null;
+			while ((line = reader.readLine()) != null) { // 逐行讀取到 line 變數中
+				System.out.println(line);
+			}
 			
 		} catch (IOException e) {
 			System.err.println(e);
