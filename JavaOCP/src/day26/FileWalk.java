@@ -11,7 +11,7 @@ public class FileWalk {
 		Stream<Path> files = Files.walk(Path.of("src"));
 		files.forEach(path -> {
 			System.out.print(path.toFile().isFile()?"[檔案]":"[目錄]");
-			System.out.print(path + " 建立時間");
+			System.out.print(path + " 建立時間:");
 			try {
 				System.out.println(Files.readAttributes(path, BasicFileAttributes.class).creationTime());
 			} catch (IOException e) {
