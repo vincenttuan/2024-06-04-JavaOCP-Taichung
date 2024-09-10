@@ -10,7 +10,7 @@
 	<body>
 		現在時刻: <%=new Date() %>
 		<hr />
-		<form method="get" action="/servlet/bmi">
+		<form method="get" action="/JavaWeb/servlet/bmi">
 			<fieldset>
 				<legend>BMI 計算</legend>
 				身高: <input type="number" name="h" placeholder="請輸入身高" required><p />
