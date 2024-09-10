@@ -18,7 +18,7 @@ public class BMISertvlet extends HttpServlet {
 		String weight = req.getParameter("w");
 		// 2.判斷是否有收到參數 ?
 		if(height == null || weight == null) {
-			resp.getWriter().print("Please input h and w !");
+			System.out.println("Please input h and w !");
 			return;
 		}
 		// 3.將 height 與 weight 轉 double
