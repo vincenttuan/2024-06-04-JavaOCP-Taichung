@@ -18,7 +18,7 @@ public class BMISertvlet extends HttpServlet {
 		String weight = req.getParameter("w");
 		// 2.判斷是否有收到參數 ?
 		if(height == null || weight == null) {
-			System.out.println("Please input h and w !"); // 會印在 Tomcat Console 中
+			System.out.println("請輸入身高或體重的資料"); // 會印在 Tomcat Console 中
 			req.setAttribute("errorMessage", "請輸入身高或體重的資料");
 			req.getRequestDispatcher("/WEB-INF/view/error.jsp").forward(req, resp);
 			return;
