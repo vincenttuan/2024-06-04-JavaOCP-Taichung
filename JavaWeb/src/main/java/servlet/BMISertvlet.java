@@ -19,6 +19,8 @@ public class BMISertvlet extends HttpServlet {
 		// 2.判斷是否有收到參數 ?
 		if(height == null || weight == null) {
 			System.out.println("Please input h and w !"); // 會印在 Tomcat Console 中
+			req.setAttribute("errorMessage", "請輸入身高或體重的資料");
+			req.getRequestDispatcher("/WEB-INF/view/error.jsp").forward(req, resp);
 			return;
 		}
 		// 3.將 height 與 weight 轉 double
@@ -31,7 +33,7 @@ public class BMISertvlet extends HttpServlet {
 		// 6. 將要傳送給 jsp 的資料放到 req 的屬性中 
 		req.setAttribute("bmi", bmi);
 		// 7. forward 到 display_bmi.jsp
-		req.getRequestDispatcher("/WEB-INF/view/	display_bmi.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/view/display_bmi.jsp").forward(req, resp);
 		
 	}
 	
