@@ -28,6 +28,10 @@ public class BMISertvlet extends HttpServlet {
 		double bmi = w / Math.pow(h/100, 2);
 		// 5. 印出 bmi 
 		System.out.println("bmi = " + bmi); // 會印在 Tomcat Console 中
+		// 6. 將要傳送給 jsp 的資料放到 req 的屬性中 
+		req.setAttribute("bmi", bmi);
+		// 7. forward 到 display_bmi.jsp
+		req.getRequestDispatcher("display_bmi.jsp").forward(req, resp);
 		
 	}
 	
