@@ -31,7 +31,7 @@ public class BMISertvlet extends HttpServlet {
 		// 6. 將要傳送給 jsp 的資料放到 req 的屬性中 
 		req.setAttribute("bmi", bmi);
 		// 7. forward 到 display_bmi.jsp
-		req.getRequestDispatcher("/WEB-INF/view/display_bmi.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/view/	display_bmi.jsp").forward(req, resp);
 		
 	}
 	
