@@ -19,5 +19,6 @@
 				<button type="submit">送出</button>
 			</fieldset>
 		</form>
+		<hr />
 	</body>
 </html>
