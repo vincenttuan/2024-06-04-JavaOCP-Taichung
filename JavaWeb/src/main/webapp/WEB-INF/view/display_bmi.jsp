@@ -7,6 +7,10 @@
 		<title>顯示 BMI 結果頁面</title>
 	</head>
 	<body>
-		BMI 計算結果: <%=request.getAttribute("bmi") %>
+		<fieldset>
+			<legend>計算結果</legend>
+			BMI: <%=request.getAttribute("bmi") %><p />
+			<a href="/JavaWeb/index.jsp">回首頁</a>
+		</fieldset>
 	</body>
 </html>
