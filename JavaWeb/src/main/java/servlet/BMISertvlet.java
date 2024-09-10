@@ -18,7 +18,7 @@ public class BMISertvlet extends HttpServlet {
 		String weight = req.getParameter("w");
 		// 2.判斷是否有收到參數 ?
 		if(height == null || weight == null) {
-			System.out.println("Please input h and w !");
+			System.out.println("Please input h and w !"); // 會印在 Tomcat Console 中
 			return;
 		}
 		// 3.將 height 與 weight 轉 double
@@ -26,8 +26,8 @@ public class BMISertvlet extends HttpServlet {
 		double w = Double.parseDouble(weight);
 		// 4. 計算 bmi
 		double bmi = w / Math.pow(h/100, 2);
-		// 5. 印出 bmi (會印在 Tomcat Console 中)
-		System.out.println("bmi = " + bmi);
+		// 5. 印出 bmi 
+		System.out.println("bmi = " + bmi); // 會印在 Tomcat Console 中
 		
 	}
 	
