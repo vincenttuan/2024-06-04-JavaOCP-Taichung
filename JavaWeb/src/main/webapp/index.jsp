@@ -20,5 +20,6 @@
 			</fieldset>
 		</form>
 		<hr />
+		<a href="/JavaWeb/servlet/beverage">飲料訂購單</a>
 	</body>
 </html>
