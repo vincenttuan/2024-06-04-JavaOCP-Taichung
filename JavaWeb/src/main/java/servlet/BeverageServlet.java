@@ -27,7 +27,7 @@ public class BeverageServlet extends HttpServlet {
 		String userName = req.getParameter("userName");
 		String email = req.getParameter("email");
 		String orderDate = req.getParameter("orderDate");
-		String amount = req.getParameter("amount");
+		String amount = req.getParameter("amount"); // 數量
 		String beverageName = req.getParameter("beverageName");
 		String ice = req.getParameter("ice");
 		String sugar = req.getParameter("sugar");
