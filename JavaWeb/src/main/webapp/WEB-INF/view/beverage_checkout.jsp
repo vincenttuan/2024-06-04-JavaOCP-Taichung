@@ -1,5 +1,5 @@
-<%@page import="java.util.Arrays"%>
-<%@page import="model.entity.Beverage"%>
+<%@ page import="java.util.Arrays"%>
+<%@ page import="model.entity.Beverage"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
