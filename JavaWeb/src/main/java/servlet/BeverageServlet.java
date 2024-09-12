@@ -34,6 +34,11 @@ public class BeverageServlet extends HttpServlet {
 		String[] additionalArray = req.getParameterValues("additional");
 		String memo = req.getParameter("memo");
 		
+		// 計算飲料價格(預設飲料一杯 30 元)
+		int totalPrice = 30 * Integer.parseInt(amount);
+		
+		// 傳遞給 jsp
+		
 		
 	}
 	
