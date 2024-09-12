@@ -29,7 +29,7 @@
 					 <input type="checkbox" name="additional" value="布丁"> 布丁(+15)
 					 <input type="checkbox" name="additional" value="椰果"> 椰果(+12)<p />
 				備註:<br>
-				<textarea rows="5" cols="10"></textarea><p />
+				<textarea rows="5" cols="100"></textarea><p />
 				<button type="reset">重設</button>
 				<button type="submit">傳送</button>
 			</fieldset>
