@@ -22,9 +22,7 @@
 				冰塊: <input type="radio" name="ice" value="0"> 去冰  
 				     <input type="radio" name="ice" value="0.5"> 少冰
 				     <input type="radio" name="ice" value="1" checked> 正常冰<p />
-				甜度: <input type="radio" name="sugar" value="0"> 無糖     
-					 <input type="radio" name="sugar" value="0.5" checked> 半糖
-				     <input type="radio" name="sugar" value="1"> 全糖<p />
+				甜度: <input type="range" name="sugar" min="0" max="10" value="5" ><p />
 				配料: <input type="checkbox" name="additional" value="珍珠"> 珍珠(+10)
 					 <input type="checkbox" name="additional" value="芋圓"> 芋圓(+10)
 					 <input type="checkbox" name="additional" value="綠豆"> 綠豆(+5)
