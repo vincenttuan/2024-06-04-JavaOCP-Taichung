@@ -1,3 +1,4 @@
+<%@page import="java.util.Arrays"%>
 <%@page import="model.entity.Beverage"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -21,7 +22,7 @@
 				品名: <%=beverage.getBeverageName() %><p />
 				冰塊: <%=beverage.getIce() %><p />
 				甜度: <%=beverage.getSugar() %><p />
-				配料: <%=beverage.getAdditionalArray() %><p />
+				配料: <%=Arrays.toString(beverage.getAdditionalArray()) %><p />
 				備註: <%=beverage.getMemo() %><p />
 				----------------------<br>
 				金額: <%=beverage.getTotalPrice() %><p />
