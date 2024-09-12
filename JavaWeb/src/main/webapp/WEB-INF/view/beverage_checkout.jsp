@@ -19,6 +19,8 @@
 				甜度: <p />
 				配料: <p />
 				備註: <p />
+				----------------------<br>
+				金額: <p />
 			</fieldset>
 			<a href="/JavaWeb/servlet/beverage" title="按我一下可以訂購飲料">回飲料訂購單</a>
 		</div>
