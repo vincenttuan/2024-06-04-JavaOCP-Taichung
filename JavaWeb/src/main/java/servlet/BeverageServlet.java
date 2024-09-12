@@ -46,7 +46,7 @@ public class BeverageServlet extends HttpServlet {
 		req.setAttribute("beverage", beverage);
 		
 		// forward 到指定 jsp
-		req.getRequestDispatcher("/WEB-INF/view/beverage_form.jsp").forward(req, resp); 
+		req.getRequestDispatcher("/WEB-INF/view/beverage_checkout.jsp").forward(req, resp); 
 		
 	}
 	
