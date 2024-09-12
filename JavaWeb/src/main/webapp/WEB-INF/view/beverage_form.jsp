@@ -7,7 +7,7 @@
 		<title>飲料訂購單</title>
 	</head>
 	<body>
-		<form method="post" action="#">
+		<form method="post" action="/JavaWeb/servlet/beverage">
 			<fieldset>
 				<legend>飲料訂購單</legend>
 				姓名: <input type="text" name="userName" required /><p />
@@ -29,7 +29,7 @@
 					 <input type="checkbox" name="additional" value="布丁"> 布丁(+15)
 					 <input type="checkbox" name="additional" value="椰果"> 椰果(+12)<p />
 				備註:<br>
-				<textarea rows="5" cols="70"></textarea><p />
+				<textarea rows="5" cols="70" name="memo"></textarea><p />
 				<button type="reset">重設</button>
 				<button type="submit">傳送</button>
 			</fieldset>
