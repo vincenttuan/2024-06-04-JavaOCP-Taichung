@@ -17,6 +17,24 @@ public class BeverageServlet extends HttpServlet {
 		
 		// forward 到指定 jsp
 		req.getRequestDispatcher("/WEB-INF/view/beverage_form.jsp").forward(req, resp);
+		/*
+		resp.getWriter().print("<!DOCTYPE html>");
+		resp.getWriter().print("<html>");
+		resp.getWriter().print("<head>");
+		resp.getWriter().print("<meta charset=\"UTF-8\">");
+		resp.getWriter().print("<title>飲料訂購單</title>");
+		resp.getWriter().print("</head>");
+		resp.getWriter().print("<body>");
+		resp.getWriter().print("<form method=\"post\" action=\"/JavaWeb/servlet/beverage\">");
+		resp.getWriter().print("<fieldset>");
+		resp.getWriter().print("<legend>飲料訂購單</legend>");
+		resp.getWriter().print("姓名: <input type=\"text\" name=\"userName\" required /><p />");
+		resp.getWriter().print("電郵: <input type=\"email\" name=\"email\" required /><p />");
+		resp.getWriter().print("</fieldset>");
+		resp.getWriter().print("</form>");
+		resp.getWriter().print("</body>");
+		resp.getWriter().print("</html>");
+		*/
 		
 	}
 
