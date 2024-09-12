@@ -10,9 +10,15 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/servlet/bmi")
 public class BMISertvlet extends HttpServlet {
-
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setAttribute("errorMessage", "本網頁不支援 Get 請求");
+		req.getRequestDispatcher("/WEB-INF/view/error.jsp").forward(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 1.接收請求參數(Parameter)
 		String height = req.getParameter("h");
 		String weight = req.getParameter("w");
