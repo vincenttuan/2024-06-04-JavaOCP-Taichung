@@ -1,0 +1,5 @@
+-- 修改商品資料
+update product set product_name = '阿薩姆紅茶' where product_id = 101;
+update product set price = 12, qty = 22 where product_id = 101 or product_id = 102;
+update product set price = 13, qty = 23 where product_id in (101, 102);
+update product set price = 15, qty = 25 where product_id = 102;
