@@ -1,0 +1,7 @@
+-- 查詢商品資料
+select product_id, product_name, price, qty from product;
+select product_name, price from product;
+select product_name, price, qty, price*qty as sub_total from product;
+select sum(price*qty) as total from product;
+select avg(price*qty) as avg from product;
+select sum(price*qty) as total, avg(price*qty) as avg from product;
