@@ -1,0 +1,4 @@
+-- 刪除商品資料
+delete from product;
+delete from product where product_id = 101;
+delete from product where qty = 0;
