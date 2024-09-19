@@ -14,7 +14,6 @@ public class BeverageServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		// forward 到指定 jsp
 		req.getRequestDispatcher("/WEB-INF/view/beverage_form.jsp").forward(req, resp);
 		/*
