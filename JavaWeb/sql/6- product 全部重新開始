@@ -15,3 +15,6 @@ insert into product (product_id, product_name, price, qty) values (102, "綠茶"
 insert into product (product_id, product_name, price, qty) values (103, "奶茶", 25, 40);
 insert into product (product_id, product_name, price, qty) values (201, "拿鐵", 60, 50);
 insert into product (product_id, product_name, price, qty) values (202, "美式", 40, 60);
+
+-- 查詢商品資料
+select product_id, product_name, price, qty from product;
