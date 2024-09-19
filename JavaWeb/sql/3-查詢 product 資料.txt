@@ -6,6 +6,7 @@ select sum(price*qty) as total from product;
 select avg(price*qty) as avg from product;
 select sum(price*qty) as total, avg(price*qty) as avg from product;
 -- 查詢商品資料:條件式 where
+select product_id, product_name, price, qty from product where product_id = 101;
 select product_id, product_name, price, qty from product where price >= 35;
 select product_id, product_name, price, qty from product 
 where price >= 35 and qty >= 55;
