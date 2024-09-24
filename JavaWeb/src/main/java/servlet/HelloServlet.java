@@ -1,6 +1,10 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Date;
 
 import jakarta.servlet.ServletException;
@@ -16,7 +20,7 @@ public class HelloServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		resp.getWriter().print("Hello Now: " + new Date());
-		
+			
 	}
 
 	

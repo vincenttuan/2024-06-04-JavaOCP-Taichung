@@ -13,7 +13,9 @@ public class ReadProduct {
 		String username = "root";
 		String password = "12345678";
 		String dbUrl = "jdbc:mysql://localhost:3306/web?serverTimezone=Asia/Taipei";
-		Connection conn = DriverManager.getConnection(username, password, dbUrl);
+		//Connection conn = DriverManager.getConnection(username, password, dbUrl);
+		Connection conn = DriverManager.getConnection(dbUrl, username, password);
+		
 		// 3.建立敘述句 Statement
 		Statement stmt = conn.createStatement();
 		// 4.設定 sql 查詢語句
