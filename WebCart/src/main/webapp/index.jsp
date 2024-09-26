@@ -8,5 +8,7 @@
 	</head>
 	<body>
 		<h1>Web Cart</h1>
+		<a href="/WebCart/product">商品列表</a><br />
+		
 	</body>
 </html>
