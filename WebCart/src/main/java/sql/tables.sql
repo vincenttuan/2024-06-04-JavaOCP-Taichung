@@ -5,7 +5,7 @@ drop table if exists orders;
 drop table if exists order_items;
 
 /*
--- 商品
+-- 商品 product
 +------------+--------------+--------+-----+
 | product_id | product_name | price  | qty |
 +------------+--------------+--------+-----+
