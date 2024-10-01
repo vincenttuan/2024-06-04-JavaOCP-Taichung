@@ -79,7 +79,7 @@ create table if not exists orders (
     order_date DATE NOT NULL COMMENT '訂單日期',
     total_amount DECIMAL(10, 2) NOT NULL COMMENT '總金額',
     order_status VARCHAR(20) NOT NULL COMMENT '訂單狀態',
-    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE -- 聯集刪除(確保資料的一致性，避免孤立或無效的外鍵關聯。)
+    FOREIGN KEY (user_id) REFERENCES users(user_id) 
 );
 
 -- 插入訂單資料
