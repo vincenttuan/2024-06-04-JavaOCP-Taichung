@@ -6,30 +6,31 @@ drop table if exists order_items;
 
 /*
 -- 商品 product
-+------------+--------------+--------+-----+
-| product_id | product_name | price  | qty |
-+------------+--------------+--------+-----+
-| 101        | Black Tea    | 10     | 20  |
-| 102        | Green Tea    | 15     | 30  |
-| 103        | Milk  Tea    | 25     | 40  |
-| 104        | Latte        | 60     | 50  |
-| 105        | Black Coffee | 40     | 60  |
-+------------+--------------+--------+-----+
++------------+------------------+----------+----------------+--------------+
+| product_id | product_name     | price    | stock_quantity | image_base64 |
++------------+------------------+----------+----------------+--------------+
+| 1          | PC               | 30000.00 | 50             |              |              
+| 2          | Mobile           | 15000.00 | 100            |              |
+| 3          | MusicBox         | 3000.00  | 200            |              |
+| 4          | Pad              | 20000.00 | 75             |              |
+| 5          | Watch            | 8000.00  | 150            |              |
++------------+------------------+----------+----------------+--------------+
 */
 -- 建立商品表
 create table if not exists product (
 	product_id int primary key comment '商品ID',
     product_name varchar(50) not null unique comment '商品名稱',
     price int not null comment '商品價格',
-    qty int default 0 comment '商品庫存'
+    qty int default 0 comment '商品庫存',
+    image_base64 longtext comment '商品照片'
 );
 
--- 建立商品數據資料
-insert into product (product_id, product_name, price, qty) values (101, "紅茶", 10, 20);
-insert into product (product_id, product_name, price, qty) values (102, "綠茶", 15, 30);
-insert into product (product_id, product_name, price, qty) values (103, "奶茶", 25, 40);
-insert into product (product_id, product_name, price, qty) values (201, "拿鐵", 60, 50);
-insert into product (product_id, product_name, price, qty) values (202, "美式", 40, 60);
+-- 新增商品紀錄
+insert into product(product_name, price, stock_quantity) values('PC', 30000.00, 50);
+insert into product(product_name, price, stock_quantity) values('Mobile', 15000.00, 100);
+insert into product(product_name, price, stock_quantity) values('MusicBox', 3000.00, 200);
+insert into product(product_name, price, stock_quantity) values('Pad', 20000.00, 75);
+insert into product(product_name, price, stock_quantity) values('Watch', 8000.00, 150);
 
 /*
 -- 使用者 users
