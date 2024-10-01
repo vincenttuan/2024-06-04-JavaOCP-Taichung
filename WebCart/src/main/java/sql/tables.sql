@@ -47,7 +47,7 @@ insert into product(product_name, price, stock_quantity) values('Watch', 8000.00
 -- 建立 users 資料表，設定 user_id 為自動遞增
 create table if not exists users (
     user_id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'User ID', 
-    username VARCHAR(50) NOT NULL COMMENT 'Username',
+    username VARCHAR(50) unique NOT NULL COMMENT 'Username',
     password VARCHAR(50) NOT NULL COMMENT 'Password',
     priority INT NOT NULL COMMENT 'Priority Level'
 );
