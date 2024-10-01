@@ -115,8 +115,8 @@ create table if not exists order_items (
     product_id INT NOT NULL COMMENT '商品ID',
     quantity INT NOT NULL COMMENT '數量',
     unit_price DECIMAL(10, 2) NOT NULL COMMENT '單價',
-    FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
+    FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE, -- 當訂單刪除訂單項目也一併刪除
+    FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
 
 -- 插入訂單項目資料
