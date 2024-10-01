@@ -44,7 +44,7 @@ insert into product (product_id, product_name, price, qty) values (202, "美式"
 +----------+---------+----------+----------+
 */
 -- 建立 users 資料表，設定 user_id 為自動遞增
-CREATE TABLE users (
+create table if not exists users (
     user_id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'User ID', 
     username VARCHAR(50) NOT NULL COMMENT 'Username',
     password VARCHAR(50) NOT NULL COMMENT 'Password',
@@ -72,7 +72,7 @@ INSERT INTO users (username, password, priority) VALUES
 +----------+---------+------------+--------------+--------------+
 */
 -- 建立訂單表 (orders)，order_id 自動遞增
-CREATE TABLE orders (
+create table if not exists orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY COMMENT '訂單ID',
     user_id INT NOT NULL COMMENT '使用者ID',
     order_date DATE NOT NULL COMMENT '訂單日期',
@@ -108,7 +108,7 @@ INSERT INTO orders (user_id, order_date, total_amount, order_status) VALUES
 */
 
 -- 建立訂單項目表 (order_items)，item_id 自動遞增
-CREATE TABLE order_items (
+create table if not exists order_items (
     item_id INT AUTO_INCREMENT PRIMARY KEY COMMENT '項目ID',
     order_id INT NOT NULL COMMENT '訂單ID',
     product_id INT NOT NULL COMMENT '商品ID',
