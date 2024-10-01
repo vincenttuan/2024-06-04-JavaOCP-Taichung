@@ -11,6 +11,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Product 商品資料</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" >
 	</head>
 	<body>
 		<div>
