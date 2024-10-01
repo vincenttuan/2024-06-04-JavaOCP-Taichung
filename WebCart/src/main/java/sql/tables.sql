@@ -18,7 +18,7 @@ drop table if exists order_items;
 */
 -- 建立商品表
 create table if not exists product (
-	product_id int primary key comment '商品ID',
+	product_id int AUTO_INCREMENT primary key comment '商品ID',
     product_name varchar(50) not null unique comment '商品名稱',
     price int not null comment '商品價格',
     stock_quantity int default 0 comment '商品庫存',
