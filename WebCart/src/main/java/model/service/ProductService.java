@@ -26,6 +26,7 @@ public class ProductService {
 			productDto.setPrice(product.getPrice());
 			productDto.setQty(product.getQty());
 			productDto.setTotal(product.getPrice() * product.getQty()); // 小計
+			productDto.setImageBase64(product.getImageBase64());
 			// 注入到 productDtos
 			productDtos.add(productDto);
 		}
