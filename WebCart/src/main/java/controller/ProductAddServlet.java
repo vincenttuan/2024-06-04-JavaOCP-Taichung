@@ -10,11 +10,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import model.service.ProductService;
 
 @WebServlet("/product/add")
 @MultipartConfig(maxFileSize = 1024*1024*10) // 設定上傳大小 10M
 public class ProductAddServlet extends HttpServlet {
-
+	
+	private ProductService productService = new ProductService();
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 重導一個商品新增 jsp 網頁
@@ -37,9 +40,15 @@ public class ProductAddServlet extends HttpServlet {
 			imageBase64 = Base64.getEncoder().encodeToString(productImage.getInputStream().readAllBytes());
 		}
 		
-		resp.setContentType("text/html");
-		resp.getWriter().print("<img src='data:image/png;base64," + imageBase64 + "'>");
+		//resp.setContentType("text/html");
+		//resp.getWriter().print("<img src='data:image/png;base64," + imageBase64 + "'>");
 		//resp.getWriter().print(imageBase64);
+		// 新增商品資料
+		productService.add(productName, price, qty, imageBase64);
+		
+		// 重導到結果頁
+		req.setAttribute("result", "商品新增成功");
+		req.getRequestDispatcher("/WEB-INF/view/product_result.jsp").forward(req, resp);
 	}
 	
 }
