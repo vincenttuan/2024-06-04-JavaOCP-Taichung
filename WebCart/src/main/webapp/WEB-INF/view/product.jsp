@@ -21,7 +21,7 @@
 				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
-							<th>序號</th><th>品名</th><th>價格</th><th>庫存</th><th>小計</th>
+							<th>序號</th><th>圖片</th><th>品名</th><th>價格</th><th>庫存</th><th>小計</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -29,6 +29,7 @@
 						<% for(ProductDto productDto : productDtos) { %>
 							<tr class="<%=(x % 2 == 0) ? "pure-table-odd" : ""%>">
 								<td><%=productDto.getId() %></td>
+								<td><img src="data:image/png;base64,<%=productDto.getImageBase64() %>"></td>
 								<td><%=productDto.getName() %></td>
 								<td><%=productDto.getPrice() %></td>
 								<td><%=productDto.getQty() %></td>
