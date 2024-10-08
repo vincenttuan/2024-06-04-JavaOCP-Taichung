@@ -14,10 +14,8 @@
 		<div class="pure-form">
 			<fieldset>
 				<legend>Product 商品資料結果</legend>
-				<div class="pure-form">
-					結果: <%=result %><p />
-					<a href="/WebCart/product">商品列表</a>
-				</div>
+				結果: <%=result %><p />
+				<a href="/WebCart/product">商品列表</a>
 			</fieldset>
 		</div>
 	</body>
