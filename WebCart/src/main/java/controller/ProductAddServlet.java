@@ -37,7 +37,8 @@ public class ProductAddServlet extends HttpServlet {
 			imageBase64 = Base64.getEncoder().encodeToString(productImage.getInputStream().readAllBytes());
 		}
 		
-		resp.getWriter().print(imageBase64);
+		resp.getWriter().print("<img src='data:image/png;base64," + imageBase64 + "'>");
+		//resp.getWriter().print(imageBase64);
 	}
 	
 }
