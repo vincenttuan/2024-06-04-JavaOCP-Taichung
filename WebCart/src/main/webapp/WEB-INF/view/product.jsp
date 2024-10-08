@@ -29,7 +29,7 @@
 						<% for(ProductDto productDto : productDtos) { %>
 							<tr class="<%=(x % 2 == 0) ? "pure-table-odd" : ""%>">
 								<td><%=productDto.getId() %></td>
-								<td><img src="data:image/png;base64,<%=productDto.getImageBase64() %>"></td>
+								<td><img width="50" src="data:image/png;base64,<%=productDto.getImageBase64() %>"></td>
 								<td><%=productDto.getName() %></td>
 								<td><%=productDto.getPrice() %></td>
 								<td><%=productDto.getQty() %></td>
