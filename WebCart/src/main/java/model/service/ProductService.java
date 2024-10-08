@@ -32,6 +32,17 @@ public class ProductService {
 		}
 		
 		return productDtos;
-	}  
+	}
+	
+	// 新增商品
+	public void add(String productName, String price, String qty, String imageBase64) {
+		Product product = new Product();
+		product.setProductName(productName);
+		product.setPrice(Integer.parseInt(price)); // 將字串轉 int
+		product.setQty(Integer.parseInt(qty)); // 將字串轉 int
+		product.setImageBase64(imageBase64);
+		// 傳給 dao 執行後續的新增程序
+		productDao.add(product);
+	}
 	
 }
