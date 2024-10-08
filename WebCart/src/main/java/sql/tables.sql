@@ -62,28 +62,28 @@ INSERT INTO users (username, password, priority) VALUES
 
 /*
 -- 訂單 orders
-+----------+---------+------------+--------------+--------------+
-| order_id | user_id | order_date | total_amount | order_status |
-+----------+---------+------------+--------------+--------------+
-| 1        | 1       | 2024-09-19 | 33000.00     | Finished     |
-| 2        | 2       | 2024-09-20 | 15000.00     | Pending      |
-| 3        | 3       | 2024-09-21 | 23000.00     | Finished     |
-| 4        | 4       | 2024-09-22 | 8000.00      | Pending      |
-| 5        | 5       | 2024-09-23 | 18000.00     | Cancel       |
-+----------+---------+------------+--------------+--------------+
++----------+---------+------------+-------------+--------------+
+| order_id | user_id | order_date | total_price | order_status |
++----------+---------+------------+-------------+--------------+
+| 1        | 1       | 2024-09-19 | 33000.00    | Finished     |
+| 2        | 2       | 2024-09-20 | 15000.00    | Pending      |
+| 3        | 3       | 2024-09-21 | 23000.00    | Finished     |
+| 4        | 4       | 2024-09-22 | 8000.00     | Pending      |
+| 5        | 5       | 2024-09-23 | 18000.00    | Cancel       |
++----------+---------+------------+-------------+--------------+
 */
 -- 建立訂單表 (orders)，order_id 自動遞增
 create table if not exists orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY COMMENT '訂單ID',
     user_id INT NOT NULL COMMENT '使用者ID',
     order_date DATE NOT NULL COMMENT '訂單日期',
-    total_amount DECIMAL(10, 2) NOT NULL COMMENT '總金額',
+    total_price DECIMAL(10, 2) NOT NULL COMMENT '總金額',
     order_status VARCHAR(20) NOT NULL COMMENT '訂單狀態',
     FOREIGN KEY (user_id) REFERENCES users(user_id) 
 );
 
 -- 插入訂單資料
-INSERT INTO orders (user_id, order_date, total_amount, order_status) VALUES 
+INSERT INTO orders (user_id, order_date, total_price, order_status) VALUES 
 (1, '2024-09-19', 33000.00, 'Finished'),
 (2, '2024-09-20', 15000.00, 'Pending'),
 (3, '2024-09-21', 23000.00, 'Finished'),
