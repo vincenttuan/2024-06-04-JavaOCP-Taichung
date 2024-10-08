@@ -68,7 +68,7 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public List<Product> findAll() {
-		String sql = "select product_id, product_name, price, qty from product";
+		String sql = "select product_id, product_name, price, qty, image_base64 from product";
 		List<Product> products = new ArrayList<>();
 		try(Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);) {
@@ -78,12 +78,14 @@ public class ProductDaoImpl implements ProductDao {
 				String productName = rs.getString("product_name");
 				Integer price = rs.getInt("price");
 				Integer qty = rs.getInt("qty");
+				String imageBase64 = rs.getString("image_base64");
 				// 建立 Product 物件
 				Product product = new Product();
 				product.setProductId(productId);
 				product.setProductName(productName);
 				product.setPrice(price);
 				product.setQty(qty);
+				product.setImageBase64(imageBase64);
 				// 注入到 products 集合中保存
 				products.add(product);
 			}
