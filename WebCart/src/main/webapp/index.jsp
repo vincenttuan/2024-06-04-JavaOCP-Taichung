@@ -7,7 +7,7 @@
 		<title>Web Cart</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" >
 	</head>
-	<body>
+	<body style="padding: 15px">
 		<h1>Web Cart</h1>
 		<a href="/WebCart/product">商品列表</a><br />
 		<a href="/WebCart/product/add">商品新增</a><br />
