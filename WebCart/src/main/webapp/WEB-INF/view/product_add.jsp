@@ -16,8 +16,8 @@
 					商品價格: <input type="number" name="price" placeholder="請輸入商品價格" min="1" required /><p />
 					商品庫存: <input type="number" name="qty" placeholder="請輸入商品庫存" min="1" max="100" required /><p />
 					上傳圖片: <input type="file" name="productImage" placeholder="請選擇商品圖片"><p />
-					<button type="reset">清除資料</button>
-					<button type="submit">新增商品</button><p />
+					<button type="reset" class="pure-button">清除資料</button>
+					<button type="submit" class="pure-button pure-button-primary">新增商品</button><p />
 				</form>
 			</fieldset>
 		</div>
