@@ -6,6 +6,7 @@ public class Product {
 	private String productName; // 對應 product_name 欄位
 	private Integer price; // 對應 price 欄位
 	private Integer qty; // 對應 qty 欄位
+	private String imageBase64; // 圖片編碼
 	
 	public Integer getProductId() {
 		return productId;
@@ -31,6 +32,13 @@ public class Product {
 	public void setQty(Integer qty) {
 		this.qty = qty;
 	}
+	public String getImageBase64() {
+		return imageBase64;
+	}
+	public void setImageBase64(String imageBase64) {
+		this.imageBase64 = imageBase64;
+	}
+	
 	
 	
 }
