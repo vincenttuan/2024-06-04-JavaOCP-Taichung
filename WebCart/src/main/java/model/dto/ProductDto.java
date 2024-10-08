@@ -7,13 +7,15 @@ public class ProductDto {
 	private Integer price; // 對應 entity.Product 的 price 欄位
 	private Integer qty; // 對應 entity.Product 的 qty 欄位
 	private Integer total; // 計算總和: price * qty
+	private String imageBase64; // 圖片編碼
 	
-	public ProductDto(Integer id, String name, Integer price, Integer qty) {
+	public ProductDto(Integer id, String name, Integer price, Integer qty, String imageBase64) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.qty = qty;
 		this.total = price * qty;
+		this.imageBase64 = imageBase64;
 	}
 	
 	public ProductDto() {
@@ -59,8 +61,14 @@ public class ProductDto {
 	public void setTotal(Integer total) {
 		this.total = total;
 	}
-	
-	
-	
+
+	public String getImageBase64() {
+		return imageBase64;
+	}
+
+	public void setImageBase64(String imageBase64) {
+		this.imageBase64 = imageBase64;
+	}
+
 	
 }
