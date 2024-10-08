@@ -30,7 +30,8 @@ public class ProductDaoImpl implements ProductDao {
 	
 	@Override
 	public void add(Product product) {
-		// TODO Auto-generated method stub
+		String sql = "insert into product(product_name, price, qty, image_base64) values(?, ?, ?, ?)";
+		
 		
 	}
 
