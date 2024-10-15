@@ -24,7 +24,15 @@
 						</tr>
 					</thead>
 					<tbody>
+						<% for(UserDto userDto : userDtos) { %>
+							
+							<tr>
+								<td><%=userDto.getUserId() %></td>
+								<td><%=userDto.getUsername() %></td>
+								<td><%=userDto.getPriority() %></td>
+							</tr>
 						
+						<% } %>
 					</tbody>
 				</table>
 			</fieldset>
