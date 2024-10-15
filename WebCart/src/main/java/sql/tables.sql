@@ -1,8 +1,8 @@
 -- 刪除資料表
+drop table if exists order_items;
+drop table if exists orders;
 drop table if exists product;
 drop table if exists users;
-drop table if exists orders;
-drop table if exists order_items;
 
 /*
 -- 商品 product
