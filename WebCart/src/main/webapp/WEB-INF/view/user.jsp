@@ -23,15 +23,13 @@
 						</tr>
 					</thead>
 					<tbody>
-						<% for(UserDto userDto : userDtos) { %>
-							
+						<c:forEach var="userDto" items="${ userDtos }">
 							<tr>
 								<td>${ userDto.userId }</td>
 								<td>${ userDto.username }</td>
 								<td>${ userDto.priority }</td>
 							</tr>
-						
-						<% } %>
+						</c:forEach>
 					</tbody>
 				</table>
 			</fieldset>
