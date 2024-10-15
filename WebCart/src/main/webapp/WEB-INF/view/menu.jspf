@@ -4,6 +4,7 @@
 <div>
 	<a href="/WebCart/product" style="text-decoration: none">商品列表</a> |  
 	<a href="/WebCart/product/add" style="text-decoration: none">商品新增</a> | 
+	<a href="/WebCart/user" style="text-decoration: none">使用者列表</a> |  
 	<a href="/WebCart/order" style="text-decoration: none">購物</a> | 
 	<a href="/WebCart/cart" style="text-decoration: none">🛒 購物車</a> | 
 	<a href="/WebCart/login" style="text-decoration: none">🙆‍♀️ 登入</a> | 
