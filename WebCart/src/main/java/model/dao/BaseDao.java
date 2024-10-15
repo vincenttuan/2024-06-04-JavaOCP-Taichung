@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class BaseDao {
-	private static Connection conn;
+	protected static Connection conn;
 	
 	static {
 		try {
