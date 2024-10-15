@@ -2,6 +2,10 @@ package model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.entity.User;
@@ -10,8 +14,26 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	
 	@Override
 	public List<User> findAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select user_id, username, password, priority from users";
+		List<User> users = new ArrayList<>();
+		try(Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql)) {
+			// 走訪所有資料紀錄
+			while (rs.next()) {
+				User user = new User();
+				user.setUserId(rs.getInt("user_id"));
+				user.setUsername(rs.getString("username"));
+				user.setPassword(rs.getString("password"));
+				user.setPriority(rs.getInt("priority"));
+				// 注入到 users 集合
+				users.add(user);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return users;
 	}
 
 }
