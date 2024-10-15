@@ -27,9 +27,9 @@
 						<% for(UserDto userDto : userDtos) { %>
 							
 							<tr>
-								<td><%=userDto.getUserId() %></td>
-								<td><%=userDto.getUsername() %></td>
-								<td><%=userDto.getPriority() %></td>
+								<td>${ userDto.userId }</td>
+								<td>${ userDto.username }</td>
+								<td>${ userDto.priority }</td>
 							</tr>
 						
 						<% } %>
