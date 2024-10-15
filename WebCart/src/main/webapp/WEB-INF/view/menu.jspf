@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!-- Menu -->
 <div>
-	<a href="/WebCart/product">商品列表</a> | 
+	<a href="/WebCart/product">商品列表</a> |  
 	<a href="/WebCart/product/add">商品新增</a>
 </div>
     
