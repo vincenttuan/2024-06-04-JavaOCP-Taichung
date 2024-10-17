@@ -30,7 +30,9 @@ public class LoginServlet extends HttpServlet {
 		// 登入比對
 		UserDto userDto = userService.loginCheck(username, password);
 		String result = userDto == null ? "login error" : "login success";
-		resp.getWriter().print(result);
+		
+		req.setAttribute("result", result);
+		req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 	}
 	
 	
