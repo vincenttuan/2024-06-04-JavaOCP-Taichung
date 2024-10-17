@@ -11,7 +11,8 @@
 		<div class="pure-form">
 			<fieldset>
 				<legend>結果</legend>
-				${ result }
+				${ result }<p />
+				<a href="${ redirectURL }">${ redirectName }</a>
 			</fieldset>
 		</div>
 	</body>
