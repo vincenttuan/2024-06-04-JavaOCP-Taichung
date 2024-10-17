@@ -24,4 +24,22 @@ public class UserService {
 		}
 		return userDtos;
 	}
+	
+	public UserDto loginCheck(String username, String password) {
+		// 1.查找使用者
+		User user = userDao.getUser(username);
+		if(user == null) {
+			return null;
+		}
+		// 2.比對密碼
+		if(!user.getPassword().equals(password)) {
+			return null;
+		}
+		// 3.將 User 轉 UserDto
+		UserDto userDto = new UserDto();
+		userDto.setUserId(user.getUserId());
+		userDto.setUsername(user.getUsername());
+		userDto.setPriority(user.getPriority());
+		return userDto;
+	}
 }
