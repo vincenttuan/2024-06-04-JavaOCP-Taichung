@@ -9,6 +9,6 @@
 	</head>
 	<body style="padding: 15px">
 		<h1>Web Cart</h1>
-		<a href="/WebCart/product">商品列表(首頁)</a><br />
+		<a href="/WebCart/product">商品列表主頁</a><br />
 	</body>
 </html>
