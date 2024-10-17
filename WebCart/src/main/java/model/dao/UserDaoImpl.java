@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -32,6 +33,30 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 		}
 		
 		return users;
+	}
+
+	@Override
+	public User getUser(String username) {
+		String sql = "select user_id, username, password, priority from users where username = ?";
+		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, username);
+			// 開始查找
+			try(ResultSet rs = pstmt.executeQuery()) {
+				if(rs.next()) {
+					User user = new User();
+					user.setUserId(rs.getInt("user_id"));
+					user.setUsername(rs.getString("username"));
+					user.setPassword(rs.getString("password"));
+					user.setPriority(rs.getInt("priority"));
+					return user;
+				}
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 
 }
