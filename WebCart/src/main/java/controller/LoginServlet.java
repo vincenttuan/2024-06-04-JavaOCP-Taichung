@@ -32,6 +32,10 @@ public class LoginServlet extends HttpServlet {
 		String result = userDto == null ? "login error" : "login success";
 		
 		req.setAttribute("result", result);
+		// 若登入成功到商品頁面反之到登入頁面
+		req.setAttribute("redirectURL", userDto == null ? "/WebCart/login" : "/WebCart/product");
+		req.setAttribute("redirectName", userDto == null ? "請重新登入" : "商品主頁");
+		
 		req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 	}
 	
