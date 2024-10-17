@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.dto.UserDto;
 import model.service.UserService;
 
@@ -30,6 +31,10 @@ public class LoginServlet extends HttpServlet {
 		// 登入比對
 		UserDto userDto = userService.loginCheck(username, password);
 		String result = userDto == null ? "login error" : "login success";
+		
+		// 將 UserDto 放入到 session 屬性中以便其他網頁能判斷登入狀態
+		HttpSession session = req.getSession();
+		session.setAttribute("userDto", userDto);
 		
 		req.setAttribute("result", result);
 		// 若登入成功到商品頁面反之到登入頁面
