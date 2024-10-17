@@ -6,4 +6,5 @@ import model.entity.User;
 
 public interface UserDao {
 	List<User> findAllUsers();
+	User getUser(String username);
 }
