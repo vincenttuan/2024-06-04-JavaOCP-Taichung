@@ -20,7 +20,7 @@ public class LoginFilter extends HttpFilter {
 			throws IOException, ServletException {
 		
 		System.out.println("LoginFilter URI: " + request.getRequestURI().toString());
-		// 若 URI 是 "/WebCart/login" 登入頁則 by pass
+		// 若 URI 是 "/WebCart/login" 或 "/WebCart/CAPTCHA" 則 by pass
 		if(request.getRequestURI().toString().equals("/WebCart/login") ||
 				request.getRequestURI().toString().equals("/WebCart/CAPTCHA")) {
 			chain.doFilter(request, response);
