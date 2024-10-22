@@ -11,4 +11,8 @@
 	<a href="/WebCart/logout" style="text-decoration: none">🚪 登出</a> | 
 	<a href="/WebCart/index.jsp" style="text-decoration: none">🏠 回首頁</a>
 </div>
+<!-- 歡迎語 -->
+<div>
+	Hello ${ userDto.username } 您好 !
+</div>
     
