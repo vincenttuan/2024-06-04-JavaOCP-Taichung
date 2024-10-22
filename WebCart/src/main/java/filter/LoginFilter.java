@@ -10,7 +10,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = {"/product", "/product/*"})
+//@WebFilter(urlPatterns = {"/product", "/product/add", "/user"})
+//@WebFilter(urlPatterns = {"/product", "/product/*", "/user"})
+@WebFilter(urlPatterns = {"/*"})
 public class LoginFilter extends HttpFilter {
 
 	@Override
