@@ -1,5 +1,8 @@
 package controller;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -32,6 +35,22 @@ public class CAPTCHAServlet extends HttpServlet {
 	
 	// 產生圖像的方法
 	private BufferedImage getAuthCodeImage(String authCode) {
+		// 建立圖像區域
+		BufferedImage img = new BufferedImage(80, 30, BufferedImage.TYPE_INT_RGB);
+		// 建立畫布
+		Graphics g = img.getGraphics();
+		// 設定顏色
+		g.setColor(Color.YELLOW); // 拿黃色的彩色筆
+		// 塗滿背景
+		g.fillRect(0, 0, 80, 30);
+		// 設定顏色
+		g.setColor(Color.BLACK);
+		// 設定字型
+		g.setFont(new Font("新細明體", Font.BOLD, 20)); // 字體, 風格, 大小
+		// 繪文字
+		g.drawString(authCode, 22, 22);
+		
+		return img;
 		
 	}
 }
