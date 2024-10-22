@@ -52,7 +52,7 @@ public class CAPTCHAServlet extends HttpServlet {
 		// 加上干擾線
 		g.setColor(Color.RED);
 		Random random = new Random();
-		for(int i=0;i<25;i++) {
+		for(int i=0;i<15;i++) {
 			int x1 = random.nextInt(80);
 			int y1 = random.nextInt(30);
 			int x2 = random.nextInt(80);
