@@ -28,6 +28,9 @@ public class LoginServlet extends HttpServlet {
 		// 接收登入表單的資訊
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
+		
+		// 認證碼比對(Homework)
+		
 		// 登入比對
 		UserDto userDto = userService.loginCheck(username, password);
 		String result = userDto == null ? "login error" : "login success";
