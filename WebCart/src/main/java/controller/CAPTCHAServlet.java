@@ -49,7 +49,16 @@ public class CAPTCHAServlet extends HttpServlet {
 		g.setFont(new Font("新細明體", Font.BOLD, 20)); // 字體, 風格, 大小
 		// 繪文字
 		g.drawString(authCode, 22, 22);
-		
+		// 加上干擾線
+		g.setColor(Color.RED);
+		Random random = new Random();
+		for(int i=0;i<15;i++) {
+			int x1 = random.nextInt(80);
+			int y1 = random.nextInt(30);
+			int x2 = random.nextInt(80);
+			int y2 = random.nextInt(30);
+			g.drawLine(x1, y1, x2, y2); // 繪直線
+		}
 		return img;
 		
 	}
