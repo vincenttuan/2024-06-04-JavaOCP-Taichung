@@ -19,6 +19,13 @@ public class LoginFilter extends HttpFilter {
 	protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		
+		System.out.println("LoginFilter URI: " + request.getRequestURI().toString());
+		// 若 URI 是 "/WebCart/login" 登入頁則 by pass
+		if(request.getRequestURI().toString().equals("/WebCart/login")) {
+			chain.doFilter(request, response);
+			return;
+		}
+		
 		// 檢查是否有登入資訊 ?
 		HttpSession session = request.getSession();
 		if(session.getAttribute("userDto") == null) {
