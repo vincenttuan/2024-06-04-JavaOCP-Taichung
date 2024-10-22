@@ -12,7 +12,7 @@
 			<fieldset>
 				<legend>結果</legend>
 				${ result }<p />
-				session 變數: ${ sessionScope.userDto }<p />
+				session userDto 變數: ${ sessionScope.userDto }<p />
 				<a href="${ redirectURL }">${ redirectName }</a>
 			</fieldset>
 		</div>
