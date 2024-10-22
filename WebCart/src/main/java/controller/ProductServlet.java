@@ -19,17 +19,6 @@ public class ProductServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// 檢查是否有登入資訊 ?
-		HttpSession session = req.getSession();
-		if(session.getAttribute("userDto") == null) {
-			// 使用者尚未登入, 要帶給 result.jsp 的參數
-			req.setAttribute("result", "使用者尚未登入");
-			req.setAttribute("redirectURL", "/WebCart/login");
-			req.setAttribute("redirectName", "請登入");
-			req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp); 
-			return;
-		}
-		
 		// 取得所有商品資訊
 		List<ProductDto> productDtos = productService.queryAll();
 		// 將此商品資訊放到 request 屬性中
