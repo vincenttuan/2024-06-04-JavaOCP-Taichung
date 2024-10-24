@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 		
 		// 認證碼比對(Homework)
 		HttpSession session = req.getSession();
-		String sessionAuthCode = session.getAttribute("authCode") + "";
+		String sessionAuthCode = (String)session.getAttribute("authCode");
 		if(!authCode.equals(sessionAuthCode)) {
 			req.setAttribute("result", "認證碼錯誤");
 			req.setAttribute("redirectURL", "/WebCart/login");
