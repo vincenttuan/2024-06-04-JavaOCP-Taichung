@@ -11,7 +11,7 @@
 	</head>
 	<body style="padding: 15px">
 		<%@ include file="/WEB-INF/view/menu.jspf" %>
-		<div class="pure-form">
+		<form class="pure-form" method="post" action="/WebCart/order">
 			<fieldset>
 				<legend>商品訂購單</legend>
 				<table class="pure-table pure-table-bordered">
@@ -33,6 +33,6 @@
 					</tbody>
 				</table>
 			</fieldset>
-		</div>
+		</form>
 	</body>
 </html>
