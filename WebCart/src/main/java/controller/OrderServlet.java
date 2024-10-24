@@ -27,7 +27,8 @@ public class OrderServlet extends HttpServlet {
 	// 訂購程序->到購物車 (存入到資料表中)
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		String[] amounts = req.getParameterValues("amount");
+		resp.getWriter().print(amounts);
 	}
 	
 }
