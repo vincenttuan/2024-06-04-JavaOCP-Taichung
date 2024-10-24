@@ -27,7 +27,7 @@
 								<td>${ productDto.name }</td>
 								<td>${ productDto.price }</td>
 								<td>${ productDto.qty }</td>
-								<td><input type="number"></td>
+								<td><input type="number" min="0" max="${ productDto.qty }" value="0"></td>
 							</tr>
 						</c:forEach>
 					</tbody>
