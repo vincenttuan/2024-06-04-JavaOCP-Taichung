@@ -28,15 +28,24 @@ public class LoginServlet extends HttpServlet {
 		// 接收登入表單的資訊
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
+		String authCode = req.getParameter("authCode");
 		
 		// 認證碼比對(Homework)
+		HttpSession session = req.getSession();
+		String sessionAuthCode = session.getAttribute("authCode") + "";
+		if(!authCode.equals(sessionAuthCode)) {
+			req.setAttribute("result", "認證碼錯誤");
+			req.setAttribute("redirectURL", "/WebCart/login");
+			req.setAttribute("redirectName", "請重新登入");
+			req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
+			return;
+		}
 		
 		// 登入比對
 		UserDto userDto = userService.loginCheck(username, password);
 		String result = userDto == null ? "login error" : "login success";
 		
 		// 將 UserDto 放入到 session 屬性中以便其他網頁能判斷登入狀態
-		HttpSession session = req.getSession();
 		session.setAttribute("userDto", userDto);
 		
 		req.setAttribute("result", result);
