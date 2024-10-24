@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 import jakarta.servlet.ServletException;
@@ -28,7 +29,7 @@ public class OrderServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String[] amounts = req.getParameterValues("amount");
-		resp.getWriter().print(amounts);
+		resp.getWriter().print(Arrays.toString(amounts));
 	}
 	
 }
