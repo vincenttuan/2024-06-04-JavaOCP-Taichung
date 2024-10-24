@@ -21,7 +21,15 @@
 						</tr>
 					</thead>
 					<tbody>
-						
+						<c:forEach var="productDto" items="${ productDtos }">
+							<tr>
+								<td>${ productDto.id }</td>
+								<td>${ productDto.name }</td>
+								<td>${ productDto.price }</td>
+								<td>${ productDto.qty }</td>
+								<td><input type="number"></td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</fieldset>
