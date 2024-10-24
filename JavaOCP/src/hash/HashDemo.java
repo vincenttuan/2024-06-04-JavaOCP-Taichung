@@ -11,7 +11,11 @@ public class HashDemo {
 		String hashPassword = getHashPassword(password);
 		System.out.println(password);
 		System.out.println(hashPassword);
-		System.out.println("鹽: " + getSalt());
+		//------------------------------------------------
+		String salt = getSalt();
+		System.out.println("鹽: " + salt);
+		hashPassword = getHashPassword(password, salt);
+		System.out.println(hashPassword);
 	}
 	
 	// 產生雜湊
@@ -38,7 +42,7 @@ public class HashDemo {
 	}
 	
 	// 產生加鹽雜湊
-	public static String getHash(String password, String salt) {
+	public static String getHashPassword(String password, String salt) {
 		try {
 			// 加密演算法: SHA-256
 			MessageDigest md = MessageDigest.getInstance("SHA-256");
