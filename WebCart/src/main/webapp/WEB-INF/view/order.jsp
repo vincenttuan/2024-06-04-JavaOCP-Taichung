@@ -32,6 +32,7 @@
 						</c:forEach>
 					</tbody>
 				</table>
+				<button class="pure-button pure-button-primary">加入訂單</button>
 			</fieldset>
 		</form>
 	</body>
