@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
 					🧑: <input type="text" name="username" placeholder="請輸入使用者名稱" required /><p />
 					🔐: <input type="password" name="password" placeholder="請輸入使用者密碼" required /><p />
 					<input type="text" name="authCode" placeholder="請輸入認證碼" required />
-					<img src="/WebCart/CAPTCHA" valign="middle">
+					<img src="/WebCart/CAPTCHA" valign="middle" onclick="this.src='/WebCart/CAPTCHA?<%=new Random().nextInt() %>'" >
 					<p />
 					<button type="reset" class="pure-button">清除</button>
 					<button type="submit" class="pure-button pure-button-primary">登入</button><p />
