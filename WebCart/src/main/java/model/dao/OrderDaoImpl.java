@@ -83,6 +83,12 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
 			
 			pstmt.executeUpdate(); // 更新
 			
+			// 取得新增後自動生成的 order_id
+			ResultSet generateKeys = pstmt.getGeneratedKeys();
+			if(generateKeys.next()) { // 有一筆資料
+				orderId = generateKeys.getInt(1); // 取得新增後自動生成的 order_id
+			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -90,9 +96,21 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
 	}
 
 	@Override
-	public void addItem(OrderItem orderItem) {
-		// TODO Auto-generated method stub
+	public void addOrderItem(OrderItem orderItem) {
+		String sql = "insert into order_items(order_id, product_id, quantity, unit_price) values(?, ?, ? ,?)";
 		
+		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			
+			pstmt.setInt(1, orderItem.getOrderId());
+			pstmt.setInt(2, orderItem.getProductId());
+			pstmt.setInt(3, orderItem.getQuantity());
+			pstmt.setDouble(4, orderItem.getUnitPrice());
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
