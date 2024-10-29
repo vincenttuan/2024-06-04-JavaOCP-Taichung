@@ -83,8 +83,18 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
 	}
 
 	@Override
-	public void changeOrderStatus(String orderStatus) {
-		// TODO Auto-generated method stub
+	public void changeOrderStatus(Integer orderId, String orderStatus) {
+		String sql = "update orders set order_status = ? where order_id = ?";
+		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			
+			pstmt.setString(1, orderStatus);
+			pstmt.setInt(2, orderId);
+			
+			pstmt.executeUpdate(); // 更新
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	

@@ -19,5 +19,5 @@ public interface OrderDao {
 	public void addItem(OrderItem orderItem);
 	
 	// 變更訂單狀態(Finished(結帳), Pending, Cancel(取消))
-	public void changeOrderStatus(String orderStatus);
+	public void changeOrderStatus(Integer orderId, String orderStatus);
 }
