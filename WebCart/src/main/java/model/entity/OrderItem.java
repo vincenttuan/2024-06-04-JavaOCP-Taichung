@@ -5,7 +5,7 @@ public class OrderItem {
 	private Integer orderId;
 	private Integer productId;
 	private Integer quantity; // 購買數量
-	private Integer unitPrice; // 單價
+	private Double unitPrice; // 單價
 	
 	public Integer getItemId() {
 		return itemId;
@@ -31,10 +31,10 @@ public class OrderItem {
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
-	public Integer getUnitPrice() {
+	public Double getUnitPrice() {
 		return unitPrice;
 	}
-	public void setUnitPrice(Integer unitPrice) {
+	public void setUnitPrice(Double unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 	
