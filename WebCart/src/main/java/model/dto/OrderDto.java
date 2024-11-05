@@ -67,6 +67,13 @@ public class OrderDto {
 	public void setOrderStatus(String orderStatus) {
 		this.orderStatus = orderStatus;
 	}
+
+	@Override
+	public String toString() {
+		return "OrderDto [orderId=" + orderId + ", userId=" + userId + ", username=" + username + ", orderDate="
+				+ orderDate + ", totalPrice=" + totalPrice + ", orderStatus=" + orderStatus + ", orderItemDtos="
+				+ orderItemDtos + "]";
+	}
 	
 	
 	

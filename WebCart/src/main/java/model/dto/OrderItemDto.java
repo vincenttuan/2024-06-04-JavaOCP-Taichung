@@ -31,5 +31,11 @@ public class OrderItemDto {
 		this.unitPrice = unitPrice;
 	}
 	
+	@Override
+	public String toString() {
+		return "OrderItemDto [itemId=" + itemId + ", productName=" + productName + ", quantity=" + quantity
+				+ ", unitPrice=" + unitPrice + "]";
+	}
+	
 	
 }
