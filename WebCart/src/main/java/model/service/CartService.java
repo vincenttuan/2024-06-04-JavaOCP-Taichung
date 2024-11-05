@@ -12,7 +12,7 @@ public class CartService {
 	
 	private OrderDao orderDao = new OrderDaoImpl();
 	
-	public List<OrderDto> findAllOrdersByUserId(Integer userId) {
+	public List<OrderDto> findAllOrdersByUserId(Integer userId, String username) {
 		List<OrderDto> orderDtos = new ArrayList<>();
 		
 		// 從資料表抓出該使用者的原始訂單資料
@@ -26,7 +26,7 @@ public class CartService {
 			OrderDto orderDto = new OrderDto();
 			orderDto.setOrderId(order.getOrderId());
 			orderDto.setUserId(order.getUserId());
-			orderDto.setUsername(null);
+			orderDto.setUsername(username);
 			orderDto.setOrderDate(order.getOrderDate());
 			orderDto.setTotalPrice(order.getTotalPrice());
 			orderDto.setOrderStatus(order.getOrderStatus());

@@ -24,9 +24,10 @@ public class CartServlet extends HttpServlet {
 		HttpSession session = req.getSession();
 		UserDto userDto = (UserDto)session.getAttribute("userDto");
 		Integer userId = userDto.getUserId();
+		String username = userDto.getUsername();
 		
 		// 查詢該使用者的購物資料
-		List<OrderDto> orderDtos = cartService.findAllOrdersByUserId(userId);
+		List<OrderDto> orderDtos = cartService.findAllOrdersByUserId(userId, username);
 		
 		resp.getWriter().print(orderDtos);
 	}
