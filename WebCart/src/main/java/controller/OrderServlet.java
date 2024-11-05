@@ -35,6 +35,10 @@ public class OrderServlet extends HttpServlet {
 		resp.getWriter().println(Arrays.toString(ids));
 		resp.getWriter().println(Arrays.toString(prices));
 		resp.getWriter().println(Arrays.toString(amounts));
+		
+		// 將使用者的訂單資訊傳給 orderService
+		// orderService.addOrder(ids, prices, amounts);
+		
 	}
 	
 }
