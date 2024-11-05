@@ -29,6 +29,9 @@ public class OrderService {
 			Integer productId = Integer.parseInt(ids[i]);
 			Double price = Double.parseDouble(prices[i]);
 			Integer amount = Integer.parseInt(amounts[i]);
+			if(amount == 0) {
+				continue;
+			}
 			// 建立訂單明細物件
 			OrderItem orderItem = new OrderItem();
 			orderItem.setOrderId(orderId);
