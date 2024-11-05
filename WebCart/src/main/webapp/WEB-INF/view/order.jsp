@@ -25,10 +25,13 @@
 							<tr>
 								<td>
 									${ productDto.id }
-									<input type="text" name="id" value="${ productDto.id }" />
+									<input type="hidden" name="id" value="${ productDto.id }" />
 								</td>
 								<td>${ productDto.name }</td>
-								<td>${ productDto.price }</td>
+								<td>
+									${ productDto.price }
+									<input type="hidden" name="price" value="${ productDto.price }" />
+								</td>
 								<td>${ productDto.qty }</td>
 								<td><input type="number" min="0" max="${ productDto.qty }" value="0" name="amount"></td>
 							</tr>
