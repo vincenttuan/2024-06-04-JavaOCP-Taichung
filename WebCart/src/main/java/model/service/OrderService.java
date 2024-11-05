@@ -16,8 +16,8 @@ public class OrderService {
 		order.setOrderStatus("Pending");
 		order.setTotalPrice(0.0);
 		order.setUserId(userId);
-		
-		Integer orderId = orderDao.addOrder(order);
+		System.out.println(order);
+		//Integer orderId = orderDao.addOrder(order);
 		
 	}
 	
