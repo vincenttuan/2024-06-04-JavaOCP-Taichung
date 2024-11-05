@@ -2,7 +2,9 @@ package model.service;
 
 import model.dao.OrderDao;
 import model.dao.OrderDaoImpl;
+import model.dto.OrderItemDto;
 import model.entity.Order;
+import model.entity.OrderItem;
 
 public class OrderService {
 	
@@ -17,8 +19,17 @@ public class OrderService {
 		order.setTotalPrice(0.0);
 		order.setUserId(userId);
 		System.out.println(order);
+		// 新增訂單主檔並得到 orderId
 		Integer orderId = orderDao.addOrder(order);
 		System.out.println("orderId: " + orderId);
+		
+		OrderItem orderItem = new OrderItem();
+		orderItem.setOrderId(orderId);
+		orderItem.setProductId(1);
+		orderItem.setQuantity(10);
+		orderItem.setUnitPrice(30000.0);
+		// 新增訂單明細檔
+		orderDao.addOrderItem(orderItem);
 	}
 	
 }
