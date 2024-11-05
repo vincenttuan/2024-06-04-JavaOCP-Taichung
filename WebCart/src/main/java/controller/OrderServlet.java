@@ -28,8 +28,11 @@ public class OrderServlet extends HttpServlet {
 	// 訂購程序->到購物車 (存入到資料表中)
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String[] ids = req.getParameterValues("id");
 		String[] amounts = req.getParameterValues("amount");
-		resp.getWriter().print(Arrays.toString(amounts));
+		
+		resp.getWriter().println(Arrays.toString(ids));
+		resp.getWriter().println(Arrays.toString(amounts));
 	}
 	
 }

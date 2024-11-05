@@ -23,7 +23,10 @@
 					<tbody>
 						<c:forEach var="productDto" items="${ productDtos }">
 							<tr>
-								<td>${ productDto.id }</td>
+								<td>
+									${ productDto.id }
+									<input type="text" name="id" value="${ productDto.id }" />
+								</td>
 								<td>${ productDto.name }</td>
 								<td>${ productDto.price }</td>
 								<td>${ productDto.qty }</td>

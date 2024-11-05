@@ -9,8 +9,8 @@
 	<a href="/WebCart/user" style="text-decoration: none">使用者列表</a> |
 	<a href="/WebCart/order" style="text-decoration: none">購物</a> |
 	<a href="/WebCart/cart" style="text-decoration: none">🛒 購物車</a> | 
-	<a href="/WebCart/order/history" style="text-decoration: none">歷史訂單檔</a> | 
-	<a href="/WebCart/order/ranking" style="text-decoration: none">銷售統計圖</a> |
+	<a href="/WebCart/order/history" style="text-decoration: none">📄歷史訂單檔</a> | 
+	<a href="/WebCart/order/ranking" style="text-decoration: none">📊銷售統計圖</a> |
 	<c:if test="${ userDto eq null }">
 		<a href="/WebCart/login" style="text-decoration: none">🙆‍♀️ 登入</a> |
 	</c:if> 
