@@ -7,9 +7,9 @@
 		<title>Product 商品資料新增</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" >
 	</head>
-	<body style="padding: 15px">
+	<body>
 		<%@ include file="/WEB-INF/view/menu.jspf" %>
-		<div class="pure-form">
+		<div class="pure-form" style="padding: 15px">
 			<fieldset>
 				<legend>Product 商品資料新增</legend>
 				<form class="pure-form" enctype="multipart/form-data" method="post" action="/WebCart/product/add">

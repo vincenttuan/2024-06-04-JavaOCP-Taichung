@@ -9,9 +9,9 @@
 		<title>商品訂購單</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" >
 	</head>
-	<body style="padding: 15px">
+	<body>
 		<%@ include file="/WEB-INF/view/menu.jspf" %>
-		<form class="pure-form" method="post" action="/WebCart/order">
+		<form class="pure-form" method="post" action="/WebCart/order" style="padding: 15px">
 			<fieldset>
 				<legend>商品訂購單</legend>
 				<table class="pure-table pure-table-bordered">

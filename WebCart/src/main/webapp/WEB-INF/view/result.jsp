@@ -8,8 +8,9 @@
 		<title>結果頁面</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" >
 	</head>
-	<body style="padding: 15px">
-		<div class="pure-form">
+	<body>
+		<%@ include file="/WEB-INF/view/menu.jspf" %>
+		<div class="pure-form" style="padding: 15px">
 			<fieldset>
 				<legend>結果</legend>
 				${ result }<p />
