@@ -17,8 +17,8 @@ public class OrderService {
 		order.setTotalPrice(0.0);
 		order.setUserId(userId);
 		System.out.println(order);
-		//Integer orderId = orderDao.addOrder(order);
-		
+		Integer orderId = orderDao.addOrder(order);
+		System.out.println("orderId: " + orderId);
 	}
 	
 }
