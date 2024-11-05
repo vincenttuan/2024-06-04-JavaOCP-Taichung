@@ -17,6 +17,8 @@ public class CartService {
 		
 		// 從資料表抓出該使用者的原始訂單資料
 		List<Order> orders = orderDao.findAllOrdersByUserId(userId);
+		System.out.println("orders 筆數: " + orders.size());
+		
 		for(Order order : orders) {
 			// cart 的 orderStatus 必須是 Pending, 若不是 Pending 則不做事
 			if(!order.getOrderStatus().equals("Pending")) {
@@ -33,7 +35,7 @@ public class CartService {
 			// 注入到 orderDtos
 			orderDtos.add(orderDto);
 		}
-		
+		System.out.println("orderDtos 筆數: " + orderDtos.size());
 		return orderDtos;
 	}
 }
