@@ -10,12 +10,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.dto.ProductDto;
+import model.service.OrderService;
 import model.service.ProductService;
 
 @WebServlet("/order")
 public class OrderServlet extends HttpServlet {
 	
 	private ProductService productService = new ProductService();
+	private OrderService orderService = new OrderService();
 	
 	// 訂購頁面
 	@Override
@@ -37,8 +39,8 @@ public class OrderServlet extends HttpServlet {
 		resp.getWriter().println(Arrays.toString(amounts));
 		
 		// 將使用者的訂單資訊傳給 orderService
-		// orderService.addOrder(ids, prices, amounts);
-		
+		orderService.addOrder(ids, prices, amounts);
+		resp.getWriter().println("Order OK!");
 	}
 	
 }
