@@ -23,13 +23,20 @@ public class OrderService {
 		Integer orderId = orderDao.addOrder(order);
 		System.out.println("orderId: " + orderId);
 		
-		OrderItem orderItem = new OrderItem();
-		orderItem.setOrderId(orderId);
-		orderItem.setProductId(1);
-		orderItem.setQuantity(10);
-		orderItem.setUnitPrice(30000.0);
-		// 新增訂單明細檔
-		orderDao.addOrderItem(orderItem);
+		for(int i=0;i<ids.length;i++) {
+			Integer productId = Integer.parseInt(ids[i]);
+			Double price = Double.parseDouble(prices[i]);
+			Integer amount = Integer.parseInt(amounts[i]);
+			
+			OrderItem orderItem = new OrderItem();
+			orderItem.setOrderId(orderId);
+			orderItem.setProductId(productId);
+			orderItem.setQuantity(amount);
+			orderItem.setUnitPrice(price);
+			// 新增訂單明細檔
+			orderDao.addOrderItem(orderItem);
+		}
+		
 	}
 	
 }
