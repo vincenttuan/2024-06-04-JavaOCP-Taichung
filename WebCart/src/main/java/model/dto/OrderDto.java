@@ -74,7 +74,6 @@ public class OrderDto {
 				+ orderDate + ", totalPrice=" + totalPrice + ", orderStatus=" + orderStatus + ", orderItemDtos="
 				+ orderItemDtos + "]";
 	}
-	
-	
+
 	
 }
