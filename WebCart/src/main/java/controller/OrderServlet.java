@@ -9,7 +9,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.dto.ProductDto;
+import model.dto.UserDto;
 import model.service.OrderService;
 import model.service.ProductService;
 
@@ -38,8 +40,13 @@ public class OrderServlet extends HttpServlet {
 		resp.getWriter().println(Arrays.toString(prices));
 		resp.getWriter().println(Arrays.toString(amounts));
 		
+		// 因為要取得 userId, 所以可以從 session 變數中得到 UserDto 物件
+		HttpSession session = req.getSession();
+		UserDto userDto = (UserDto)session.getAttribute("userDto");
+		Integer userId = userDto.getUserId(); // 取的 user id
+		
 		// 將使用者的訂單資訊傳給 orderService
-		orderService.addOrder(ids, prices, amounts);
+		orderService.addOrder(userId, ids, prices, amounts);
 		resp.getWriter().println("Order OK!");
 	}
 	
