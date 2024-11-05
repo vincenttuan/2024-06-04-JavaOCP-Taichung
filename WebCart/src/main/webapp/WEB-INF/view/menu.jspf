@@ -14,7 +14,9 @@
 	<c:if test="${ userDto eq null }">
 		<a href="/WebCart/login" style="text-decoration: none">🙆‍♀️ 登入</a> |
 	</c:if> 
-	<a href="/WebCart/logout" style="text-decoration: none">🚪 登出</a> | 
+	<c:if test="${ userDto ne null }">
+		<a href="/WebCart/logout" style="text-decoration: none">🚪 登出</a> |
+	</c:if>
 	<a href="/WebCart/index.jsp" style="text-decoration: none">🏠 回首頁</a>
 </div>
 
