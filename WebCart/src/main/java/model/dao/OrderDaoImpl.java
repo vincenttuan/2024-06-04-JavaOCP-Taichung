@@ -3,6 +3,7 @@ package model.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +75,7 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
 	public Integer addOrder(Order order) {
 		String sql = "insert into orders(user_id, order_date, total_price, order_status) values(?, ?, ?, ?)";
 		Integer orderId = null; // 得到新增 orders 後的 order_id 資料
-		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+		try(PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 			
 			pstmt.setInt(1, order.getUserId());
 			pstmt.setString(2, order.getOrderDate());
