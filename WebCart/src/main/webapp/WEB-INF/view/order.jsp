@@ -25,7 +25,7 @@
 							<tr>
 								<td>
 									${ productDto.id }
-									<input type="hidden" name="id" value="${ productDto.id }" />
+									<input type="hidden" name="productId" value="${ productDto.id }" />
 								</td>
 								<td>${ productDto.name }</td>
 								<td>

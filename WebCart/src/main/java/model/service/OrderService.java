@@ -11,7 +11,7 @@ public class OrderService {
 	private OrderDao orderDao = new OrderDaoImpl();
 	
 	// 新增訂單到購物車
-	public void addOrder(Integer userId, String[] ids, String[] prices, String[] amounts) {
+	public void addOrder(Integer userId, String[] productIds, String[] prices, String[] amounts) {
 		// 建立訂單主檔物件
 		Order order = new Order();
 		order.setOrderDate("2024-11-05");
@@ -25,8 +25,8 @@ public class OrderService {
 		System.out.println("orderId: " + orderId);
 		
 		// 新增訂單明細檔
-		for(int i=0;i<ids.length;i++) {
-			Integer productId = Integer.parseInt(ids[i]);
+		for(int i=0;i<productIds.length;i++) {
+			Integer productId = Integer.parseInt(productIds[i]);
 			Double price = Double.parseDouble(prices[i]);
 			Integer amount = Integer.parseInt(amounts[i]);
 			if(amount == 0) {

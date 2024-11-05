@@ -32,11 +32,11 @@ public class OrderServlet extends HttpServlet {
 	// 訂購程序->到購物車 (存入到資料表中)
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String[] ids = req.getParameterValues("id");
+		String[] productIds = req.getParameterValues("productId");
 		String[] prices = req.getParameterValues("price");
 		String[] amounts = req.getParameterValues("amount");
 		
-		resp.getWriter().println(Arrays.toString(ids));
+		resp.getWriter().println(Arrays.toString(productIds));
 		resp.getWriter().println(Arrays.toString(prices));
 		resp.getWriter().println(Arrays.toString(amounts));
 		
@@ -46,7 +46,7 @@ public class OrderServlet extends HttpServlet {
 		Integer userId = userDto.getUserId(); // 取的 user id
 		
 		// 將使用者的訂單資訊傳給 orderService
-		orderService.addOrder(userId, ids, prices, amounts);
+		orderService.addOrder(userId, productIds, prices, amounts);
 		resp.getWriter().println("Order OK!");
 	}
 	
