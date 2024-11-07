@@ -12,7 +12,7 @@ import model.entity.OrderItem;
 public class OrderService {
 	
 	private OrderDao orderDao = new OrderDaoImpl();
-	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd E");
+	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
 	// 新增訂單到購物車
 	public void addOrder(Integer userId, String[] productIds, String[] prices, String[] amounts) {
