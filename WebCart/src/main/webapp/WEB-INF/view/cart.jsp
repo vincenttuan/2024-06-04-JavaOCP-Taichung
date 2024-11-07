@@ -21,6 +21,7 @@
 						<tr>
 							<th>訂單編號</th><th>使用者編號</th><th>使用者姓名</th>
 							<th>訂單日期</th><th>訂單金額</th><th>訂單狀態</th>
+							<th>訂單細目</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -32,6 +33,7 @@
 								<td>${ orderDto.orderDate }</td>
 								<td>${ orderDto.totalPrice }</td>
 								<td>${ orderDto.orderStatus }</td>
+								<td>${ orderDto.orderItemDtos }</td>
 							</tr>
 						</c:forEach>
 					</tbody>
