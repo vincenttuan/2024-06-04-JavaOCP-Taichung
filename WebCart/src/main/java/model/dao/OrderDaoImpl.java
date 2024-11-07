@@ -131,5 +131,37 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
 		}
 		
 	}
+
+	@Override
+	public List<OrderItem> findAllOrderItemsByUserId(Integer userId) {
+		String sql = "select item_id, order_id, product_id, quantity, unit_price from order_items " +
+					 "where order_id in (SELECT order_id FROM orders where user_id = ?)";
+		
+		List<OrderItem> orderItems = new ArrayList<>();
+		
+		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			
+			pstmt.setInt(1, userId);
+			
+			try(ResultSet rs = pstmt.executeQuery()) {
+				
+				while (rs.next()) {
+					OrderItem orderItem = new OrderItem();
+					orderItem.setItemId(rs.getInt("item_id"));
+					orderItem.setOrderId(rs.getInt("order_id"));
+					orderItem.setProductId(rs.getInt("product_id"));
+					orderItem.setQuantity(rs.getInt("quantity"));
+					orderItem.setUnitPrice(rs.getDouble("unit_price"));
+					orderItems.add(orderItem);
+				}
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return orderItems;
+	}
 	
 }
