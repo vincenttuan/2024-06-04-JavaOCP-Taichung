@@ -26,7 +26,13 @@ public class CartServlet extends HttpServlet {
 		Integer userId = userDto.getUserId();
 		String username = userDto.getUsername();
 		
+		// 編碼 UTF-8 (不透過 JSP 解決中文呈現問題)
+		req.setCharacterEncoding("utf-8");
+		resp.setCharacterEncoding("utf-8");
+		resp.setContentType("text/plain;charset=utf-8");
+		
 		// 查詢該使用者的購物資料
+		resp.getWriter().println("購物車資料");
 		List<OrderDto> orderDtos = cartService.findAllOrdersByUserId(userId, username);
 		
 		resp.getWriter().print(orderDtos);

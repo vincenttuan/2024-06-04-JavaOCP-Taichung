@@ -37,7 +37,7 @@ public class OrderServlet extends HttpServlet {
 		String[] prices = req.getParameterValues("price");
 		String[] amounts = req.getParameterValues("amount");
 		
-		resp.getWriter().println("購物車資料");
+		
 		resp.getWriter().println(Arrays.toString(productIds));
 		resp.getWriter().println(Arrays.toString(prices));
 		resp.getWriter().println(Arrays.toString(amounts));
