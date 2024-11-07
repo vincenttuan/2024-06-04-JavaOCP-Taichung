@@ -6,7 +6,9 @@ import java.util.List;
 import model.dao.OrderDao;
 import model.dao.OrderDaoImpl;
 import model.dto.OrderDto;
+import model.dto.OrderItemDto;
 import model.entity.Order;
+import model.entity.OrderItem;
 
 public class CartService {
 	
@@ -33,8 +35,18 @@ public class CartService {
 			orderDto.setTotalPrice(order.getTotalPrice());
 			orderDto.setOrderStatus(order.getOrderStatus());
 			
-			// 注入訂單細目
-			orderDto.addOrderItemDto(null);
+			// 找到該訂單的所有細目
+			List<OrderItem> orderItems = orderDao.findAllOrderItemsByOrderId(order.getOrderId());
+			// 逐筆注入訂單細目
+			for(OrderItem orderItem : orderItems) {
+				OrderItemDto orderItemDto = new OrderItemDto();
+				orderItemDto.setItemId(orderItem.getItemId());
+				orderItemDto.setProductName(null);
+				orderItemDto.setQuantity(orderItem.getQuantity());
+				orderItemDto.setUnitPrice(orderItem.getUnitPrice());
+				// 注入訂單細目
+				orderDto.addOrderItemDto(orderItemDto);
+			}
 			
 			// 注入到 orderDtos
 			orderDtos.add(orderDto);
