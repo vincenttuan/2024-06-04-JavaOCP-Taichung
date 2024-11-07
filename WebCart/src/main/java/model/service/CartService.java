@@ -33,6 +33,9 @@ public class CartService {
 			orderDto.setTotalPrice(order.getTotalPrice());
 			orderDto.setOrderStatus(order.getOrderStatus());
 			
+			// 注入訂單細目
+			orderDto.addOrderItemDto(null);
+			
 			// 注入到 orderDtos
 			orderDtos.add(orderDto);
 			
