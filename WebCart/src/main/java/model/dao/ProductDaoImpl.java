@@ -83,7 +83,25 @@ public class ProductDaoImpl extends BaseDao implements ProductDao {
 
 	@Override
 	public Product getOne(Integer productId) {
-		// TODO Auto-generated method stub
+		String sql = "select product_id, product_name, price, qty, image_base64 from product where product_id = ?";
+		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, productId);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				// 建立 Product 物件
+				Product product = new Product();
+				product.setProductId(rs.getInt("product_id"));
+				product.setProductName(rs.getString("product_name"));
+				product.setPrice(rs.getInt("price"));
+				product.setQty(rs.getInt("qty"));
+				product.setImageBase64(rs.getString("image_base64"));
+				return product;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
