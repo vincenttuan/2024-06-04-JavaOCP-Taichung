@@ -67,6 +67,10 @@ public class OrderDto {
 	public void setOrderStatus(String orderStatus) {
 		this.orderStatus = orderStatus;
 	}
+	
+	public List<OrderItemDto> getOrderItemDtos() {
+		return orderItemDtos;
+	}
 
 	@Override
 	public String toString() {
