@@ -5,14 +5,18 @@ import java.util.List;
 
 import model.dao.OrderDao;
 import model.dao.OrderDaoImpl;
+import model.dao.ProductDao;
+import model.dao.ProductDaoImpl;
 import model.dto.OrderDto;
 import model.dto.OrderItemDto;
 import model.entity.Order;
 import model.entity.OrderItem;
+import model.entity.Product;
 
 public class CartService {
 	
 	private OrderDao orderDao = new OrderDaoImpl();
+	private ProductDao productDao = new ProductDaoImpl();
 	
 	public List<OrderDto> findAllOrdersByUserId(Integer userId, String username) {
 		List<OrderDto> orderDtos = new ArrayList<>();
@@ -41,7 +45,12 @@ public class CartService {
 			for(OrderItem orderItem : orderItems) {
 				OrderItemDto orderItemDto = new OrderItemDto();
 				orderItemDto.setItemId(orderItem.getItemId());
-				orderItemDto.setProductName(null);
+				
+				Product product = productDao.getOne(orderItem.getProductId());
+				if(product != null) {
+					orderItemDto.setProductName(product.getProductName());
+				}
+				
 				orderItemDto.setQuantity(orderItem.getQuantity());
 				orderItemDto.setUnitPrice(orderItem.getUnitPrice());
 				// 注入訂單細目
