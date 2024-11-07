@@ -1,5 +1,8 @@
 package model.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import model.dao.OrderDao;
 import model.dao.OrderDaoImpl;
 import model.dto.OrderItemDto;
@@ -9,12 +12,13 @@ import model.entity.OrderItem;
 public class OrderService {
 	
 	private OrderDao orderDao = new OrderDaoImpl();
+	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd E");
 	
 	// 新增訂單到購物車
 	public void addOrder(Integer userId, String[] productIds, String[] prices, String[] amounts) {
 		// 建立訂單主檔物件
 		Order order = new Order();
-		order.setOrderDate("2024-11-05");
+		order.setOrderDate(sdf.format(new Date()));
 		order.setOrderStatus("Pending");
 		order.setTotalPrice(0.0);
 		order.setUserId(userId);
