@@ -51,6 +51,9 @@ public class OrderServlet extends HttpServlet {
 		//resp.getWriter().println("Order OK!");
 		
 		req.setAttribute("result", "訂單成功, 請至購物車查看");
+		req.setAttribute("redirectURL", "/WebCart/cart");
+		req.setAttribute("redirectName", "購物車");
+		
 		req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 	}
 	
