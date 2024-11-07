@@ -50,7 +50,7 @@ public class OrderServlet extends HttpServlet {
 		orderService.addOrder(userId, productIds, prices, amounts);
 		//resp.getWriter().println("Order OK!");
 		
-		req.setAttribute("message", "訂單成功, 請至購物車查看");
+		req.setAttribute("result", "訂單成功, 請至購物車查看");
 		req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 	}
 	
