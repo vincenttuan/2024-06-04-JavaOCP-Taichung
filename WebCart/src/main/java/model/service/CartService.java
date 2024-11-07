@@ -32,8 +32,11 @@ public class CartService {
 			orderDto.setOrderDate(order.getOrderDate());
 			orderDto.setTotalPrice(order.getTotalPrice());
 			orderDto.setOrderStatus(order.getOrderStatus());
+			
 			// 注入到 orderDtos
 			orderDtos.add(orderDto);
+			
+			
 		}
 		System.out.println("orderDtos 筆數: " + orderDtos.size());
 		return orderDtos;
