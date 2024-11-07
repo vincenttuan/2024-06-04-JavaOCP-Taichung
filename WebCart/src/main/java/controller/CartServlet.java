@@ -35,7 +35,9 @@ public class CartServlet extends HttpServlet {
 		resp.getWriter().println("購物車資料");
 		List<OrderDto> orderDtos = cartService.findAllOrdersByUserId(userId, username);
 		
-		resp.getWriter().print(orderDtos);
+		//resp.getWriter().print(orderDtos);
+		req.setAttribute("orderDtos", orderDtos);
+		req.getRequestDispatcher("/WEB-INF/view/cart.jsp").forward(req, resp);
 	}
 	
 }
