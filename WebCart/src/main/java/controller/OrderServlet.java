@@ -37,10 +37,9 @@ public class OrderServlet extends HttpServlet {
 		String[] prices = req.getParameterValues("price");
 		String[] amounts = req.getParameterValues("amount");
 		
-		
-		resp.getWriter().println(Arrays.toString(productIds));
-		resp.getWriter().println(Arrays.toString(prices));
-		resp.getWriter().println(Arrays.toString(amounts));
+		//resp.getWriter().println(Arrays.toString(productIds));
+		//resp.getWriter().println(Arrays.toString(prices));
+		//resp.getWriter().println(Arrays.toString(amounts));
 		
 		// 因為要取得 userId, 所以可以從 session 變數中得到 UserDto 物件
 		HttpSession session = req.getSession();
@@ -49,7 +48,10 @@ public class OrderServlet extends HttpServlet {
 		
 		// 將使用者的訂單資訊傳給 orderService
 		orderService.addOrder(userId, productIds, prices, amounts);
-		resp.getWriter().println("Order OK!");
+		//resp.getWriter().println("Order OK!");
+		
+		req.setAttribute("message", "訂單成功, 請至購物車查看");
+		req.getRequestDispatcher("/WEB-INF/view/result.jsp").forward(req, resp);
 	}
 	
 }
