@@ -51,6 +51,8 @@ public class OrderService {
 	// 修改訂單狀態-Cancel
 	public void orderCancel(Integer orderId) {
 		orderDao.changeOrderStatus(orderId, "Cancel");
+		// 3.庫存回補
+		
 	}
 	
 	// 新增訂單到購物車
