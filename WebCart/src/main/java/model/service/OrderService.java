@@ -59,9 +59,21 @@ public class OrderService {
 		Order order = new Order();
 		order.setOrderDate(sdf.format(new Date()));
 		order.setOrderStatus("Pending");
-		order.setTotalPrice(0.0);
+		//order.setTotalPrice(0.0);
 		order.setUserId(userId);
 		System.out.println(order);
+		// total 自行加總 -----------------------------------
+		double total = 0.0;
+		for(int i=0;i<productIds.length;i++) {
+			Double price = Double.parseDouble(prices[i]);
+			Integer amount = Integer.parseInt(amounts[i]);
+			if(amount == 0) {
+				continue;
+			}
+			total += price * amount;
+		}
+		order.setTotalPrice(total);
+		// ------------------------------------------------
 		
 		// 新增訂單主檔並得到 orderId
 		Integer orderId = orderDao.addOrder(order);
