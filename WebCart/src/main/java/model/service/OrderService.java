@@ -1,10 +1,14 @@
 package model.service;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import model.dao.OrderDao;
 import model.dao.OrderDaoImpl;
+import model.dto.OrderDto;
 import model.dto.OrderItemDto;
 import model.entity.Order;
 import model.entity.OrderItem;
@@ -13,6 +17,31 @@ public class OrderService {
 	
 	private OrderDao orderDao = new OrderDaoImpl();
 	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	
+	// 取得歷史訂單檔
+	public List<OrderDto> findAllOrderHistoryByUserId(Integer userId) {
+		// 得到所有訂單資料(含: Pending, Finished, Cancel)
+		List<Order> orders = orderDao.findAllOrdersByUserId(userId);
+		// 將 orders 的訂單濾掉 "Pending"
+		List<Order> orderHistories = orders.stream()
+								.filter(order -> !order.getOrderStatus().equals("Pending"))
+								.collect(Collectors.toList());
+		// Order 轉 OrderDto
+		List<OrderDto> orderDtos = new ArrayList<>();
+		orderHistories.forEach(order -> {
+			OrderDto orderDto = new OrderDto();
+			orderDto.setOrderId(order.getOrderId());
+			orderDto.setOrderDate(order.getOrderDate());
+			orderDto.setOrderStatus(order.getOrderStatus());
+			orderDto.setTotalPrice(order.getTotalPrice());
+			orderDto.setUserId(order.getUserId());
+			// 注入到 orderDtos
+			orderDtos.add(orderDto);
+		});
+		
+		return orderDtos;
+		
+	}
 	
 	// 修改訂單狀態-Finished
 	public void orderFinished(Integer orderId) {
