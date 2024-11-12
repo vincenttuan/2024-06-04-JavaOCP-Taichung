@@ -129,3 +129,24 @@ INSERT INTO order_items (order_id, product_id, quantity, unit_price) VALUES
 (4, 5, 1, 8000.00),
 (5, 2, 1, 15000.00),
 (5, 3, 1, 3000.00);
+
+-- ProductSalesSummary 產品銷售統計
+-- 這個查詢通過連接三個表（order_items、product 和 orders），
+-- 並使用條件 order_status = 'Finished' 來篩選已完成訂單的商品銷售數據。
+-- 最終結果會返回每個商品的 ID、名稱以及其在已完成訂單中的銷售總額，並按照銷售總額遞減排序。
+SELECT 
+    p.product_id,
+    p.product_name,
+    SUM(oi.quantity * oi.unit_price) AS total
+FROM 
+    web.order_items oi
+JOIN 
+    web.product p ON oi.product_id = p.product_id
+JOIN 
+    web.orders o ON oi.order_id = o.order_id
+WHERE 
+    o.order_status = 'Finished'
+GROUP BY 
+    p.product_id, p.product_name
+ORDER BY 
+    total DESC;
