@@ -32,7 +32,7 @@ public class CartServlet extends HttpServlet {
 		resp.setContentType("text/plain;charset=utf-8");
 		
 		// 查詢該使用者的購物資料
-		resp.getWriter().println("購物車資料");
+		//resp.getWriter().println("購物車資料");
 		List<OrderDto> orderDtos = cartService.findAllOrdersByUserId(userId, username);
 		
 		//resp.getWriter().print(orderDtos);
