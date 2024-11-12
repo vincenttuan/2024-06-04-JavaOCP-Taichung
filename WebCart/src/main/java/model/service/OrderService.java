@@ -14,6 +14,16 @@ public class OrderService {
 	private OrderDao orderDao = new OrderDaoImpl();
 	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
+	// 修改訂單狀態-Finished
+	public void orderFinished(Integer orderId) {
+		orderDao.changeOrderStatus(orderId, "Finished");
+	}
+	
+	// 修改訂單狀態-Cancel
+	public void orderCancel(Integer orderId) {
+		orderDao.changeOrderStatus(orderId, "Cancel");
+	}
+	
 	// 新增訂單到購物車
 	public void addOrder(Integer userId, String[] productIds, String[] prices, String[] amounts) {
 		// 建立訂單主檔物件
