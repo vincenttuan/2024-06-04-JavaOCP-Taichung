@@ -21,11 +21,11 @@
 	        var data = google.visualization.arrayToDataTable([
 	          ['product name', 'total'],
 	          
-	          <c:foreach var="pss" items="${productSalesSummaries}">
+	          <c:forEach var="pss" items="${productSalesSummaries}">
 	          
 	          	['${pss.productName}', ${pss.total}],
 	          	
-	          </c:foreach>
+	          </c:forEach>
 	          	
 	        ]);
 	
