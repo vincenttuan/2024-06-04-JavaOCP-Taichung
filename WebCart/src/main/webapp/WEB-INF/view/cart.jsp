@@ -19,6 +19,7 @@
 				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
+							<th>取消</th><th>結帳</th>
 							<th>訂單編號</th><th>使用者編號</th><th>使用者姓名</th>
 							<th>訂單日期</th><th>訂單金額</th><th>訂單狀態</th>
 							<th>訂單細目</th>
@@ -27,6 +28,8 @@
 					<tbody>
 						<c:forEach var="orderDto" items="${ orderDtos }">
 							<tr>
+								<td><a href="/WebCart/order/cancel?orderId=${ orderDto.orderId }">✂</a></td>
+								<td><a href="/WebCart/order/submit?orderId=${ orderDto.orderId }">💰</a></a></td>
 								<td>${ orderDto.orderId }</td>
 								<td>${ orderDto.userId }</td>
 								<td>${ orderDto.username }</td>
