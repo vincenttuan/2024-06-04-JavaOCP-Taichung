@@ -52,8 +52,14 @@
 				<legend>訂單統計資料</legend>
 				${ productSalesSummaries }
 				
-				<div id="piechart" style="width: 900px; height: 500px;"></div>
-				<div id="barchart" style="width: 900px; height: 500px;"></div>
+				<table>
+					<td valign="top">
+						<div id="piechart" style="width: 800px; height: 500px;"></div>
+					</td valign>
+					<td>
+						<div id="barchart" style="width: 800px; height: 500px;"></div>
+					</td>
+				</table>
 				
 			</fieldset>
 		</div>
