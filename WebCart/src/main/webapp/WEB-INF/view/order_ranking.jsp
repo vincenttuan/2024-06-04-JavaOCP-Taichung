@@ -30,15 +30,17 @@
 	        ]);
 	
 	        var options = {
-	          title: 'Product Sales Summaries'
+	          title: 'Product Sales Summaries',
+	          is3D: true
 	        };
 	
-	        //var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-			//var chart = new google.visualization.ColumnChart(document.getElementById('piechart'));
-			var chart = new google.visualization.BarChart(document.getElementById('piechart'));
-			//var chart = new google.visualization.LineChart(document.getElementById('piechart'));
+	        var chart1 = new google.visualization.PieChart(document.getElementById('piechart'));
+			//var chart2 = new google.visualization.ColumnChart(document.getElementById('piechart'));
+			var chart3 = new google.visualization.BarChart(document.getElementById('barchart'));
+			//var chart4 = new google.visualization.LineChart(document.getElementById('piechart'));
 			
-	        chart.draw(data, options);
+	        chart1.draw(data, options);
+	        chart3.draw(data, options);
 	      }
 	    </script>
 	
@@ -51,6 +53,7 @@
 				${ productSalesSummaries }
 				
 				<div id="piechart" style="width: 900px; height: 500px;"></div>
+				<div id="barchart" style="width: 900px; height: 500px;"></div>
 				
 			</fieldset>
 		</div>
