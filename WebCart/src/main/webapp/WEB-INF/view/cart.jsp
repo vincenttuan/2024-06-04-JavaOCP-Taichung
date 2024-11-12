@@ -28,8 +28,8 @@
 					<tbody>
 						<c:forEach var="orderDto" items="${ orderDtos }">
 							<tr>
-								<td><a href="/WebCart/order/cancel?orderId=${ orderDto.orderId }">✂</a></td>
-								<td><a href="/WebCart/order/submit?orderId=${ orderDto.orderId }">💰</a></a></td>
+								<td><a title="按我一下可以取消訂單" href="/WebCart/order/cancel?orderId=${ orderDto.orderId }">✂</a></td>
+								<td><a title="按我一下可以進行結帳" href="/WebCart/order/submit?orderId=${ orderDto.orderId }">💰</a></a></td>
 								<td>${ orderDto.orderId }</td>
 								<td>${ orderDto.userId }</td>
 								<td>${ orderDto.username }</td>
