@@ -33,8 +33,11 @@
 	          title: 'Product Sales Summaries'
 	        };
 	
-	        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-	
+	        //var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+			//var chart = new google.visualization.ColumnChart(document.getElementById('piechart'));
+			var chart = new google.visualization.BarChart(document.getElementById('piechart'));
+			//var chart = new google.visualization.LineChart(document.getElementById('piechart'));
+			
 	        chart.draw(data, options);
 	      }
 	    </script>
