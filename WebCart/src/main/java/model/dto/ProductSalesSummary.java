@@ -25,4 +25,10 @@ public class ProductSalesSummary {
 		this.total = total;
 	}
 	
+	@Override
+	public String toString() {
+		return "ProductSalesSummary [productId=" + productId + ", productName=" + productName + ", total=" + total
+				+ "]";
+	}
+	
 }
