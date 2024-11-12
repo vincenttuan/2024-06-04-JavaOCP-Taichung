@@ -87,6 +87,12 @@ public class OrderService {
 			if(amount == 0) {
 				continue;
 			}
+			
+			// 1.檢查商品庫存是否足夠
+			
+			// 2.預扣庫存
+			
+			
 			// 建立訂單明細物件
 			OrderItem orderItem = new OrderItem();
 			orderItem.setOrderId(orderId);
