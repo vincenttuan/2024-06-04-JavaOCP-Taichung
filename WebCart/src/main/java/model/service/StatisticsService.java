@@ -9,7 +9,7 @@ import model.dto.ProductSalesSummary;
 public class StatisticsService {
 	private Statistics statistics = new StatisticsImpl();
 	
-	private List<ProductSalesSummary> getProductSalesSummaries() {
+	public List<ProductSalesSummary> getProductSalesSummaries() {
 		return statistics.getProductSalesSummaries();
 	}
 }
