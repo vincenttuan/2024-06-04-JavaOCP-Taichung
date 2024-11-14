@@ -35,9 +35,11 @@ public class WebController {
 	 * */
 	@GetMapping("/bmi")
 	@ResponseBody
-	public String getBmi(@RequestParam double h, @RequestParam double w) {
+	public String getBmi(@RequestParam("h") double h, @RequestParam("w") double w) {
 		double bmi = w / Math.pow(h/100, 2);
 		return String.format("BMI %.2f", bmi);
 	}
+	
+	
 	
 }
