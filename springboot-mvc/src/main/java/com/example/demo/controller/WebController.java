@@ -25,7 +25,7 @@ public class WebController {
 	 * */
 	@GetMapping("/hello")
 	@ResponseBody
-	public String hello(@RequestParam String name) {
+	public String hello(@RequestParam(required = false, defaultValue = "班長") String name) {
 		return "Hello " + name;
 	}
 	
