@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.model.entity.Student;
+
 @Controller
 public class WebController {
 	
@@ -100,6 +102,12 @@ public class WebController {
 	 * 學生資料
 	 * 網址: /student3?name=John&age=18&score=90 
 	 * */
-	
+	@GetMapping("/student3")
+	@ResponseBody
+	public String getStudent3(Student student) {
+		// ... 其他處理
+		System.out.println(student); // 印在 Console
+		return String.format("學生姓名: %s 年齡: %d 成績: %d", student.getName(), student.getAge(), student.getScore());
+	}
 	
 }
