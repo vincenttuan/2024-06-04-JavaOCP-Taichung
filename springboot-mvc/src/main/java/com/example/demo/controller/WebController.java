@@ -85,9 +85,9 @@ public class WebController {
 	/**
 	 * 多參數的應用 
 	 * 學生資料
-	 * 網址: /student?name=John&age=18&score=90 
+	 * 網址: /student2?name=John&age=18&score=90 
 	 * */
-	@GetMapping("/student")
+	@GetMapping("/student2")
 	@ResponseBody
 	public String getStudent2(Map<String, String> map) {
 		// ... 其他處理
