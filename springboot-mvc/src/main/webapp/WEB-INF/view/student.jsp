@@ -5,9 +5,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Student</title>
 	</head>
 	<body>
-		<h1></h1>
+		<h1>${ student.name }</h1>
+		<h2>年齡: ${ student.age }</h2>
+		<h2>分數: ${ student.score }</h2>
+		<h2>判定: ${ student.score ge 60 ? "及格" : "不及格" }</h2>
 	</body>
 </html>
