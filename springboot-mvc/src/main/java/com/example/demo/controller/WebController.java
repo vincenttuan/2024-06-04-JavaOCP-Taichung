@@ -136,6 +136,8 @@ public class WebController {
 		System.out.println(student); // 印在 Console
 		String message = "Hello"; // 自訂參數
 		model.addAttribute("message", message); // 透過 model 帶給 jsp (相當於 req.setAtrtribute("message", message))
+		Map<String, String> foodMap = Map.of("food", "巧克力", "price", "30"); 
+		model.addAllAttributes(foodMap);
 		return "student"; // 自動分派 => /WEB-INF/view/student.jsp
 	}
 	
