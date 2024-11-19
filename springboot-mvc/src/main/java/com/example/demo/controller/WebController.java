@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,6 +68,30 @@ public class WebController {
 		List<String> employees = List.of("John", "Mary", "Jack", "Rose");
 		String employee = employees.get(id);
 		return employee;
+	}
+	
+	/**
+	 * 多參數的應用 
+	 * 學生資料
+	 * 網址: /student?name=John&age=18&score=90 
+	 * */
+	@GetMapping("/student")
+	@ResponseBody
+	public String getStudent(@RequestParam String name, @RequestParam Integer age, @RequestParam Integer score) {
+		// ... 其他處理
+		return String.format("學生姓名: %s 年齡: %d 成績: %d", name, age, score);
+	}
+	
+	/**
+	 * 多參數的應用 
+	 * 學生資料
+	 * 網址: /student?name=John&age=18&score=90 
+	 * */
+	@GetMapping("/student")
+	@ResponseBody
+	public String getStudent2(Map<String, String> map) {
+		// ... 其他處理
+		return String.format("學生姓名: %s 年齡: %s 成績: %s", map.get("name"), map.get("age"), map.get("score"));
 	}
 	
 }
