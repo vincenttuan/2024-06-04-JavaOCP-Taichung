@@ -110,4 +110,17 @@ public class WebController {
 		return String.format("學生姓名: %s 年齡: %d 成績: %d", student.getName(), student.getAge(), student.getScore());
 	}
 	
+	/**
+	 * 多參數的應用 自動回應 json 格式
+	 * 學生資料
+	 * 網址: /student4?name=John&age=18&score=90 
+	 * */
+	@GetMapping("/student4")
+	@ResponseBody
+	public Student getStudent4(Student student) {
+		// ... 其他處理
+		System.out.println(student); // 印在 Console
+		return student; // 會將物件自動轉 json 格式輸出
+	}
+	
 }
