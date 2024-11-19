@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -49,6 +50,20 @@ public class WebController {
 	@GetMapping("/employee")
 	@ResponseBody
 	public String getEmployee(@RequestParam Integer id) {
+		List<String> employees = List.of("John", "Mary", "Jack", "Rose");
+		String employee = employees.get(id);
+		return employee;
+	}
+	
+	/**
+	 * 路徑參數
+	 * 尋找指定員工
+	 * 網址: /employee/1
+	 * 網址: /employee/2
+	 */
+	@GetMapping("/employee/{id}")
+	@ResponseBody
+	public String getEmployee2(@PathVariable Integer id) {
 		List<String> employees = List.of("John", "Mary", "Jack", "Rose");
 		String employee = employees.get(id);
 		return employee;
