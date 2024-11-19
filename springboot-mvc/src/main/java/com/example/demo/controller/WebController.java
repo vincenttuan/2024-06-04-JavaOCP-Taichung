@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +41,17 @@ public class WebController {
 		return String.format("BMI %.2f", bmi);
 	}
 	
-	
+	/**
+	 * 參數的應用 
+	 * 尋找指定員工
+	 * 網址: /employee?id=1 
+	 * */
+	@GetMapping("/employee")
+	@ResponseBody
+	public String getEmployee(@RequestParam Integer id) {
+		List<String> employees = List.of("John", "Mary", "Jack", "Rose");
+		String employee = employees.get(id);
+		return employee;
+	}
 	
 }
