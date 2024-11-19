@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -121,6 +122,21 @@ public class WebController {
 		// ... 其他處理
 		System.out.println(student); // 印在 Console
 		return student; // 會將物件自動轉 json 格式輸出
+	}
+	
+	/**
+	 * 多參數的應用 透過 jsp 回應
+	 * 學生資料
+	 * 網址: /student5?name=John&age=18&score=90 
+	 * */
+	@GetMapping("/student5")
+	//@ResponseBody
+	public String getStudent5(Student student, Model model) {
+		// ... 其他處理
+		System.out.println(student); // 印在 Console
+		String message = "Hello"; // 自訂參數
+		model.addAttribute("message", message); // 透過 model 帶給 jsp (相當於 req.setAtrtribute("message", message))
+		return "student"; // 自動分派 => /WEB-INF/view/student.jsp
 	}
 	
 }
