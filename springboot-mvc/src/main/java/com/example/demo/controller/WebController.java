@@ -91,6 +91,7 @@ public class WebController {
 	@ResponseBody
 	public String getStudent2(Map<String, String> map) {
 		// ... 其他處理
+		System.out.println(map); // 印在 Console
 		return String.format("學生姓名: %s 年齡: %s 成績: %s", map.get("name"), map.get("age"), map.get("score"));
 	}
 	
