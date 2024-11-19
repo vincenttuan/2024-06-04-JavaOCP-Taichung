@@ -83,7 +83,7 @@ public class WebController {
 	}
 	
 	/**
-	 * 多參數的應用 
+	 * 多參數的應用 Map
 	 * 學生資料
 	 * 網址: /student2?name=John&age=18&score=90 
 	 * */
@@ -94,5 +94,11 @@ public class WebController {
 		System.out.println(map); // 印在 Console
 		return String.format("學生姓名: %s 年齡: %s 成績: %s", map.get("name"), map.get("age"), map.get("score"));
 	}
+	
+	/**
+	 * 多參數的應用 指定物件: 例如 Student
+	 * 學生資料
+	 * 網址: /student3?name=John&age=18&score=90 
+	 * */
 	
 }
