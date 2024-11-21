@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,6 +15,7 @@ import com.example.demo.model.entity.Room;
 import com.example.demo.repository.RoomRepositoryJDBC;
 
 @Repository // 宣告一個 Repository 給 Spring 管理
+@PropertySource("classpath:sql.properties") // 自動到 src/main/resources 找到 sql.properties
 public class RoomRepositoryJDBCImpl implements RoomRepositoryJDBC {
 	
 	@Autowired // 自動綁定(會自動採用 application.properties 有關於 spring.datasource 的設定資訊)
