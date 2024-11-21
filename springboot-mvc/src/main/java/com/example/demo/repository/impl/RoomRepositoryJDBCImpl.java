@@ -28,10 +28,13 @@ public class RoomRepositoryJDBCImpl implements RoomRepositoryJDBC {
 	@Override
 	public Optional<Room> findRoomById(Integer roomId) {
 		String sql = "select room_id, room_name, room_size from room where room_id = ?";
-		
-		// queryForObject(String sql, RowMapper<T> rowMapper, @Nullable Object... args)
-		Room room = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Room.class), roomId);
-		
+		try {
+			// queryForObject(String sql, RowMapper<T> rowMapper, @Nullable Object... args)
+			Room room = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Room.class), roomId);
+			return Optional.of(room);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return Optional.empty();
 	}
 
