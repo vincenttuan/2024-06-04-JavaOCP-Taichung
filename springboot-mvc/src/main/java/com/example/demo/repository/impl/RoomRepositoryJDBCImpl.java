@@ -41,16 +41,14 @@ public class RoomRepositoryJDBCImpl implements RoomRepositoryJDBC {
 	
 	@Override
 	public List<Room> findAllRooms() {
-		String sql = "select room_id, room_name, room_size from room";
-		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Room.class));
+		return jdbcTemplate.query(findAllSql, new BeanPropertyRowMapper<>(Room.class));
 	}
 
 	@Override
 	public Optional<Room> findRoomById(Integer roomId) {
-		String sql = "select room_id, room_name, room_size from room where room_id = ?";
 		try {
 			// queryForObject(String sql, RowMapper<T> rowMapper, @Nullable Object... args)
-			Room room = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Room.class), roomId);
+			Room room = jdbcTemplate.queryForObject(findByIdSql, new BeanPropertyRowMapper<>(Room.class), roomId);
 			return Optional.of(room);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -60,20 +58,17 @@ public class RoomRepositoryJDBCImpl implements RoomRepositoryJDBC {
 
 	@Override
 	public int saveRoom(Room room) {
-		String sql = "insert into room(room_id, room_name, room_size) values(?, ?, ?)";
-		return jdbcTemplate.update(sql, room.getRoomId(), room.getRoomName(), room.getRoomSize());
+		return jdbcTemplate.update(saveSql, room.getRoomId(), room.getRoomName(), room.getRoomSize());
 	}
 
 	@Override
 	public int updateRoom(Room room) {
-		String sql = "update room set room_name = ?, room_size = ? where room_id = ?";
-		return jdbcTemplate.update(sql, room.getRoomName(), room.getRoomSize(), room.getRoomId());
+		return jdbcTemplate.update(updateSql, room.getRoomName(), room.getRoomSize(), room.getRoomId());
 	}
 
 	@Override
 	public int deleteById(Integer roomId) {
-		String sql = "delete from room where room_id = ?";
-		return jdbcTemplate.update(sql, roomId);
+		return jdbcTemplate.update(deleteByIdSql, roomId);
 	}
 
 }
