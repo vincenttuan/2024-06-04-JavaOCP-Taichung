@@ -52,8 +52,8 @@ public class RoomRepositoryJDBCImpl implements RoomRepositoryJDBC {
 
 	@Override
 	public int deleteById(Integer roomId) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "delete from room where room_id = ?";
+		return jdbcTemplate.update(sql, roomId);
 	}
 
 }
