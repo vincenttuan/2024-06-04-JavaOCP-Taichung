@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.entity.Room;
@@ -18,13 +21,17 @@ public class RoomRepositoryJDBCImpl implements RoomRepositoryJDBC {
 	
 	@Override
 	public List<Room> findAllRooms() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select room_id, room_name, room_size from room";
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Room.class));
 	}
 
 	@Override
 	public Optional<Room> findRoomById(Integer roomId) {
-		// TODO Auto-generated method stub
+		String sql = "select room_id, room_name, room_size from room where room_id = ?";
+		
+		// queryForObject(String sql, RowMapper<T> rowMapper, @Nullable Object... args)
+		Room room = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Room.class), roomId);
+		
 		return Optional.empty();
 	}
 
