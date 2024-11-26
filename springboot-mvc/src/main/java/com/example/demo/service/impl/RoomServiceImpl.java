@@ -92,8 +92,8 @@ public class RoomServiceImpl implements RoomService {
 
 	@Override
 	public void updateRoom(Integer roomId, RoomDTO roomDTO) {
-		// TODO Auto-generated method stub
-		
+		roomDTO.setRoomId(roomId);
+		updateRoom(roomDTO);
 	}
 
 	@Override
