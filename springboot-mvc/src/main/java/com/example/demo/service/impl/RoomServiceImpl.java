@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.dto.RoomDTO;
+import com.example.demo.model.entity.Room;
 import com.example.demo.repository.RoomRepositoryJDBC;
 import com.example.demo.service.RoomService;
 
@@ -22,7 +24,13 @@ public class RoomServiceImpl implements RoomService {
 	
 	@Override
 	public List<RoomDTO> getAllRooms() {
-		return null;
+		// ...entity
+		List<Room> rooms = roomRepositoryJDBC.findAllRooms();
+		// 利用 modelMapper 將 entity 轉 DTO
+		List<RoomDTO> roomDTOs = rooms.stream()
+									  .map(room -> modelMapper.map(room, RoomDTO.class))
+									  .collect(Collectors.toList());
+		return roomDTOs;
 	}
 
 	@Override
