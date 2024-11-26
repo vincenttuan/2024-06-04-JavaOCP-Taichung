@@ -49,7 +49,7 @@ public class RoomRepositoryJDBCImpl implements RoomRepositoryJDBC {
 			Room room = jdbcTemplate.queryForObject(findByIdSql, new BeanPropertyRowMapper<>(Room.class), roomId);
 			return Optional.of(room);
 		} catch (Exception e) {
-			//System.out.println("roomId: " + roomId + " 不存在");
+			// empty
 		}
 		return Optional.empty();
 	}
