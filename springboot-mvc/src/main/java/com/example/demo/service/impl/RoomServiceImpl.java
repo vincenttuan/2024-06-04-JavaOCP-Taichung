@@ -24,13 +24,10 @@ public class RoomServiceImpl implements RoomService {
 	
 	@Override
 	public List<RoomDTO> getAllRooms() {
-		// ...entity
-		List<Room> rooms = roomRepositoryJDBC.findAllRooms();
-		// 利用 modelMapper 將 entity 轉 DTO
-		List<RoomDTO> roomDTOs = rooms.stream()
-									  .map(room -> modelMapper.map(room, RoomDTO.class))
-									  .collect(Collectors.toList());
-		return roomDTOs;
+		return roomRepositoryJDBC.findAllRooms() // List<Room>
+								 .stream() // ... Room
+								 .map(room -> modelMapper.map(room, RoomDTO.class)) // ... RoomDTO
+								 .collect(Collectors.toList()); // List<RoomDTO>
 	}
 
 	@Override
