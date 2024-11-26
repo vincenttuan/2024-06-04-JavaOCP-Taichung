@@ -8,13 +8,13 @@ public interface RoomService {
 	public List<RoomDTO> getAllRooms();
 	public RoomDTO getRoomById(Integer roomId);
 	
-	public int addRoom(RoomDTO roomDTO);
-	public int addRoom(Integer roomId, String roomName, Integer roomSize);
+	public void addRoom(RoomDTO roomDTO);
+	public void addRoom(Integer roomId, String roomName, Integer roomSize);
 	
-	public int updateRoom(RoomDTO roomDTO);
-	public int updateRoom(Integer roomId, RoomDTO roomDTO);
-	public int updateRoom(Integer roomId, String roomName, Integer roomSize);
+	public void updateRoom(RoomDTO roomDTO);
+	public void updateRoom(Integer roomId, RoomDTO roomDTO);
+	public void updateRoom(Integer roomId, String roomName, Integer roomSize);
 	
-	public int deleteRoom(Integer roomId);
+	public void deleteRoom(Integer roomId);
 	
 }

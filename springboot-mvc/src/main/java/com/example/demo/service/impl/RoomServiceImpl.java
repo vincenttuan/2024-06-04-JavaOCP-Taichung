@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.exception.RoomAlreadyExistException;
+import com.example.demo.exception.RoomException;
 import com.example.demo.exception.RoomNotFoundException;
 import com.example.demo.mapper.RoomMapper;
 import com.example.demo.model.dto.RoomDTO;
@@ -54,39 +56,47 @@ public class RoomServiceImpl implements RoomService {
 	}
 
 	@Override
-	public int addRoom(RoomDTO roomDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void addRoom(RoomDTO roomDTO) {
+		// 判斷該 room 是否已經存在 ?
+		Optional<Room> optRoom = roomRepositoryJDBC.findRoomById(roomDTO.getRoomId());
+		if(optRoom.isPresent()) {
+			throw new RoomAlreadyExistException("新增失敗,此房間已經存在:" + roomDTO.getRoomId());
+		}
+		Room room = roomMapper.toEntity(roomDTO);
+		int rowcount = roomRepositoryJDBC.saveRoom(room);
+		if(rowcount == 0) {
+			throw new RoomException("無法新增");
+		}
 	}
 
 	@Override
-	public int addRoom(Integer roomId, String roomName, Integer roomSize) {
+	public void addRoom(Integer roomId, String roomName, Integer roomSize) {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 	@Override
-	public int updateRoom(RoomDTO roomDTO) {
+	public void updateRoom(RoomDTO roomDTO) {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 	@Override
-	public int updateRoom(Integer roomId, RoomDTO roomDTO) {
+	public void updateRoom(Integer roomId, RoomDTO roomDTO) {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 	@Override
-	public int updateRoom(Integer roomId, String roomName, Integer roomSize) {
+	public void updateRoom(Integer roomId, String roomName, Integer roomSize) {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 	@Override
-	public int deleteRoom(Integer roomId) {
+	public void deleteRoom(Integer roomId) {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 }
