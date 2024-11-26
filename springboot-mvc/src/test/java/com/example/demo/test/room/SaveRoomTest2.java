@@ -19,11 +19,11 @@ public class SaveRoomTest2 {
 	@Test
 	public void test1() {
 		// 新增
-		RoomDTO roomDTO = new RoomDTO(505, "505(S)", 5);
+		RoomDTO roomDTO = new RoomDTO(707, "707(S)", 5);
 		roomService.addRoom(roomDTO);
 		System.out.println("新增完成, 請查資料庫");
 		
-		roomService.addRoom(606, "606(S)", 6);
+		roomService.addRoom(806, "806(S)", 6);
 		System.out.println("新增完成, 請查資料庫");
 		
 	}
