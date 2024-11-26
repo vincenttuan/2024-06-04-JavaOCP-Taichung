@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -32,8 +33,16 @@ public class RoomServiceImpl implements RoomService {
 
 	@Override
 	public RoomDTO getRoomById(Integer roomId) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Room> optRoom = roomRepositoryJDBC.findRoomById(roomId);
+		if(optRoom.isEmpty()) {
+			//return null;
+			// 自行建立一個例外物件
+			RuntimeException re = new RuntimeException("查無此房間");
+			throw re;
+		}
+		Room room = optRoom.get(); // 取得 room 實體
+		RoomDTO roomDTO = modelMapper.map(room, RoomDTO.class);
+		return roomDTO;
 	}
 
 	@Override
