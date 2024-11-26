@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.exception.RoomNotFoundException;
 import com.example.demo.mapper.RoomMapper;
 import com.example.demo.model.dto.RoomDTO;
 import com.example.demo.model.entity.Room;
@@ -48,7 +49,7 @@ public class RoomServiceImpl implements RoomService {
 		return roomDTO;
 		*/
 		Room room = roomRepositoryJDBC.findRoomById(roomId)
-									  .orElseThrow(() -> new RuntimeException("查無此房間"));
+									  .orElseThrow(() -> new RoomNotFoundException("無此房間:" + roomId));
 		return roomMapper.toDTO(room);
 	}
 
