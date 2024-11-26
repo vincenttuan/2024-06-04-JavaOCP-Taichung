@@ -104,8 +104,16 @@ public class RoomServiceImpl implements RoomService {
 
 	@Override
 	public void deleteRoom(Integer roomId) {
-		// TODO Auto-generated method stub
+		// 判斷該 room 是否已經存在?
+		Optional<Room> optRoom = roomRepositoryJDBC.findRoomById(roomId);
+		if(optRoom.isEmpty()) { // 房間不存在
+			throw new RoomNotFoundException("刪除 room 失敗, room 不存在: " + roomId);
+		}
 		
+		int rowcount = roomRepositoryJDBC.deleteById(roomId);
+		if(rowcount == 0) {
+			throw new RoomException("無法刪除");
+		}
 	}
 
 }
