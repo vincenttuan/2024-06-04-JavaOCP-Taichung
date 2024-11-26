@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.mapper.RoomMapper;
 import com.example.demo.model.dto.RoomDTO;
 import com.example.demo.model.entity.Room;
 import com.example.demo.repository.RoomRepositoryJDBC;
@@ -21,13 +22,14 @@ public class RoomServiceImpl implements RoomService {
 	private RoomRepositoryJDBC roomRepositoryJDBC;
 	
 	@Autowired
-	private ModelMapper modelMapper;
+	private RoomMapper roomMapper;
 	
 	@Override
 	public List<RoomDTO> getAllRooms() {
 		return roomRepositoryJDBC.findAllRooms() // List<Room>
 								 .stream() // ... Room
-								 .map(room -> modelMapper.map(room, RoomDTO.class)) // ... RoomDTO
+								 //.map(room -> roomMapper.toDTO(room)) // ... RoomDTO
+								 .map(roomMapper::toDTO) // ... RoomDTO
 								 .collect(Collectors.toList()); // List<RoomDTO>
 	}
 
@@ -41,7 +43,7 @@ public class RoomServiceImpl implements RoomService {
 			throw re;
 		}
 		Room room = optRoom.get(); // 取得 room 實體
-		RoomDTO roomDTO = modelMapper.map(room, RoomDTO.class);
+		RoomDTO roomDTO = roomMapper.toDTO(room);
 		return roomDTO;
 	}
 
