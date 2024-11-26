@@ -32,6 +32,13 @@
 	
 	<dependencies>
 		
+		<!-- Model Mapper DTO 與 Entity 互轉 -->
+		<dependency>
+		  <groupId>org.modelmapper</groupId>
+		  <artifactId>modelmapper</artifactId>
+		  <version>3.2.1</version>
+		</dependency>
+
 		<!-- 配置 jsp -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>

@@ -15,11 +15,9 @@ public class RoomServiceImpl implements RoomService {
 	
 	@Autowired
 	private RoomRepositoryJDBC roomRepositoryJDBC;
-	// private RoomRepositoryJDBC roomRepositoryJDBC = new RoomRepositoryJDBCImpl();
 	
 	@Override
 	public List<RoomDTO> getAllRooms() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
