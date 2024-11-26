@@ -77,7 +77,11 @@ public class RoomServiceImpl implements RoomService {
 
 	@Override
 	public void updateRoom(RoomDTO roomDTO) {
-		// TODO Auto-generated method stub
+		// 判斷該 room 是否存在 ?
+		Optional<Room> optRoom = roomRepositoryJDBC.findRoomById(roomDTO.getRoomId());
+		if(optRoom.isEmpty()) {
+			throw new RoomNotFoundException("修改 room 失敗, room 不存在: " + roomDTO.getRoomId());
+		}
 		
 	}
 
