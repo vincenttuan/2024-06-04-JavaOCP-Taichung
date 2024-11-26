@@ -35,6 +35,7 @@ public class RoomServiceImpl implements RoomService {
 
 	@Override
 	public RoomDTO getRoomById(Integer roomId) {
+		/*
 		Optional<Room> optRoom = roomRepositoryJDBC.findRoomById(roomId);
 		if(optRoom.isEmpty()) {
 			//return null;
@@ -45,6 +46,10 @@ public class RoomServiceImpl implements RoomService {
 		Room room = optRoom.get(); // 取得 room 實體
 		RoomDTO roomDTO = roomMapper.toDTO(room);
 		return roomDTO;
+		*/
+		Room room = roomRepositoryJDBC.findRoomById(roomId)
+									  .orElseThrow(() -> new RuntimeException("查無此房間"));
+		return roomMapper.toDTO(room);
 	}
 
 	@Override
