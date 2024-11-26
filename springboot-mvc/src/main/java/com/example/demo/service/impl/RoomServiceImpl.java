@@ -83,6 +83,11 @@ public class RoomServiceImpl implements RoomService {
 			throw new RoomNotFoundException("修改 room 失敗, room 不存在: " + roomDTO.getRoomId());
 		}
 		
+		Room room = roomMapper.toEntity(roomDTO);
+		int rowcount = roomRepositoryJDBC.updateRoom(room);
+		if(rowcount == 0) {
+			throw new RoomException("無法修改");
+		}
 	}
 
 	@Override
