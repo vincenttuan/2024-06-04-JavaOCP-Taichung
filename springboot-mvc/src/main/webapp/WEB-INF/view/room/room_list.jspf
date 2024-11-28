@@ -12,6 +12,7 @@
 		            <th>房號 id</th>
 		            <th>房名 name</th>
 		            <th>人數 size</th>
+		            <th>刪除</th>
 		        </tr>
 		    </thead>
 		    <tbody>
@@ -20,6 +21,9 @@
 			            <td align="center">${ roomDTO.id }</td>
 			            <td align="left">${ roomDTO.name }</td>
 			            <td align="right">${ roomDTO.size }</td>
+			            <td align="center">
+			            	<a href="/delete/${ roomDTO.id }">刪除</a>
+			            </td>
 			        </tr>
 		        </c:forEach>
 		    </tbody>
