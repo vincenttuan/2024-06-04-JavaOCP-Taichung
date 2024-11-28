@@ -1,9 +1,16 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.model.dto.RoomDTO;
+import com.example.demo.service.RoomService;
 
 /**
  * Method URI                  功能
@@ -20,8 +27,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/room")
 public class RoomController {
 	
+	@Autowired
+	private RoomService roomService;
+	
 	@GetMapping // 查詢所有會議室(多筆)
-	public String getRooms() {
+	public String getRooms(Model model) {
+		List<RoomDTO> roomDTOs = roomService.getAllRooms(); 
+		model.addAttribute("roomDTOs", roomDTOs); // 相當於 req.setAttribute("roomDTOs", roomDTOs);
 		return "room/room"; // 指向 jsp 檔名
 	}
 	
