@@ -22,7 +22,7 @@
 			            <td align="left">${ roomDTO.name }</td>
 			            <td align="right">${ roomDTO.size }</td>
 			            <td align="center">
-			            	<a href="/delete/${ roomDTO.id }">刪除</a>
+			            	<a href="/room/delete/${ roomDTO.id }">刪除</a>
 			            </td>
 			        </tr>
 		        </c:forEach>
