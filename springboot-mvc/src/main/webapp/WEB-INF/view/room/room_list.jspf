@@ -17,9 +17,9 @@
 		    <tbody>
 		    	<c:forEach var="roomDTO" items="${ roomDTOs }">
 			        <tr>
-			            <td>${ roomDTO.id }</td>
-			            <td>${ roomDTO.name }</td>
-			            <td>${ roomDTO.size }</td>
+			            <td align="center">${ roomDTO.id }</td>
+			            <td align="left">${ roomDTO.name }</td>
+			            <td align="right">${ roomDTO.size }</td>
 			        </tr>
 		        </c:forEach>
 		    </tbody>
