@@ -6,7 +6,7 @@
 <div class="pure-form">
 	<fieldset>
 		<legend>Room 列表</legend>
-		<table class="pure-table pure-table-bordered">
+		<table class="pure-table pure-table-striped">
 			<thead>
 		        <tr>
 		            <th>房號 id</th>
