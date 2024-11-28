@@ -25,7 +25,6 @@
 					<td>
 						<%@ include file="/WEB-INF/view/room/room_list.jspf" %>
 					</td>
-					
 				</tr>
 			</table>
 		</div>
