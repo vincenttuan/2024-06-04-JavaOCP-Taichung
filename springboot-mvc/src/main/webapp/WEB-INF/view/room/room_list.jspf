@@ -1,4 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-Room 列表
-${ roomDTOs }
+<!-- Jakarta JSTL 表單標籤 -->
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<div class="pure-form">
+	<fieldset>
+		<legend>Room 列表</legend>
+		<table class="pure-table pure-table-bordered">
+			<thead>
+		        <tr>
+		            <th>房號 id</th>
+		            <th>房名 name</th>
+		            <th>人數 size</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		    	<c:forEach var="roomDTO" items="${ roomDTOs }">
+			        <tr>
+			            <td>${ roomDTO.id }</td>
+			            <td>${ roomDTO.name }</td>
+			            <td>${ roomDTO.size }</td>
+			        </tr>
+		        </c:forEach>
+		    </tbody>
+		</table>
+	</fieldset>	
+</div>    
