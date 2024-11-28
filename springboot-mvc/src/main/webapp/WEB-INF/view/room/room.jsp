@@ -9,8 +9,27 @@
 		<link rel="stylesheet" href="/css/my_css.css">
 	</head>
 	<body>
+		<!-- menu bar include -->
+		<%@ include file="/WEB-INF/view/room/menu.jspf" %>
 		
-		${ roomDTOs }
+		<!-- body content -->
+		<div style="padding: 15px">
+			<table>
+				<tr>
+					<!-- 新增 Room 表單 -->
+					<td>
+						<%@ include file="/WEB-INF/view/room/room_form.jspf" %>
+					</td>
+					
+					<!-- 列表 Room 資訊 -->
+					<td>
+						<%@ include file="/WEB-INF/view/room/room_list.jspf" %>
+					</td>
+					
+				</tr>
+			</table>
+		</div>
+		
 		
 	</body>
 </html>
