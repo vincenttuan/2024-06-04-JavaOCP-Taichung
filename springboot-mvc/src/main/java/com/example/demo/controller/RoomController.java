@@ -43,8 +43,12 @@ public class RoomController {
 	}
 	
 	@PostMapping
-	public String addRoom() { // 新增會議室
-		return "";
+	public String addRoom(RoomDTO roomDTO) { // 新增會議室
+		roomService.addRoom(roomDTO); // 儲存
+		
+		// 通知瀏覽器要去的地方(重導到...)
+		return "redirect:http://localhost:8080/room";
+		//return "redirect:/room";
 	}
 	
 	@PostMapping("/update/{roomId}")
