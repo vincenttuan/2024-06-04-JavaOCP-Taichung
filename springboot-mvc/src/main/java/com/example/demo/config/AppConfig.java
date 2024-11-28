@@ -36,6 +36,17 @@ public class AppConfig {
 		}; 	
 		modelMapper.addMappings(roomMapRule1); // 加入新規則
 		
+		// Entity -> DTO 映射規則
+		PropertyMap<Room, RoomDTO> roomMapRule2 = new PropertyMap<Room, RoomDTO>() { // 規則二
+			@Override
+			protected void configure() {
+				map(source.getRoomId(), destination.getId());
+				map(source.getRoomName(), destination.getName());
+				map(source.getRoomSize(), destination.getSize());
+			}
+		}; 	
+		modelMapper.addMappings(roomMapRule1); // 加入新規則
+		
 		return modelMapper;
 	}
 	
