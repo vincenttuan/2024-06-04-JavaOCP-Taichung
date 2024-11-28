@@ -22,7 +22,7 @@ public class RoomController {
 	
 	@GetMapping // 查詢所有會議室(多筆)
 	public String getRooms() {
-		return "room"; // 指向 jsp 檔名
+		return "room/room"; // 指向 jsp 檔名
 	}
 	
 	@GetMapping("/{roomId}") // 查詢指定會議室(單筆)
