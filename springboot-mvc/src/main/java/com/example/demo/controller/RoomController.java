@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Method URI                  功能
@@ -14,6 +16,19 @@ import org.springframework.stereotype.Controller;
  * */
 
 @Controller
+@RequestMapping("/room")
 public class RoomController {
-
+	
+	@GetMapping // 查詢所有會議室(多筆)
+	public String getRooms() {
+		return "room"; // 指向 jsp 檔名
+	}
+	
+	@GetMapping("/{roomId}") // 查詢指定會議室(單筆)
+	public String getRoom() {
+		return "room";
+	}
+	
+	
+	
 }
