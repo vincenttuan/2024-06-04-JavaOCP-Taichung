@@ -45,7 +45,7 @@ public class AppConfig {
 				map(source.getRoomSize(), destination.getSize());
 			}
 		}; 	
-		modelMapper.addMappings(roomMapRule1); // 加入新規則
+		modelMapper.addMappings(roomMapRule2); // 加入新規則
 		
 		return modelMapper;
 	}
