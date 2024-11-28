@@ -27,22 +27,22 @@ public class RoomController {
 	
 	@GetMapping("/{roomId}") // 查詢指定會議室(單筆)
 	public String getRoom() {
-		return "room";
+		return "";
 	}
 	
 	@PostMapping
 	public String addRoom() { // 新增會議室
-		return "room";
+		return "";
 	}
 	
 	@PostMapping("/update/{roomId}")
 	public String updateRoom() { // 修改會議室
-		return "room";
+		return "";
 	}
 	
 	@GetMapping("/delete/{roomId}") // 刪除會議室
 	public String deleteRoom() {
-		return "room";
+		return "";
 	}
 	
 }
