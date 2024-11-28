@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -29,6 +30,19 @@ public class RoomController {
 		return "room";
 	}
 	
+	@PostMapping
+	public String addRoom() { // 新增會議室
+		return "room";
+	}
 	
+	@PostMapping("/update/{roomId}")
+	public String updateRoom() { // 修改會議室
+		return "room";
+	}
+	
+	@GetMapping("/delete/{roomId}") // 刪除會議室
+	public String deleteRoom() {
+		return "room";
+	}
 	
 }
