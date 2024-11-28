@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RoomDTO {
-	private Integer roomId; // 對應 room.roomId 欄位
-	private String roomName; // 對應 room.roomName 欄位
-	private Integer roomSize; // 對應 room.roomSize 欄位
+	private Integer id; // 對應 room.roomId 欄位
+	private String name; // 對應 room.roomName 欄位
+	private Integer size; // 對應 room.roomSize 欄位
 }

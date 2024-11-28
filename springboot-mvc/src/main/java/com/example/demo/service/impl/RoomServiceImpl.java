@@ -56,9 +56,9 @@ public class RoomServiceImpl implements RoomService {
 	@Override
 	public void addRoom(RoomDTO roomDTO) {
 		// 判斷該 room 是否已經存在 ?
-		Optional<Room> optRoom = roomRepositoryJDBC.findRoomById(roomDTO.getRoomId());
+		Optional<Room> optRoom = roomRepositoryJDBC.findRoomById(roomDTO.getId());
 		if(optRoom.isPresent()) {
-			throw new RoomAlreadyExistException("新增失敗,此房間已經存在:" + roomDTO.getRoomId());
+			throw new RoomAlreadyExistException("新增失敗,此房間已經存在:" + roomDTO.getId());
 		}
 		Room room = roomMapper.toEntity(roomDTO);
 		int rowcount = roomRepositoryJDBC.saveRoom(room);
@@ -76,9 +76,9 @@ public class RoomServiceImpl implements RoomService {
 	@Override
 	public void updateRoom(RoomDTO roomDTO) {
 		// 判斷該 room 是否存在 ?
-		Optional<Room> optRoom = roomRepositoryJDBC.findRoomById(roomDTO.getRoomId());
+		Optional<Room> optRoom = roomRepositoryJDBC.findRoomById(roomDTO.getId());
 		if(optRoom.isEmpty()) {
-			throw new RoomNotFoundException("修改 room 失敗, room 不存在: " + roomDTO.getRoomId());
+			throw new RoomNotFoundException("修改 room 失敗, room 不存在: " + roomDTO.getId());
 		}
 		
 		Room room = roomMapper.toEntity(roomDTO);
@@ -90,7 +90,7 @@ public class RoomServiceImpl implements RoomService {
 
 	@Override
 	public void updateRoom(Integer roomId, RoomDTO roomDTO) {
-		roomDTO.setRoomId(roomId);
+		roomDTO.setId(roomId);
 		updateRoom(roomDTO);
 	}
 
