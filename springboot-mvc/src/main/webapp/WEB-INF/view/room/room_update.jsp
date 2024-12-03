@@ -14,14 +14,14 @@
 		
 		<!-- body content -->
 		<div style="padding: 15px">
-			<form class="pure-form" method="post" action="/room">
+			<form class="pure-form" method="post" action="/room/update/${ roomDTO.id }">
 				<fieldset>
-					<legend>Room 表單</legend>
-					Room 房號: <input type="number" name="id" /><p />
-					Room 房名: <input type="text" name="name" /><p />
-					Room 人數: <input type="number" name="size" /><p />
+					<legend>Room 編輯</legend>
+					Room 房號: <input type="number" name="id" value="${ roomDTO.id }" disabled="disabled" /><p />
+					Room 房名: <input type="text" name="name" value="${ roomDTO.name }" /><p />
+					Room 人數: <input type="number" name="size" value="${ roomDTO.size }" /><p />
 					<button type="submit" class="pure-button pure-button-primary">
-						新增
+						修改
 					</button>
 				</fieldset>
 			</form>
