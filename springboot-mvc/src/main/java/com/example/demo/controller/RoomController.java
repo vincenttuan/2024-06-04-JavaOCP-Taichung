@@ -39,9 +39,10 @@ public class RoomController {
 		return "room/room"; // 指向 jsp 檔名
 	}
 	
-	@GetMapping("/{roomId}") // 查詢指定會議室(單筆)
+	@GetMapping("/{roomId}") // 查詢指定會議室(單筆) / 要修改哪一筆資料
 	@ResponseBody
 	public String getRoom(@PathVariable Integer roomId) {
+		// 得到要修改的資料
 		RoomDTO roomDTO = roomService.getRoomById(roomId);
 		return "" + roomDTO;
 	}
