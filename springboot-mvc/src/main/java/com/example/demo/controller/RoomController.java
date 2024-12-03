@@ -69,7 +69,8 @@ public class RoomController {
 	@GetMapping("/delete/{roomId}") // 刪除會議室
 	public String deleteRoom(@PathVariable Integer roomId) {
 		roomService.deleteRoom(roomId);
-		return "redirect:http://localhost:8080/room";
+		// 通知瀏覽器要去的地方(重導到...)
+		return "redirect:/room";
 	}
 	
 }
