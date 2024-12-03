@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="sp" uri="http://www.springframework.org/tags/form" %>
+    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,17 +16,17 @@
 		
 		<!-- body content -->
 		<div style="padding: 15px">
-			<form class="pure-form" method="post" action="/room/update/${ roomDTO.id }">
+			<sp:form modelAttribute="roomDTO" class="pure-form" method="post" action="/room/update/${ roomDTO.id }">
 				<fieldset>
 					<legend>Room 編輯</legend>
-					Room 房號: <input type="number" name="id" value="${ roomDTO.id }" disabled="disabled" /><p />
-					Room 房名: <input type="text" name="name" value="${ roomDTO.name }" /><p />
-					Room 人數: <input type="number" name="size" value="${ roomDTO.size }" /><p />
+					Room 房號: <sp:input type="number" path="id" disabled="disabled" /><p />
+					Room 房名: <sp:input type="text"   path="name" /><p />
+					Room 人數: <sp:input type="number" path="size" /><p />
 					<button type="submit" class="pure-button pure-button-primary">
 						修改
 					</button>
 				</fieldset>
-			</form>
+			</sp:form>
 		</div>
 	</body>
 </html>
