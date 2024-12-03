@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.model.dto.RoomDTO;
 import com.example.demo.service.RoomService;
 
+import jakarta.validation.Valid;
+
 /**
  * Method URI                  功能
  * --------------------------------------------------------------------
@@ -60,7 +62,8 @@ public class RoomController {
 	
 	@PostMapping("/update/{roomId}")
 	//@ResponseBody
-	public String updateRoom(@PathVariable Integer roomId, RoomDTO roomDTO) { // 修改會議室
+	// @Valid RoomDTO roomDTO => 檢查 roomDTO 是否符合驗證規則
+	public String updateRoom(@PathVariable Integer roomId, @Valid RoomDTO roomDTO) { // 修改會議室
 		roomService.updateRoom(roomId, roomDTO); // 修改
 		// 通知瀏覽器要去的地方(重導到...)
 		return "redirect:/room";

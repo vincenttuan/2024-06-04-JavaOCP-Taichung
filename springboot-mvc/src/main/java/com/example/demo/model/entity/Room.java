@@ -15,13 +15,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Room {
 	
-	@NotNull(message = "id 不可以是空值")
 	private Integer roomId; // 對應 room_id 欄位
 	
-	@Size(min = 1, max = 10, message = "名稱必須限定在 {min} ~ {max} 個字間")
 	private String roomName; // 對應 room_name 欄位
 	
-	@Range(min = 1, max = 200, message = "人數範圍限制在 {min} ~ {max} 人")
 	private Integer roomSize; // 對應 room_size 欄位
 	
 }
