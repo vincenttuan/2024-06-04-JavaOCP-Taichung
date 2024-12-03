@@ -12,6 +12,7 @@
 		            <th>房號 id</th>
 		            <th>房名 name</th>
 		            <th>人數 size</th>
+		            <th>編輯</th>
 		            <th>刪除</th>
 		        </tr>
 		    </thead>
@@ -21,6 +22,9 @@
 			            <td align="center">${ roomDTO.id }</td>
 			            <td align="left">${ roomDTO.name }</td>
 			            <td align="right">${ roomDTO.size }</td>
+			            <td align="center">
+			            	<a href="" class="button-success pure-button">編輯</a>
+			            </td>
 			            <td align="center">
 			            	<a href="/room/delete/${ roomDTO.id }" class="button-error pure-button">刪除</a>
 			            </td>
