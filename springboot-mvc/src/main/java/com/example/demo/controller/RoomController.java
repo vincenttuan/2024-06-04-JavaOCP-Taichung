@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -63,7 +64,8 @@ public class RoomController {
 	@PostMapping("/update/{roomId}")
 	//@ResponseBody
 	// @Valid RoomDTO roomDTO => 檢查 roomDTO 是否符合驗證規則
-	public String updateRoom(@PathVariable Integer roomId, @Valid RoomDTO roomDTO) { // 修改會議室
+	// BindingResult result   => 存放檢查 roomDTO 的驗證結果
+	public String updateRoom(@PathVariable Integer roomId, @Valid RoomDTO roomDTO, BindingResult result) { // 修改會議室
 		roomService.updateRoom(roomId, roomDTO); // 修改
 		// 通知瀏覽器要去的地方(重導到...)
 		return "redirect:/room";
