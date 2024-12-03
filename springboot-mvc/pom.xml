@@ -32,6 +32,12 @@
 	
 	<dependencies>
 		
+		<!-- 表單驗證-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		
 		<!-- Model Mapper DTO 與 Entity 互轉 -->
 		<dependency>
 		  <groupId>org.modelmapper</groupId>
