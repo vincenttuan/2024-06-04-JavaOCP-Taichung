@@ -53,7 +53,12 @@ public class RoomController {
 	}
 	
 	@PostMapping
-	public String addRoom(RoomDTO roomDTO) { // 新增會議室
+	public String addRoom(@Valid RoomDTO roomDTO, BindingResult result) { // 新增會議室
+		if(result.hasErrors()) {
+			
+			return "room/room";
+		}
+		
 		roomService.addRoom(roomDTO); // 儲存
 		
 		// 通知瀏覽器要去的地方(重導到...)
