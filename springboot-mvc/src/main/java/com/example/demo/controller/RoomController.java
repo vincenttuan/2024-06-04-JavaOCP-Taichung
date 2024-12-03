@@ -59,9 +59,11 @@ public class RoomController {
 	}
 	
 	@PostMapping("/update/{roomId}")
-	@ResponseBody
+	//@ResponseBody
 	public String updateRoom(@PathVariable Integer roomId, RoomDTO roomDTO) { // 修改會議室
-		return roomId + ", " + roomDTO;
+		roomService.updateRoom(roomId, roomDTO); // 修改
+		// 通知瀏覽器要去的地方(重導到...)
+		return "redirect:http://localhost:8080/room";
 	}
 	
 	@GetMapping("/delete/{roomId}") // 刪除會議室
