@@ -53,9 +53,10 @@ public class RoomController {
 	}
 	
 	@PostMapping
-	public String addRoom(@Valid RoomDTO roomDTO, BindingResult result) { // 新增會議室
+	public String addRoom(@Valid RoomDTO roomDTO, BindingResult result, Model model) { // 新增會議室
 		if(result.hasErrors()) {
-			
+			List<RoomDTO> roomDTOs = roomService.getAllRooms(); 
+			model.addAttribute("roomDTOs", roomDTOs); // 相當於 req.setAttribute("roomDTOs", roomDTOs);
 			return "room/room";
 		}
 		
