@@ -54,8 +54,8 @@ public class RoomController {
 		roomService.addRoom(roomDTO); // 儲存
 		
 		// 通知瀏覽器要去的地方(重導到...)
-		return "redirect:http://localhost:8080/room";
-		//return "redirect:/room";
+		//return "redirect:http://localhost:8080/room";
+		return "redirect:/room";
 	}
 	
 	@PostMapping("/update/{roomId}")
@@ -63,7 +63,7 @@ public class RoomController {
 	public String updateRoom(@PathVariable Integer roomId, RoomDTO roomDTO) { // 修改會議室
 		roomService.updateRoom(roomId, roomDTO); // 修改
 		// 通知瀏覽器要去的地方(重導到...)
-		return "redirect:http://localhost:8080/room";
+		return "redirect:/room";
 	}
 	
 	@GetMapping("/delete/{roomId}") // 刪除會議室
