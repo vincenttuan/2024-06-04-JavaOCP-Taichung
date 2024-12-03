@@ -35,7 +35,7 @@ public class RoomController {
 	@Autowired
 	private RoomService roomService;
 	
-	@GetMapping // 查詢所有會議室(多筆)
+	@GetMapping // 查詢所有會議室(多筆) / 首頁
 	public String getRooms(Model model) {
 		List<RoomDTO> roomDTOs = roomService.getAllRooms(); 
 		model.addAttribute("roomDTOs", roomDTOs); // 相當於 req.setAttribute("roomDTOs", roomDTOs);
