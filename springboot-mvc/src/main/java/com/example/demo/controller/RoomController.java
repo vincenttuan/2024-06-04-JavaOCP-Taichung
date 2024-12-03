@@ -40,11 +40,13 @@ public class RoomController {
 	}
 	
 	@GetMapping("/{roomId}") // 查詢指定會議室(單筆) / 要修改哪一筆資料
-	@ResponseBody
-	public String getRoom(@PathVariable Integer roomId) {
+	//@ResponseBody
+	public String getRoom(@PathVariable Integer roomId, Model model) {
 		// 得到要修改的資料
 		RoomDTO roomDTO = roomService.getRoomById(roomId);
-		return "" + roomDTO;
+		// 將要修改的資料傳給 jsp
+		model.addAttribute("roomDTO", roomDTO);
+		return "room/room_update";
 	}
 	
 	@PostMapping
