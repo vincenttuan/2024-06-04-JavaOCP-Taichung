@@ -36,7 +36,7 @@ public class RoomController {
 	private RoomService roomService;
 	
 	@GetMapping // 查詢所有會議室(多筆) / 首頁
-	public String getRooms(Model model) {
+	public String getRooms(Model model, RoomDTO roomDTO) {
 		List<RoomDTO> roomDTOs = roomService.getAllRooms(); 
 		model.addAttribute("roomDTOs", roomDTOs); // 相當於 req.setAttribute("roomDTOs", roomDTOs);
 		return "room/room"; // 指向 jsp 檔名
