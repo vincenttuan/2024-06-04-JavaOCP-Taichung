@@ -19,7 +19,7 @@
 			<sp:form modelAttribute="roomDTO" class="pure-form" method="post" action="/room/update/${ roomDTO.id }">
 				<fieldset>
 					<legend>Room 編輯</legend>
-					Room 房號: <sp:input type="number" path="id" disabled="true" />
+					Room 房號: <sp:input type="number" path="id" readonly="true" />
 					          <sp:errors path="id" cssStyle="color: red" />
 					<p />
 					Room 房名: <sp:input type="text"   path="name" />
