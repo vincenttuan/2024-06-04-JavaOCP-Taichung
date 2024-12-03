@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.model.dto.RoomDTO;
 import com.example.demo.service.RoomService;
@@ -39,8 +40,10 @@ public class RoomController {
 	}
 	
 	@GetMapping("/{roomId}") // 查詢指定會議室(單筆)
-	public String getRoom() {
-		return "";
+	@ResponseBody
+	public String getRoom(@PathVariable Integer roomId) {
+		RoomDTO roomDTO = roomService.getRoomById(roomId);
+		return "" + roomDTO;
 	}
 	
 	@PostMapping

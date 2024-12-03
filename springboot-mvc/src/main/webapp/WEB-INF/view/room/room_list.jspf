@@ -23,7 +23,7 @@
 			            <td align="left">${ roomDTO.name }</td>
 			            <td align="right">${ roomDTO.size }</td>
 			            <td align="center">
-			            	<a href="" class="button-success pure-button">編輯</a>
+			            	<a href="/room/${ roomDTO.id }" class="button-success pure-button">編輯</a>
 			            </td>
 			            <td align="center">
 			            	<a href="/room/delete/${ roomDTO.id }" class="button-error pure-button">刪除</a>
