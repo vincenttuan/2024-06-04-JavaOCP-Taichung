@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// Rest 統一對外的資料格式
+// 自定義 Rest 統一對外的資料格式
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
