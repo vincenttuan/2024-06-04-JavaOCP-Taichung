@@ -1,5 +1,8 @@
 package com.example.demo.model.response;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +18,7 @@ public class ApiResponse<T> {
 	
 	// 成功回應
 	public static <T> ApiResponse<T> success(String message, T data) {
-		return new ApiResponse<T>(200, message, data);
+		return new ApiResponse<T>(HttpStatus.OK.value(), message, data);
 	}
 	
 	// 失敗回應
