@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,10 +27,18 @@ public class RoomRestController {
 	@Autowired
 	private RoomService roomService;
 	
+	// 取得所有房間列表
 	@GetMapping("/rooms")
 	public List<RoomDTO> getRooms() {
 		List<RoomDTO> roomDTOs = roomService.getAllRooms();
 		return roomDTOs;
+	}
+	
+	// 取得單筆房間
+	@GetMapping("/room/{roomId}")
+	public RoomDTO getRoom(@PathVariable Integer roomId) {
+		RoomDTO roomDTO = roomService.getRoomById(roomId);
+		return roomDTO;
 	}
 	
 	
