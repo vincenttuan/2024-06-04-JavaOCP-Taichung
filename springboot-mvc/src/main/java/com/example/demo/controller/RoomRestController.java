@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,6 +48,13 @@ public class RoomRestController {
 	@PostMapping("/room")
 	public Boolean addRoom(@RequestBody RoomDTO roomDTO) {
 		roomService.addRoom(roomDTO);
+		return true;
+	}
+	
+	// 修改房間
+	@PutMapping("/room/{roomId}")
+	public Boolean updateRoom(@PathVariable Integer roomId, @RequestBody RoomDTO roomDTO) {
+		roomService.updateRoom(roomId, roomDTO);
 		return true;
 	}
 	
