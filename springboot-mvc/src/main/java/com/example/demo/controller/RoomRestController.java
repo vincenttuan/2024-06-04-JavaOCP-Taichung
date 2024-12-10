@@ -48,42 +48,42 @@ public class RoomRestController {
 	
 	// 取得單筆房間
 	@GetMapping("/room/{roomId}")
-	public ApiResponse<RoomDTO> getRoom(@PathVariable Integer roomId) {
+	public ResponseEntity<ApiResponse<RoomDTO>> getRoom(@PathVariable Integer roomId) {
 		RoomDTO roomDTO = roomService.getRoomById(roomId);
-		return ApiResponse.success("查詢 [ " + roomId + " ] 房間成功", roomDTO);
+		return ResponseEntity.ok(ApiResponse.success("查詢 [ " + roomId + " ] 房間成功", roomDTO));
 	}
 	
 	// 新增房間
 	@PostMapping("/room")
-	public ApiResponse<Boolean> addRoom(@RequestBody RoomDTO roomDTO) {
+	public ResponseEntity<ApiResponse<Boolean>> addRoom(@RequestBody RoomDTO roomDTO) {
 		roomService.addRoom(roomDTO);
-		return ApiResponse.success("新增房間成功", true);
+		return ResponseEntity.ok(ApiResponse.success("新增房間成功", true));
 	}
 	
 	// 修改房間
 	@PutMapping("/room/{roomId}")
-	public ApiResponse<Boolean> updateRoom(@PathVariable Integer roomId, @RequestBody RoomDTO roomDTO) {
+	public ResponseEntity<ApiResponse<Boolean>> updateRoom(@PathVariable Integer roomId, @RequestBody RoomDTO roomDTO) {
 		roomService.updateRoom(roomId, roomDTO);
-		return ApiResponse.success("修改房間成功", true);
+		return ResponseEntity.ok(ApiResponse.success("修改房間成功", true));
 	}
 	
 	// 刪除房間
 	@DeleteMapping("/room/{roomId}")
-	public ApiResponse<Boolean> deleteRoom(@PathVariable Integer roomId) {
+	public ResponseEntity<ApiResponse<Boolean>> deleteRoom(@PathVariable Integer roomId) {
 		roomService.deleteRoom(roomId);
-		return ApiResponse.success("刪除房間成功", true);
+		return ResponseEntity.ok(ApiResponse.success("刪除房間成功", true));
 	}
 	
 	// 例外處理
 	@ExceptionHandler({RoomException.class})
-	public ApiResponse<String> handleRoomException(RoomException re) {
+	public ResponseEntity<ApiResponse<String>> handleRoomException(RoomException re) {
 		int status = HttpStatus.INTERNAL_SERVER_ERROR.value(); // 500
 		if(re instanceof RoomNotFoundException) {
 			status = HttpStatus.NOT_FOUND.value(); // 404;
 		} else if(re instanceof RoomAlreadyExistException) {
 			status = HttpStatus.CONFLICT.value(); // 409;
 		}
-		return ApiResponse.error(status, re.getMessage());
+		return ResponseEntity.status(status).body(ApiResponse.error(status, re.getMessage()));
 	}
 	
 }
