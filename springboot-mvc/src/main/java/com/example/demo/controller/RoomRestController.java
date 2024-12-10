@@ -64,9 +64,9 @@ public class RoomRestController {
 	
 	// 刪除房間
 	@DeleteMapping("/room/{roomId}")
-	public Boolean deleteRoom(@PathVariable Integer roomId) {
+	public ApiResponse<Boolean> deleteRoom(@PathVariable Integer roomId) {
 		roomService.deleteRoom(roomId);
-		return true;
+		return ApiResponse.success("刪除房間成功", true);
 	}
 	
 	// 例外處理
