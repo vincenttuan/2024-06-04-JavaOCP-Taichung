@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -74,11 +75,11 @@ public class RoomRestController {
 	// 例外處理
 	@ExceptionHandler({RoomException.class})
 	public ApiResponse<String> handleRoomException(RoomException re) {
-		int status = 500;
+		int status = HttpStatus.INTERNAL_SERVER_ERROR.value(); // 500
 		if(re instanceof RoomNotFoundException) {
-			status = 404;
+			status = HttpStatus.NOT_FOUND.value(); // 404;
 		} else if(re instanceof RoomAlreadyExistException) {
-			status = 409;
+			status = HttpStatus.CONFLICT.value(); // 409;
 		}
 		return ApiResponse.error(status, re.getMessage());
 	}
