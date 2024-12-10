@@ -73,4 +73,5 @@ public class RoomRestController {
 	public String handleRoomException(RoomException re) {
 		return re.getMessage();
 	}
+	
 }
