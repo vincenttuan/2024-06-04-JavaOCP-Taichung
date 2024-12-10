@@ -71,8 +71,8 @@ public class RoomRestController {
 	
 	// 例外處理
 	@ExceptionHandler({RoomException.class})
-	public String handleRoomException(RoomException re) {
-		return re.getMessage();
+	public ApiResponse<String> handleRoomException(RoomException re) {
+		return ApiResponse.error(500, re.getMessage());
 	}
 	
 }
