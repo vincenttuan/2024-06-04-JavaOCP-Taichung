@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.RoomException;
 import com.example.demo.model.dto.RoomDTO;
+import com.example.demo.model.response.ApiResponse;
 import com.example.demo.service.RoomService;
 
 /**
@@ -35,9 +36,9 @@ public class RoomRestController {
 	
 	// 取得所有房間列表
 	@GetMapping("/rooms")
-	public List<RoomDTO> getRooms() {
+	public ApiResponse<List<RoomDTO>> getRooms() {
 		List<RoomDTO> roomDTOs = roomService.getAllRooms();
-		return roomDTOs;
+		return ApiResponse.success("查詢資料成功", roomDTOs);
 	}
 	
 	// 取得單筆房間
