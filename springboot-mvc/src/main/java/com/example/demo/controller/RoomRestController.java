@@ -38,14 +38,14 @@ public class RoomRestController {
 	@GetMapping("/rooms")
 	public ApiResponse<List<RoomDTO>> getRooms() {
 		List<RoomDTO> roomDTOs = roomService.getAllRooms();
-		return ApiResponse.success("查詢房間成功", roomDTOs);
+		return ApiResponse.success("查詢所有房間成功", roomDTOs);
 	}
 	
 	// 取得單筆房間
 	@GetMapping("/room/{roomId}")
 	public ApiResponse<RoomDTO> getRoom(@PathVariable Integer roomId) {
 		RoomDTO roomDTO = roomService.getRoomById(roomId);
-		return ApiResponse.success("查詢房間成功", roomDTO);
+		return ApiResponse.success("查詢 [ " + roomId + " ] 房間成功", roomDTO);
 	}
 	
 	// 新增房間
