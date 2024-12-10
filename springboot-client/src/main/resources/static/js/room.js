@@ -4,3 +4,5 @@ const roomIdInput = document.getElementById('roomId');
 const roomNameInput = document.getElementById('roomName');
 const roomSizeInput = document.getElementById('roomSize');
 const addResult = document.getElementById('addResult');
+
+roomNameInput.value = Math.random();
