@@ -52,7 +52,7 @@ public class RoomRestController {
 	@PostMapping("/room")
 	public ApiResponse<Boolean> addRoom(@RequestBody RoomDTO roomDTO) {
 		roomService.addRoom(roomDTO);
-		return ApiResponse.success("新增房間成功", true);;
+		return ApiResponse.success("新增房間成功", true);
 	}
 	
 	// 修改房間
