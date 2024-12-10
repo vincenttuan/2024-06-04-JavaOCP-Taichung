@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,9 +40,10 @@ public class RoomRestController {
 	
 	// 取得所有房間列表
 	@GetMapping("/rooms")
-	public ApiResponse<List<RoomDTO>> getRooms() {
+	public ResponseEntity<ApiResponse<List<RoomDTO>>> getRooms() {
 		List<RoomDTO> roomDTOs = roomService.getAllRooms();
-		return ApiResponse.success("查詢所有房間成功", roomDTOs);
+		//return ResponseEntity.status(200).body(ApiResponse.success("查詢所有房間成功", roomDTOs));
+		return ResponseEntity.ok(ApiResponse.success("查詢所有房間成功", roomDTOs));
 	}
 	
 	// 取得單筆房間
