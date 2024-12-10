@@ -43,9 +43,9 @@ public class RoomRestController {
 	
 	// 取得單筆房間
 	@GetMapping("/room/{roomId}")
-	public RoomDTO getRoom(@PathVariable Integer roomId) {
+	public ApiResponse<RoomDTO> getRoom(@PathVariable Integer roomId) {
 		RoomDTO roomDTO = roomService.getRoomById(roomId);
-		return roomDTO;
+		return ApiResponse.success("查詢資料成功", roomDTO);
 	}
 	
 	// 新增房間
