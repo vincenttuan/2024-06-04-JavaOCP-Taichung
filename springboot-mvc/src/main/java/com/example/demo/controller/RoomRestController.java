@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +34,7 @@ DELETE /rest/room/{roomId} 刪除指定房間    roomId (路徑參數，房間 I
 */
 @RestController
 @RequestMapping("/rest")
+@CrossOrigin(origins = "http://localhost:8081", allowCredentials = "true")
 public class RoomRestController {
 	
 	@Autowired
