@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.exception.RoomAlreadyExistException;
 import com.example.demo.exception.RoomException;
+import com.example.demo.exception.RoomNotFoundException;
 import com.example.demo.model.dto.RoomDTO;
 import com.example.demo.model.response.ApiResponse;
 import com.example.demo.service.RoomService;
@@ -72,7 +74,13 @@ public class RoomRestController {
 	// 例外處理
 	@ExceptionHandler({RoomException.class})
 	public ApiResponse<String> handleRoomException(RoomException re) {
-		return ApiResponse.error(500, re.getMessage());
+		int status = 500;
+		if(re instanceof RoomNotFoundException) {
+			status = 404;
+		} else if(re instanceof RoomAlreadyExistException) {
+			status = 409;
+		}
+		return ApiResponse.error(status, re.getMessage());
 	}
 	
 }
