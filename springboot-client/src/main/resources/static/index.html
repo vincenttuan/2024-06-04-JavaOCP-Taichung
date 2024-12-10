@@ -3,9 +3,30 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Room</title>
+		<!-- 引入 css -->
 		<link rel="stylesheet" href="./css/room.css">
 	</head>
 	<body>
-	
+		<!-- 網頁內容 -->
+		<div>
+			<h1>Room 管理</h1>
+			
+			<!-- 房間列表 -->
+			<h2>Room List</h2>
+			<ul id="roomList"></ul>
+			
+			<!-- 新增房間表單 -->
+			<h2>新增 Room</h2>
+			<div>
+				Room Id: <input type="number" id="roomId" name="roomId" placeholder="請輸入房號"><p />
+				Room Name: <input type="text" id="roomName" name="roomName" placeholder="請輸入房名"><p />
+				Room Size: <input type="number" id="roomSize" name="roomSize" placeholder="請輸入人數"><p />
+				<button onclick="addRoom()">新增</button>
+				<div id="addResult"></div>
+			</div>
+			
+		</div>
+		<!-- 引入 js -->
+		<script src="./js/room.js"></script>
 	</body>
 </html>
