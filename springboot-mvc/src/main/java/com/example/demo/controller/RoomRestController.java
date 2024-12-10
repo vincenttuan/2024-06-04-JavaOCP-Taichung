@@ -38,21 +38,21 @@ public class RoomRestController {
 	@GetMapping("/rooms")
 	public ApiResponse<List<RoomDTO>> getRooms() {
 		List<RoomDTO> roomDTOs = roomService.getAllRooms();
-		return ApiResponse.success("查詢資料成功", roomDTOs);
+		return ApiResponse.success("查詢房間成功", roomDTOs);
 	}
 	
 	// 取得單筆房間
 	@GetMapping("/room/{roomId}")
 	public ApiResponse<RoomDTO> getRoom(@PathVariable Integer roomId) {
 		RoomDTO roomDTO = roomService.getRoomById(roomId);
-		return ApiResponse.success("查詢資料成功", roomDTO);
+		return ApiResponse.success("查詢房間成功", roomDTO);
 	}
 	
 	// 新增房間
 	@PostMapping("/room")
-	public Boolean addRoom(@RequestBody RoomDTO roomDTO) {
+	public ApiResponse<Boolean> addRoom(@RequestBody RoomDTO roomDTO) {
 		roomService.addRoom(roomDTO);
-		return true;
+		return ApiResponse.success("新增房間成功", true);;
 	}
 	
 	// 修改房間
