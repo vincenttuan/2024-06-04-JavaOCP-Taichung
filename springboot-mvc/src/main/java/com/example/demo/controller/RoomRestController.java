@@ -57,9 +57,9 @@ public class RoomRestController {
 	
 	// 修改房間
 	@PutMapping("/room/{roomId}")
-	public Boolean updateRoom(@PathVariable Integer roomId, @RequestBody RoomDTO roomDTO) {
+	public ApiResponse<Boolean> updateRoom(@PathVariable Integer roomId, @RequestBody RoomDTO roomDTO) {
 		roomService.updateRoom(roomId, roomDTO);
-		return true;
+		return ApiResponse.success("修改房間成功", true);
 	}
 	
 	// 刪除房間
