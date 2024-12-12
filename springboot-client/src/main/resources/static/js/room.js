@@ -39,6 +39,7 @@ const displayRooms = (rooms) => {
 	});
 }
 
+// 呼叫 fetchRooms() 方法 
 fetchRooms();
 
 
