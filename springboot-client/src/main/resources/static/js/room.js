@@ -5,4 +5,20 @@ const roomNameInput = document.getElementById('roomName');
 const roomSizeInput = document.getElementById('roomSize');
 const addResult = document.getElementById('addResult');
 
-roomNameInput.value = Math.random();
+// 透過 fetch 經由 http://localhost:8080/rest/rooms 取得遠端資料
+// async 非同步, await 等待, fetch 取資料, json() 字串轉 json 物件
+
+const fetchRooms = async () => {
+	try {
+		console.log('取得 rooms 資料');
+		const response = await fetch('http://localhost:8080/rest/rooms');
+		const apiResponse = await response.json();
+		console.log(apiResponse);
+	} catch(e) {
+		console.err(e);
+	}	
+};
+
+fetchRooms();
+
+
