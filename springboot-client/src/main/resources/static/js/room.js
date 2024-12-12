@@ -25,7 +25,16 @@ const fetchRooms = async () => {
 // 顯示所有房間
 const displayRooms = (rooms) => {
 	//alert(rooms);
-	roomList.innerText = rooms;
+	//roomList.innerText = rooms;
+	rooms.forEach(room => {
+		// 建立 <li> 標籤
+		const item = document.createElement('li');
+		// 在 <li> 標籤內放入資料
+		item.textContent = room;
+		
+		// 將 <li> (item) 放到 <ul> (roomList)
+		roomList.appendChild(item);
+	});
 }
 
 fetchRooms();
