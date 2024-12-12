@@ -5,6 +5,36 @@ const roomNameInput = document.getElementById('roomName');
 const roomSizeInput = document.getElementById('roomSize');
 const addResult = document.getElementById('addResult');
 
+// 新增房間
+/*
+function addRoom() {
+	
+}
+*/
+const addRoom = () => {
+	// 取得表單輸入資訊
+	const roomId = roomIdInput.value;
+	const roomName = roomNameInput.value;
+	const roomSize = roomSizeInput.value;
+	
+	// 儲存
+	try {
+		// 建立 json 物件
+		const roomDTO = {
+			roomId: roomId,
+			roomName: roomName,
+			roomSize: roomSize
+		};
+		
+		// json 物件轉 json 字串
+		roomDTOString = JSON.stringify(roomDTO);
+		alert(roomDTOString);
+		
+	} catch(e) {
+		console.err(e);
+	}
+};
+
 // 透過 fetch 經由 http://localhost:8080/rest/rooms 取得遠端資料
 // async 非同步, await 等待, fetch 取資料, json() 字串轉 json 物件
 const fetchRooms = async () => {
