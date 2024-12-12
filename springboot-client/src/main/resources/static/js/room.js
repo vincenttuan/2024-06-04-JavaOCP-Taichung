@@ -24,7 +24,8 @@ const fetchRooms = async () => {
 
 // 顯示所有房間
 const displayRooms = (rooms) => {
-	alert(rooms);
+	//alert(rooms);
+	roomList.innerText = rooms;
 }
 
 fetchRooms();
