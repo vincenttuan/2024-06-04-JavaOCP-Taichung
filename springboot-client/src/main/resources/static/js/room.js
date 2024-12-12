@@ -79,7 +79,7 @@ const displayRooms = (rooms) => {
 		const item = document.createElement('li');
 		// 在 <li> 標籤內放入資料
 		//item.textContent = '房號:' + room.id + ' 房名:' + room.name + ' 人數:' + room.size;
-		item.textContent = `房號: ${room.id} 房名: ${room.name} 人數: ${room.size}`;
+		item.textContent = `房號: ${room.id} 房名: ${room.name} 人數: ${room.size} `;
 		// 新建立一個刪除按鈕
 		const deleteButton = document.createElement('button');
 		deleteButton.textContent = '刪除';
