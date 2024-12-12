@@ -80,7 +80,7 @@ const deleteRoom = async (roomId) => {
 			// 刪除成功, 重新查詢所有房間
 			fetchRooms();
 		} else {
-			addResult.innerText = apiResponse.message;
+			addResult.innerText = `${apiResponse.status} ${apiResponse.message}`;
 		}
 		
 	} catch(e) {
