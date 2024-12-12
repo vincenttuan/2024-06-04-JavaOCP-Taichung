@@ -30,7 +30,7 @@ const displayRooms = (rooms) => {
 		// 建立 <li> 標籤
 		const item = document.createElement('li');
 		// 在 <li> 標籤內放入資料
-		item.textContent = room;
+		item.textContent = room.id + room.name + room.size;
 		
 		// 將 <li> (item) 放到 <ul> (roomList)
 		roomList.appendChild(item);
