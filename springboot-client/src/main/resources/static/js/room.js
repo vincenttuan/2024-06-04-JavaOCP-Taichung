@@ -14,6 +14,8 @@ const fetchRooms = async () => {
 		const response = await fetch('http://localhost:8080/rest/rooms');
 		const apiResponse = await response.json();
 		console.log(apiResponse);
+		//addResult.innerHTML = '<h3>' + apiResponse.message + '</h3>';
+		addResult.innerText = apiResponse.message;
 	} catch(e) {
 		console.err(e);
 	}	
