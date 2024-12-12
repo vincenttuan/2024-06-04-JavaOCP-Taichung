@@ -7,11 +7,11 @@ const addResult = document.getElementById('addResult');
 
 // 新增房間
 /*
-function addRoom() {
+async function addRoom() {
 	
 }
 */
-const addRoom = () => {
+const addRoom = async() => {
 	// 取得表單輸入資訊
 	const roomId = roomIdInput.value;
 	const roomName = roomNameInput.value;
@@ -21,14 +21,30 @@ const addRoom = () => {
 	try {
 		// 建立 json 物件
 		const roomDTO = {
-			roomId: roomId,
-			roomName: roomName,
-			roomSize: roomSize
+			id: roomId,
+			name: roomName,
+			size: roomSize
 		};
 		
 		// json 物件轉 json 字串
 		roomDTOString = JSON.stringify(roomDTO);
-		alert(roomDTOString);
+		console.log(roomDTOString);
+		
+		// post 送出
+		const response = await fetch('http://localhost:8080/rest/room', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: roomDTOString
+		});
+		
+		// 回應
+		const apiResponse = await response.json();
+		addResult.innerText = apiResponse.message;
+		 
+		// 重新查詢 rooms 資料
+		fetchRooms();
 		
 	} catch(e) {
 		console.err(e);
