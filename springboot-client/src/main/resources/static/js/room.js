@@ -25,7 +25,9 @@ const fetchRooms = async () => {
 // 顯示所有房間
 const displayRooms = (rooms) => {
 	//alert(rooms);
-	//roomList.innerText = rooms;
+	// 清空 roomList
+	roomList.innerText = '';
+	// 逐筆顯示每一個房間的資訊
 	rooms.forEach(room => {
 		// 建立 <li> 標籤
 		const item = document.createElement('li');
