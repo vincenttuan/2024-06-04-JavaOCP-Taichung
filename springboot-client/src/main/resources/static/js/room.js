@@ -133,7 +133,6 @@ const openModal = (id, name, size) => {
 	editNameInput.value = name;
 	editSizeInput.value = size;
 	editModal.style.display = 'flex';
-	
 }
 
 // 關閉小視窗
