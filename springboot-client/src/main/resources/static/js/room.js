@@ -8,8 +8,8 @@ const addResult = document.getElementById('addResult');
 // 獲取 DOM 元素 (Modal)
 const editModal = document.getElementById('editModal');
 const editIdInput = document.getElementById('editId');
-const editNameInput = document.getElementById('editId');
-const editSizeInput = document.getElementById('editId');
+const editNameInput = document.getElementById('editName');
+const editSizeInput = document.getElementById('editSize');
 
 // 新增房間
 /*
