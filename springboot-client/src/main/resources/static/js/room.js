@@ -120,6 +120,11 @@ const displayRooms = (rooms) => {
 	});
 }
 
+// 打開小視窗
+const openModal = (id, name, size) => {
+	console.log(id, name, size);
+}
+
 // 呼叫 fetchRooms() 方法 
 fetchRooms();
 
