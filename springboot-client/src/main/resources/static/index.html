@@ -25,6 +25,17 @@
 			<h2>Room List</h2>
 			<ul id="roomList"></ul>
 			
+			<!-- 修改房間表單 pop-up 小視窗 (Modal) -->
+			<div class="modal-overlay" id="editModal">
+		        <div class="modal">
+		            <span class="close-btn" onclick="closeModal()">×</span>
+		            <h3>Edit Room</h3>
+		            Room Id:<input type="text" id="editRoomId" style="width: 50px" disabled>
+		            Room Name: <input type="text" id="editRoomName" style="width: 100px" placeholder="請輸入新的會議室名稱">
+		            Room Size: <input type="number" id="editRoomSize" style="width: 50px" placeholder="請輸入新的會議室人數">
+		            <button onclick="confirmEdit()">Confirm</button>
+		        </div>
+		    </div>
 			
 		</div>
 		<!-- 引入 js -->
