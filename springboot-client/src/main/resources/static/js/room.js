@@ -19,14 +19,14 @@ const addRoom = async() => {
 	
 	// 儲存
 	try {
-		// 建立 json 物件
+		// 建立物件
 		const roomDTO = {
 			id: roomId,
 			name: roomName,
 			size: roomSize
 		};
 		
-		// json 物件轉 json 字串
+		// 物件轉 json 字串
 		roomDTOString = JSON.stringify(roomDTO);
 		console.log(roomDTOString);
 		
@@ -101,13 +101,20 @@ const displayRooms = (rooms) => {
 		// 在 <li> 標籤內放入資料
 		//item.textContent = '房號:' + room.id + ' 房名:' + room.name + ' 人數:' + room.size;
 		item.textContent = `房號: ${room.id} 房名: ${room.name} 人數: ${room.size} `;
+		//-----------------------------------------------------------------------------
 		// 新建立一個刪除按鈕
 		const deleteButton = document.createElement('button');
 		deleteButton.textContent = '刪除';
 		deleteButton.onclick = () => deleteRoom(room.id);
 		// 將 deleteButton 加入到 item
 		item.appendChild(deleteButton);
-		
+		//-----------------------------------------------------------------------------
+		// 建立一個修改按鈕
+		const updateButton = document.createElement('button');
+		updateButton.textContent = '修改';
+		updateButton.onclick = () => openModal(room.id, room.name, room.size);
+		item.appendChild(updateButton);
+		//-----------------------------------------------------------------------------
 		// 將 <li> (item) 放到 <ul> (roomList)
 		roomList.appendChild(item);
 	});
