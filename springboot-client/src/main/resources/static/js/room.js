@@ -140,7 +140,39 @@ const closeModal = () => {
 	editModal.style.display = 'none';
 }
 
-
+// 修改確認
+const cinfirmEdit = async () => {
+	try {
+		// 建立物件 (json style)
+		const roomDTO = {
+			name: editNameInput.value,
+			size: editSizeInput.value
+		};
+		
+		const id = editIdInput.value;
+		const response = await fetch(`http://localhost:8080/rest/room/${id}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(roomDTO)
+		});
+		
+		const apiResponse = await response.json();
+		
+		if(response.ok) {
+			fetchRooms();
+		} else {
+			addResult.textContent = apiResponse.message;
+		}
+		
+		
+	} catch(e) {
+		addResult.textContent = e;
+	} finally {
+		closeModal(); // 關閉 Modal
+	}
+}
 
 
 // 呼叫 fetchRooms() 方法 
