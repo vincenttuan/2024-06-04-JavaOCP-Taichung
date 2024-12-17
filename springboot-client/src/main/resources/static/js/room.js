@@ -129,7 +129,11 @@ const displayRooms = (rooms) => {
 // 打開小視窗
 const openModal = (id, name, size) => {
 	console.log(id, name, size);
+	editIdInput.value = id;
+	editNameInput.value = name;
+	editSizeInput.value = size;
 	editModal.style.display = 'flex';
+	
 }
 
 // 關閉小視窗
