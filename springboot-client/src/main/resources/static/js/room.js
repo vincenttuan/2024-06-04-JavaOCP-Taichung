@@ -141,7 +141,7 @@ const closeModal = () => {
 }
 
 // 修改確認
-const cinfirmEdit = async () => {
+const confirmEdit = async () => {
 	try {
 		// 建立物件 (json style)
 		const roomDTO = {
