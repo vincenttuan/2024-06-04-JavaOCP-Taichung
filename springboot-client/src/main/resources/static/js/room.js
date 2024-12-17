@@ -5,6 +5,12 @@ const roomNameInput = document.getElementById('roomName');
 const roomSizeInput = document.getElementById('roomSize');
 const addResult = document.getElementById('addResult');
 
+// 獲取 DOM 元素 (Modal)
+const editModal = document.getElementById('editModal');
+const editIdInput = document.getElementById('editId');
+const editNameInput = document.getElementById('editId');
+const editSizeInput = document.getElementById('editId');
+
 // 新增房間
 /*
 async function addRoom() {
@@ -123,6 +129,7 @@ const displayRooms = (rooms) => {
 // 打開小視窗
 const openModal = (id, name, size) => {
 	console.log(id, name, size);
+	
 }
 
 
