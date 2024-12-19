@@ -18,7 +18,7 @@ public class AddEmployee {
 		try {
 			// 建立一個 employee 物件
 			Employee employee = new Employee();
-			employee.setUsername("John");
+			employee.setUsername("Mary");
 			employee.setPassword("1234");
 			employee.setAnnualLeave(7);
 			

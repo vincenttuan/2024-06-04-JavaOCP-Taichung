@@ -1,11 +1,15 @@
 package com.example.leave.model.entity;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.Data;
 
 @Entity // 此類會在資料庫中建立一個 employee 資料表
@@ -25,6 +29,10 @@ public class Employee {
 	
 	@Column(nullable = false)
 	private Integer annualLeave; // 特休天數
+	
+	@Column
+	@Temporal(TemporalType.DATE) // 僅存日期
+	private Date arrivalDate; // 到職日 
 	
 	// 自行寫 toString 避免未來若有加入關聯產生了資料存取遞迴的風險
 	@Override
