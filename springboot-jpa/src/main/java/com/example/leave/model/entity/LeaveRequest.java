@@ -36,7 +36,7 @@ public class LeaveRequest {
 	private String reason;
 	
 	@Column(length = 10)
-	private String status; // PENDING、APPROVED、REJECTED
+	private String status = "PENDING"; // PENDING、APPROVED、REJECTED
 
 	
 	
