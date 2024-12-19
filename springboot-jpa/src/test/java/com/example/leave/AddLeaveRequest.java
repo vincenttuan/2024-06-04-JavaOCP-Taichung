@@ -24,6 +24,7 @@ public class AddLeaveRequest {
 			Date startDate = sdf.parse("2024-12-24");
 			Date endDate = sdf.parse("2024-12-26");
 			
+			// 建立假單
 			LeaveRequest leaveRequest = new LeaveRequest();
 			leaveRequest.setEmployeeId(1);
 			leaveRequest.setType("特休");
