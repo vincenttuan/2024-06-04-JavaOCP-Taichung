@@ -21,23 +21,24 @@ public class LeaveRequest {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column
+	@Column(nullable = false)
 	private Integer employeeId;
 	
-	@Column
+	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date startDate;
 	
-	@Column
+	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date endDate;
 	
 	@Column(length = 255)
 	private String reason;
 	
-	@Column(length = 10)
+	@Column(length = 10, nullable = false)
 	private String status = "PENDING"; // PENDING、APPROVED、REJECTED
-
+	
+	
 	
 	
 }
