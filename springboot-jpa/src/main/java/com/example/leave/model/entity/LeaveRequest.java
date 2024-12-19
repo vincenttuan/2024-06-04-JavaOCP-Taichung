@@ -40,8 +40,12 @@ public class LeaveRequest {
 	
 	@Column(length = 10, nullable = false)
 	private String status = "PENDING"; // PENDING、APPROVED、REJECTED
-	
-	
+
+	@Override
+	public String toString() {
+		return "LeaveRequest [id=" + id + ", employeeId=" + employeeId + ", type=" + type + ", startDate=" + startDate
+				+ ", endDate=" + endDate + ", reason=" + reason + ", status=" + status + "]";
+	}
 	
 	
 }
