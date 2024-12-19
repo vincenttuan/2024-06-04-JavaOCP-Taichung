@@ -25,6 +25,9 @@ public class LeaveRequest {
 	private Integer employeeId;
 	
 	@Column(nullable = false)
+	private String type; // 特休, 病假, 事假
+	
+	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date startDate;
 	
