@@ -11,6 +11,7 @@ import com.example.leave.repository.EmployeeRepository;
 
 @SpringBootTest
 public class QueryEmployee {
+	
 	@Autowired
 	EmployeeRepository employeeRepository;
 	
