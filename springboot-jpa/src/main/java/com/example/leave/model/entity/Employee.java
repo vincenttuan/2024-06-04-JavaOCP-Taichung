@@ -17,13 +17,13 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // 連續自動生成 +1 的序號
 	private Integer id;
 	
-	@Column
+	@Column(length = 50, nullable = false, unique = true)
 	private String username;
 	
-	@Column
+	@Column(length = 50, nullable = false)
 	private String password;
 	
-	@Column
+	@Column(nullable = false)
 	private Integer annualLeave; // 特休天數
 	
 	// 自行寫 toString 避免未來若有加入關聯產生了資料存取遞迴的風險
