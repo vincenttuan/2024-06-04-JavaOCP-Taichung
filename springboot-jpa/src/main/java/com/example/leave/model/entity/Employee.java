@@ -33,12 +33,14 @@ public class Employee {
 	@Column
 	@Temporal(TemporalType.DATE) // 僅存日期
 	private Date arrivalDate; // 到職日 
-	
-	// 自行寫 toString 避免未來若有加入關聯產生了資料存取遞迴的風險
+
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", username=" + username + ", password=" + password + ", annualLeave="
-				+ annualLeave + "]";
+				+ annualLeave + ", arrivalDate=" + arrivalDate + "]";
 	}
+	
+	// 自行寫 toString 避免未來若有加入關聯產生了資料存取遞迴的風險
+	
 	
 }
