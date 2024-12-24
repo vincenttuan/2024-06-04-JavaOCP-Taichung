@@ -24,11 +24,11 @@ public class AddLeaveRequest {
 	
 	@Test
 	public void test() { 
-		// 員編 = 1 要休 2024-12-24 ~ 2024-12-26
-		// 員編 = 1 要休 2024-12-30 ~ 2024-12-31
-		// 員編 = 3 要休 2024-12-30 ~ 2024-12-31
+		// 員編 = 1 要休 2024-12-24 ~ 2024-12-26 聖誕節
+		// 員編 = 1 要休 2024-12-30 ~ 2024-12-31 跨年
+		// 員編 = 3 要休 2024-12-30 ~ 2024-12-31 跨年
 		try {
-			// 將員工編號 = 3 的資料取出
+			// 將員工編號的資料取出
 			Optional<Employee> optEmployee = employeeRepository.findById(3);
 			if(optEmployee.isEmpty()) {
 				System.out.println("員工不存在");
