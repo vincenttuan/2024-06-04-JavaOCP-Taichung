@@ -23,7 +23,7 @@ public class QueryLeaveRequest {
 		// 資料列出
 		for(LeaveRequest leave : leaves) {
 			System.out.print("員工編號:" +  leave.getEmployee().getId());
-			System.out.print("員工姓名:" +  leave.getEmployee().getUsername());
+			System.out.print(" 員工姓名:" +  leave.getEmployee().getUsername());
 			System.out.print(" 請假開始:" +  leave.getStartDate());
 			System.out.print(" 請假結束:" +  leave.getEndDate());
 			System.out.println(" 假單狀態:" +  leave.getStatus());
