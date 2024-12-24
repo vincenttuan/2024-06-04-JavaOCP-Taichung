@@ -33,7 +33,7 @@ public class QueryEmployee {
 		System.out.println("員工編號:" + employee.getId());
 		System.out.println("員工姓名:" + employee.getUsername());
 		System.out.println("特休天數:" + employee.getAnnualLeave());
-		System.out.println("請假紀錄:");
+		System.out.println("請假紀錄筆數:" + employee.getLeaveRequests().size());
 		
 		
 		
