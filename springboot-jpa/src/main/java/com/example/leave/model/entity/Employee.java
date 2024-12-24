@@ -9,7 +9,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -39,6 +41,10 @@ public class Employee {
 	
 	@OneToMany(mappedBy = "employee", fetch = FetchType.EAGER) // 查詢員工時也一併連同請假紀錄一起查 
 	private List<LeaveRequest> leaveRequests;
+	
+	@OneToOne
+	@JoinColumn(name = "salary_id", nullable = true)
+	private Salary salary;
 	
 	// 自行寫 toString 避免未來若有加入關聯產生了資料存取遞迴的風險
 	@Override
