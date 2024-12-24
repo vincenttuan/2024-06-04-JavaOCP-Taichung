@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.leave.model.entity.Employee;
+import com.example.leave.model.entity.LeaveRequest;
 import com.example.leave.repository.EmployeeRepository;
 
 @SpringBootTest
@@ -33,8 +34,17 @@ public class QueryEmployee {
 		System.out.println("員工編號:" + employee.getId());
 		System.out.println("員工姓名:" + employee.getUsername());
 		System.out.println("特休天數:" + employee.getAnnualLeave());
-		System.out.println("請假紀錄筆數:" + employee.getLeaveRequests().size());
-		
+		// 請假紀錄
+		List<LeaveRequest> leaves = employee.getLeaveRequests();
+		System.out.println("請假紀錄筆數:" + leaves.size());
+		System.out.println("請假紀錄:");
+		System.out.println("======================");
+		for(LeaveRequest leave : leaves) {
+			System.out.println(leave.getType() + " " + 
+					leave.getStartDate() + " ~ " + leave.getEndDate() + " " + 
+					leave.getReason() + " " + 
+					leave.getStatus());
+		}
 		
 		
 	}
