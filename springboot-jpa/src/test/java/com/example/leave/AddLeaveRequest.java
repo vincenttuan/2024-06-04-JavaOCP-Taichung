@@ -24,6 +24,8 @@ public class AddLeaveRequest {
 	@Test
 	public void test() { 
 		// 員編 = 1 要休 2024-12-24 ~ 2024-12-26
+		// 員編 = 1 要休 2024-12-30 ~ 2024-12-31
+		// 員編 = 3 要休 2024-12-30 ~ 2024-12-31
 		try {
 			// 將員工編號 = 1 的資料取出
 			Employee employee = employeeRepository.findById(1).get();
