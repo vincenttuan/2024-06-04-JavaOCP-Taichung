@@ -10,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -45,6 +47,14 @@ public class Employee {
 	@OneToOne
 	@JoinColumn(name = "salary_id", nullable = true, referencedColumnName = "id")
 	private Salary salary;
+	
+	@ManyToMany
+	@JoinTable(
+			name = "employee_project", // 關聯表名稱
+			joinColumns = @JoinColumn(name = "employee_id"), // 員工 id
+			inverseJoinColumns = @JoinColumn(name = "project_id") // 專案 id
+	)
+	private List<Project> projects; // 員工所參與的專案
 	
 	// 自行寫 toString 避免未來若有加入關聯產生了資料存取遞迴的風險
 	@Override
