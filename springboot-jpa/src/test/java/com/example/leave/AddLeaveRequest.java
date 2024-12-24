@@ -2,6 +2,7 @@ package com.example.leave;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +29,16 @@ public class AddLeaveRequest {
 		// 員編 = 3 要休 2024-12-30 ~ 2024-12-31
 		try {
 			// 將員工編號 = 1 的資料取出
-			Employee employee = employeeRepository.findById(1).get();
+			Optional<Employee> optEmployee = employeeRepository.findById(1);
+			if(optEmployee.isEmpty()) {
+				System.out.println("員工不存在");
+				return;
+			}
+			Employee employee = optEmployee.get();
 			
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			Date startDate = sdf.parse("2024-12-24");
-			Date endDate = sdf.parse("2024-12-26");
+			Date startDate = sdf.parse("2024-12-30");
+			Date endDate = sdf.parse("2024-12-31");
 			
 			// 建立假單
 			LeaveRequest leaveRequest = new LeaveRequest();
@@ -40,7 +46,7 @@ public class AddLeaveRequest {
 			leaveRequest.setType("特休");
 			leaveRequest.setStartDate(startDate);
 			leaveRequest.setEndDate(endDate);
-			leaveRequest.setReason("耶誕節");
+			leaveRequest.setReason("跨年");
 			leaveRequest.setStatus("APPROVED");
 			
 			// 儲存
