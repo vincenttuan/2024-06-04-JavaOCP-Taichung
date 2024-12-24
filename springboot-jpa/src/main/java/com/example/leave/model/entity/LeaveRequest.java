@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -21,8 +23,11 @@ public class LeaveRequest {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(nullable = false)
-	private Integer employeeId;
+	//@Column(nullable = false)
+	//private Integer employeeId;
+	@ManyToOne
+	@JoinColumn(name = "employee_id")
+	private Employee employee;
 	
 	@Column(nullable = false)
 	private String type; // 特休, 病假, 事假
