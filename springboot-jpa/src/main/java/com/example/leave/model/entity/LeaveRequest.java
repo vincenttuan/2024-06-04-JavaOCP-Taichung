@@ -40,7 +40,8 @@ public class LeaveRequest {
 	
 	@Column(length = 10, nullable = false)
 	private String status = "PENDING"; // PENDING、APPROVED、REJECTED
-
+	
+	// 自行寫 toString 避免未來若有加入關聯產生了資料存取遞迴的風險
 	@Override
 	public String toString() {
 		return "LeaveRequest [id=" + id + ", employeeId=" + employeeId + ", type=" + type + ", startDate=" + startDate
