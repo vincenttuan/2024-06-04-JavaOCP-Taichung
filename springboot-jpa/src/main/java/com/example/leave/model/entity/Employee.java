@@ -43,7 +43,7 @@ public class Employee {
 	private List<LeaveRequest> leaveRequests;
 	
 	@OneToOne
-	@JoinColumn(name = "salary_id", nullable = true)
+	@JoinColumn(name = "salary_id", nullable = true, referencedColumnName = "id")
 	private Salary salary;
 	
 	// 自行寫 toString 避免未來若有加入關聯產生了資料存取遞迴的風險
