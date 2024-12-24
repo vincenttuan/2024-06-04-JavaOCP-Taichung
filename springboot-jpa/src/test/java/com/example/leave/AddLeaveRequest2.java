@@ -27,7 +27,8 @@ public class AddLeaveRequest2 {
 			
 			// 建立假單
 			LeaveRequest leaveRequest = new LeaveRequest();
-			leaveRequest.setEmployeeId(2); // 員編 1, 2
+			//leaveRequest.setEmployeeId(1); // 員編 1
+			leaveRequest.setEmployeeId(2); // 員編 2
 			leaveRequest.setType("特休");
 			leaveRequest.setStartDate(startDate);
 			leaveRequest.setEndDate(endDate);
