@@ -1,6 +1,7 @@
 package com.example.leave.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class EmployeeService {
 		List<EmployeeDTO> employeeDTOs = employees // List<Employee>
 											.stream() // Employee, Employee, Employee ...
 											.map(employee -> modelMapper.map(employee, EmployeeDTO.class)) // EmployeeDTO, EmployeeDTO, EmployeeDTO ...
-											.toList(); // List<EmployeeDTO>
+											.toList();  //.collect(Collectors.toList());
 		return employeeDTOs;
 	
 	}
