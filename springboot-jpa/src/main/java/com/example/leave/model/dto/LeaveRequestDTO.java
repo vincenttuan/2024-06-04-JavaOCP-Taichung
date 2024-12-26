@@ -14,7 +14,7 @@ public class LeaveRequestDTO {
 	private String status; // "PENDING", "APPROVED", "REJECTED"
 	
 	// 計算請假天數
-	private long getLeaveDays() {
+	public long getLeaveDays() {
 		long leaveDays = (endDate.getTime() - startDate.getTime())/(60*60*24*1000);
 		return leaveDays;
 	}
