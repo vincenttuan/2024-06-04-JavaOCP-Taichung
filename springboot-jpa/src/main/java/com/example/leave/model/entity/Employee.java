@@ -48,7 +48,7 @@ public class Employee {
 	@JoinColumn(name = "salary_id", nullable = true, referencedColumnName = "id")
 	private Salary salary;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER) // 查詢員工時也一併連同專案紀錄一起查 
 	@JoinTable(
 			name = "employee_project", // 關聯表名稱
 			joinColumns = @JoinColumn(name = "employee_id"), // 員工 id
