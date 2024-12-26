@@ -1,8 +1,10 @@
 package com.example.leave.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.eclipse.tags.shaded.org.apache.regexp.recompile;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +32,20 @@ public class EmployeeService {
 											.map(employee -> modelMapper.map(employee, EmployeeDTO.class)) // EmployeeDTO, EmployeeDTO, EmployeeDTO ...
 											.toList();  //.collect(Collectors.toList());
 		return employeeDTOs;
-	
 	}
+	
+	// 查找單筆員工資料
+	public EmployeeDTO getEmployeeDTOById(Integer id) {
+		Optional<Employee> optEmployee = employeeRepository.findById(id);
+		if(optEmployee.isEmpty()) {
+			throw new RuntimeException("找不到員工 ID: " + id);
+		}
+		Employee employee = optEmployee.get();
+		// 將 Employee 轉 EmployeeDTO
+		EmployeeDTO employeeDTO = modelMapper.map(employee, EmployeeDTO.class);
+		return employeeDTO;
+	}
+	
+	
 	
 }
