@@ -16,10 +16,14 @@ public class AddProject {
 	@Test
 	public void test() {
 		
-		Project project = new Project();
-		project.setName("App");
-		
-		projectRepository.save(project);
+		try {
+			Project project = new Project();
+			project.setName("App");
+			
+			projectRepository.save(project);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 	}
