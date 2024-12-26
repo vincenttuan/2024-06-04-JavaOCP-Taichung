@@ -1,4 +1,4 @@
-package com.example.leave;
+package com.example.leave.test.repository;
 
 import java.util.List;
 import java.util.Optional;

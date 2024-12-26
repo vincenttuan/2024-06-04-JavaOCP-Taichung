@@ -1,4 +1,4 @@
-package com.example.leave;
+package com.example.leave.test.repository;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
