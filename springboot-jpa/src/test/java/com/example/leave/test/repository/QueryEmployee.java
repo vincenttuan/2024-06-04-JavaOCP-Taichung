@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.leave.model.entity.Employee;
 import com.example.leave.model.entity.LeaveRequest;
+import com.example.leave.model.entity.Project;
+import com.example.leave.model.entity.Salary;
 import com.example.leave.repository.EmployeeRepository;
 
 @SpringBootTest
@@ -23,7 +25,7 @@ public class QueryEmployee {
 //		for(Employee emp : employees) {
 //			System.out.println(emp);
 //		}
-		// 查詢員工編號=1的員工資料與請假紀錄
+		// 查詢員工編號=1 的員工資料, 請假紀錄, 專案紀錄與薪資
 		Optional<Employee> optEmployee = employeeRepository.findById(1);
 		if(optEmployee.isEmpty()) {
 			System.out.println("無此員工");
@@ -45,7 +47,17 @@ public class QueryEmployee {
 					leave.getReason() + " " + 
 					leave.getStatus());
 		}
-		
+		// 專案紀錄
+		List<Project> projects = employee.getProjects();
+		System.out.println("專案紀錄筆數:" + projects.size());
+		System.out.println("專案紀錄:");
+		System.out.println("======================");
+		for(Project project : projects) {
+			System.out.println("專案名稱:" + project.getName());
+		}
+		// 薪資紀錄
+		Salary salary = employee.getSalary();
+		System.out.println("薪資:" + salary.getAmount());
 		
 	}
 	
