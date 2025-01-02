@@ -40,6 +40,9 @@
 									</c:forEach>
 								</table>
 							</td>
+							<td>
+								${ employeeDTO.leaveRequests }
+							</td>
 						</tr>
 						
 					</c:forEach>
