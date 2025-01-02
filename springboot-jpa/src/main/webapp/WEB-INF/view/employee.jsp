@@ -34,7 +34,11 @@
 							<td>${ employeeDTO.arrivalDate }</td>
 							<td>${ employeeDTO.salary.amount }</td>
 							<td>
-								${ employeeDTO.projects }
+								<table class="pure-table">
+									<c:forEach var="projectDTO" items="${ employeeDTO.projects }"> 
+										<td>${ projectDTO.name }</td>
+									</c:forEach>
+								</table>
 							</td>
 						</tr>
 						
