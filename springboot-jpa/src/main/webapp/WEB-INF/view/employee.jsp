@@ -21,7 +21,7 @@
 				<thead>
 					<tr>
 						<th>編號</th><th>姓名</th><th>年假</th><th>到職日</th>
-						<th>薪資</th><th>專案工作</th><th>請假紀錄</th>
+						<th>薪資(千元)</th><th>專案工作</th><th>請假紀錄</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -32,7 +32,7 @@
 							<td>${ employeeDTO.username }</td>
 							<td>${ employeeDTO.annualLeave }</td>
 							<td>${ employeeDTO.arrivalDate }</td>
-							<td>${ employeeDTO.salary.amount }</td>
+							<td align="right">${ employeeDTO.salary.amount/1000.0 }</td>
 							<td>
 								<table class="pure-table">
 									<c:forEach var="projectDTO" items="${ employeeDTO.projects }"> 
