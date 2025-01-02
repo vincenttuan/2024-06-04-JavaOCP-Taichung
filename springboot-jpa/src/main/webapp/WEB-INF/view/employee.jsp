@@ -25,7 +25,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					
+					<!-- 員工資料列表 -->
+					<c:forEach var="employeeDTO" items="${ employeeDTOs }">
+						<tr>
+							<td>${ employeeDTO.id }</td>
+							<td>${ employeeDTO.username }</td>
+							<td>${ employeeDTO.annualLeave }</td>
+							<td>${ employeeDTO.arrivalDate }</td>
+							<td>${ employeeDTO.salary.amount }</td>
+							<td>
+								${ employeeDTO.projects }
+							</td>
+						</tr>
+						
+					</c:forEach>
 				</tbody>
 			</table>
 			
