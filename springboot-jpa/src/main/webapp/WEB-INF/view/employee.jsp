@@ -41,7 +41,16 @@
 								</table>
 							</td>
 							<td>
-								${ employeeDTO.leaveRequests }
+								<table>
+									<c:forEach var="leaveRequestDTO" items="${ employeeDTO.leaveRequests }">
+										<tr>
+											<td>${ leaveRequestDTO.type }</td>
+											<td>${ leaveRequestDTO.startDate } ~ ${ leaveRequestDTO.endDate }</td>
+											<td>${ leaveRequestDTO.reason }</td>
+											<td>${ leaveRequestDTO.status }</td>
+										</tr>
+									</c:forEach>
+								</table>
 							</td>
 						</tr>
 						
