@@ -1,6 +1,11 @@
 package com.example.leave.model.entity;
 
 import java.util.Date;
+import java.util.List;
+
+import com.example.leave.model.dto.LeaveRequestDTO;
+import com.example.leave.model.dto.ProjectDTO;
+import com.example.leave.model.dto.SalaryDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,10 +18,13 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "leave_request") // 預設資料表名 (此行可以省略)
-@Data
+@Getter
+@Setter
 public class LeaveRequest {
 	
 	@Id

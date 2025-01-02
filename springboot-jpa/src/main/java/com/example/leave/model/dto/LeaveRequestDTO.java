@@ -1,10 +1,14 @@
 package com.example.leave.model.dto;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class LeaveRequestDTO {
 	private Integer id;
 	private String type; // 特休, 病假, 事假

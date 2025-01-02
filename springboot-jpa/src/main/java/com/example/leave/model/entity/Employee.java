@@ -3,6 +3,10 @@ package com.example.leave.model.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.example.leave.model.dto.LeaveRequestDTO;
+import com.example.leave.model.dto.ProjectDTO;
+import com.example.leave.model.dto.SalaryDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -18,10 +22,13 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity // 此類會在資料庫中建立一個 employee 資料表
 @Table(name = "employee") // 將資料表改為指定名稱(預設是類名小寫)
-@Data
+@Getter
+@Setter
 public class Employee {
 	
 	@Id // 主鍵欄位
