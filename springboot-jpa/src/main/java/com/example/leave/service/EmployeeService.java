@@ -10,6 +10,14 @@ import com.example.leave.model.dto.EmployeeDTO;
 import com.example.leave.model.entity.Employee;
 import com.example.leave.repository.EmployeeRepository;
 
+/**
+ * 功能服務:
+ * 1.查詢所有員工資料
+ * 2.查找單筆員工資料
+ * 
+ * 
+ * */
+
 @Service
 public class EmployeeService {
 	
@@ -19,7 +27,7 @@ public class EmployeeService {
 	@Autowired
 	private ModelMapper modelMapper;
 	
-	// 查詢所有員工資料
+	// 1.查詢所有員工資料
 	public List<EmployeeDTO> findAllEmployeeDTOs() {
 		// 先從資料庫中抓出 List<Employee>
 		List<Employee> employees = employeeRepository.findAll();
@@ -31,7 +39,7 @@ public class EmployeeService {
 		return employeeDTOs;
 	}
 	
-	// 查找單筆員工資料
+	// 2.查找單筆員工資料
 	public EmployeeDTO getEmployeeDTOById(Integer id) {
 		Optional<Employee> optEmployee = employeeRepository.findById(id);
 		if(optEmployee.isEmpty()) {
