@@ -30,7 +30,7 @@ public class EmployeeController {
 	
 	// 員工註冊 (接收 employee_register.jsp 員工註冊 jsp 表單傳來的資訊)
 	@PostMapping("/register")
-	public String addEmployee(@RequestParam(name = "username") String username, 
+	public String addEmployee(@RequestParam(name = "username", defaultValue = "John") String username, 
 			@RequestParam(name = "password") String password, 
 			@RequestParam(name = "salaryAmount") Integer salaryAmount, 
 			@RequestParam(name = "arrivalDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date arrivalDate, 
