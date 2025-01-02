@@ -1,6 +1,7 @@
 package com.example.leave.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.leave.model.dto.EmployeeDTO;
 import com.example.leave.service.EmployeeService;
 
 @Controller
@@ -25,6 +27,16 @@ public class EmployeeController {
 	public String register() {
 		return "employee_register"; // 員工註冊 jsp
 	}
+	
+	// 取得員工資料
+	@GetMapping 
+	public String findAllEmployees(Model model) {
+		List<EmployeeDTO> employeeDTOs = employeeService.findAllEmployeeDTOs();
+		
+		model.addAttribute("employeeDTOs", employeeDTOs);
+		return "employee";
+	}
+	
 	
 	// 員工註冊 (接收 employee_register.jsp 員工註冊 jsp 表單傳來的資訊)
 	@PostMapping("/register")
