@@ -18,7 +18,7 @@
 		<!-- body content -->
 		<div style="padding: 15px">
 			<!-- 員工註冊 -->
-			<form class="pure-form" method="post" action="/register">
+			<form class="pure-form" method="post" action="/employee/register">
 			    登入帳號: <input name="username" /> <p />
 			    登入密碼: <input name="password" /> <p />
 			    員工薪資: <input name="salaryAmount" value="40000" /> <p />
