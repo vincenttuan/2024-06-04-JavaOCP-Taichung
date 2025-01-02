@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/leave/menu.jspf" %>
+		<%@ include file="/WEB-INF/view/menu.jspf" %>
 		<!-- body content -->
 		<div style="padding: 15px">
 			
