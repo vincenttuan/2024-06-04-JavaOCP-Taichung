@@ -1,5 +1,6 @@
 package com.example.leave.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.modelmapper.ModelMapper;
@@ -8,13 +9,15 @@ import org.springframework.stereotype.Service;
 
 import com.example.leave.model.dto.EmployeeDTO;
 import com.example.leave.model.entity.Employee;
+import com.example.leave.model.entity.Salary;
 import com.example.leave.repository.EmployeeRepository;
+import com.example.leave.repository.SalaryRepository;
 
 /**
  * 功能服務:
  * 1.查詢所有員工資料
  * 2.查找單筆員工資料
- * 
+ * 3.新增員工(註冊)
  * 
  * */
 
@@ -23,6 +26,9 @@ public class EmployeeService {
 	
 	@Autowired
 	private EmployeeRepository employeeRepository;
+	
+	@Autowired
+	private SalaryRepository salaryRepository;
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -51,6 +57,14 @@ public class EmployeeService {
 		return employeeDTO;
 	}
 	
+	// 3.新增員工(註冊)
+	public void addEmployee(String username, String password, Integer salaryAmount, Date arrivalDate, Integer annualLeave) {
+		// 先儲存 salary
+		Salary salary = new Salary();
+		salary.setAmount(salaryAmount);
+		salaryRepository.
+		
+	}
 	
 	
 }
