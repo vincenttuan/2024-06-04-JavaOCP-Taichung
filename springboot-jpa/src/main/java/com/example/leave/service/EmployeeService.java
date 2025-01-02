@@ -62,8 +62,16 @@ public class EmployeeService {
 		// 先儲存 salary
 		Salary salary = new Salary();
 		salary.setAmount(salaryAmount);
-		salaryRepository.
+		salaryRepository.save(salary);
 		
+		// 再存 employee
+		Employee employee = new Employee();
+		employee.setUsername(username);
+		employee.setPassword(password);
+		employee.setArrivalDate(arrivalDate);
+		employee.setAnnualLeave(annualLeave);
+		employee.setSalary(salary); // 設定薪資
+		employeeRepository.save(employee);
 	}
 	
 	
