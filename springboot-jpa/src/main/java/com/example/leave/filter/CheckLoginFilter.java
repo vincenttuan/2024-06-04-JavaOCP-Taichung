@@ -30,6 +30,5 @@ public class CheckLoginFilter extends HttpFilter{
 		// 檢查通過, 放行
 		chain.doFilter(request, response);
 	}
-
 	
 }	
