@@ -36,7 +36,7 @@ public class LoginController {
 						HttpSession session) {
 		
 		EmployeeDTO employeeDTO = employeeService.login(username, password);
-		session.setAttribute("employeeDTO", employeeDTO);
+		session.setAttribute("employeeDTO", employeeDTO); // 登入資訊
 		return "redirect:/employee";
 	}
 	
