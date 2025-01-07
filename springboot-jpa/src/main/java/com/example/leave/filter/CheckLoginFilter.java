@@ -21,6 +21,7 @@ public class CheckLoginFilter extends HttpFilter{
 	protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		
+		// 1. 檢查路徑是否是白名單, 若是則放行
 		String servletPath = request.getServletPath(); // 取得當前 URL servletPath
 		if(whitelists.contains(servletPath)) { // servletPath 是否包含在 whitelists 中
 			// 此為白名單路徑, 放行
@@ -28,14 +29,14 @@ public class CheckLoginFilter extends HttpFilter{
 			return;
 		}
 		
-		// 檢查 session 中是否有登入資訊
+		// 2. 檢查 session 中是否有登入資訊, 若沒有登入就會顯示登入畫面
 		HttpSession session = request.getSession();
 		if(session == null || session.getAttribute("employeeDTO") == null) {
 			response.sendRedirect("/login");
 			return;
 		}
 		
-		// 檢查通過, 放行
+		// 3. 檢查通過, 放行 (表示之前已經登入過)
 		chain.doFilter(request, response);
 	}
 	
