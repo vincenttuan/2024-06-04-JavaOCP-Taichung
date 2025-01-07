@@ -78,6 +78,16 @@ public class EmployeeService {
 	public EmployeeDTO login(String username, String password) {
 		// 查詢員工
 		Employee employee = employeeRepository.findByUsername(username);
+		if(employee == null) {
+			throw new IllegalArgumentException("無此帳號:" + username);
+		}
+		// 確認密碼
+		if(!password.equals(employee.getPassword())) {
+			throw new IllegalArgumentException("密碼錯誤");
+		}
+		// 將 Employee 轉 EmployeeDTO
+		EmployeeDTO employeeDTO = modelMapper.map(employee, EmployeeDTO.class);
+		return employeeDTO;
 	}
 	
 }
