@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.leave.model.dto.ProjectDTO;
+import com.example.leave.model.entity.Project;
 import com.example.leave.repository.ProjectRepository;
 
 @Service
@@ -27,6 +28,9 @@ public class ProjectService {
 	}
 	
 	// 新增專案
-	
+	public void addProject(ProjectDTO projectDTO) {
+		Project project = modelMapper.map(projectDTO, Project.class);
+		projectRepository.save(project);
+	}
 	
 }
