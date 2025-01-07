@@ -19,7 +19,7 @@
 		<div style="padding: 15px">
 			<!-- 專案工作 -->
 			<sp:form class="pure-form" modelAttribute="projectDTO" method="post" action="/project">
-			    專案名稱: <input name="name" /> <p />
+			    專案名稱: <sp:input path="name" /> <p />
 			    <button type="submit">新增</button>
 			</sp:form>
 			<!-- 專案列表 -->
