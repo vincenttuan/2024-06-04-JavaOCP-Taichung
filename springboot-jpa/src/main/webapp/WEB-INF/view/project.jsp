@@ -35,9 +35,6 @@
 							<td>${ project.id }</td>
 							<td>${ project.name }</td>
 							<td>
-								<c:forEach var="employee" items="${ project.employees }">
-									${ employee.username }
-								</c:forEach>
 								
 							</td>
 						</tr>
