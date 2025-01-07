@@ -18,7 +18,7 @@ import com.example.leave.repository.SalaryRepository;
  * 1.查詢所有員工資料
  * 2.查找單筆員工資料
  * 3.新增員工(註冊)
- * 
+ * 4.員工登入
  * */
 
 @Service
@@ -74,5 +74,10 @@ public class EmployeeService {
 		employeeRepository.save(employee);
 	}
 	
+	// 4.員工登入
+	public EmployeeDTO login(String username, String password) {
+		// 查詢員工
+		Employee employee = employeeRepository.findByUsername(username);
+	}
 	
 }
