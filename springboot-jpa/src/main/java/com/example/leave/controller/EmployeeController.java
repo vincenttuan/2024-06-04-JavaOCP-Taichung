@@ -92,5 +92,16 @@ public class EmployeeController {
 		return "employee_salary";
 	}
 	
+	// 修改員工薪資
+	@GetMapping("/salary")
+	public String updateEmployeeSalary(@RequestParam(name = "amount") Integer amount, HttpSession session) {
+		// 員工資料
+		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
+		Integer employeeId = employeeDTO.getId();
+		// 更新員工薪資
+		employeeService.updateSalary(employeeId, amount);
+		return "redirect:/employee";
+	}
+	
 	
 }
