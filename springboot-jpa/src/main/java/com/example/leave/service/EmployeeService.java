@@ -103,7 +103,10 @@ public class EmployeeService {
 				.orElseThrow(() -> new IllegalArgumentException("無此員編:" + employeeId));
 		
 		// 找到 projectIds 符合的 projects
-		List<Project> projects = projectRepository.findAllById(projectIds);
+		// 並且處理專案為空的情況
+		List<Project> projects = (projectIds == null || projectIds.isEmpty()) 
+				? List.of() // 空集合
+				: projectRepository.findAllById(projectIds);
 		
 		// 設置專案關聯
 		employee.setProjects(projects);
