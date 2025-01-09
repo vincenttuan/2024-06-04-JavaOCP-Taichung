@@ -93,7 +93,7 @@ public class EmployeeController {
 	}
 	
 	// 修改員工薪資
-	@GetMapping("/salary")
+	@PostMapping("/salary")
 	public String updateEmployeeSalary(@RequestParam(name = "amount") Integer amount, HttpSession session) {
 		// 員工資料
 		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
