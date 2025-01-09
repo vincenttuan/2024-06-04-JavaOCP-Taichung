@@ -43,8 +43,11 @@
 										<td>${ projectDTO.name }</td>
 									</c:forEach>
 								</table>
-								<!-- 加入修改 button link -->
-								<a href="/employee/project" class="button-success pure-button">修改</a>
+								<!-- 判斷登入者的 id -->
+								<c:if test="${ sessionScope.employeeDTO.id eq employeeDTO.id }">
+									<!-- 加入修改 button link -->
+									<a href="/employee/project" class="button-success pure-button">修改</a>
+								</c:if>
 							</td>
 							<td>
 								<table>
