@@ -25,7 +25,17 @@
 					員工姓名: ${employeeDTO.username}<p />
 					專案項目: 
 						<c:forEach var="projectDTO" items="${projectDTOs}">
-							<input type="checkbox" value="${projectDTO.id}" /> ${projectDTO.name}
+							<input type="checkbox" value="${projectDTO.id}" 
+							
+								<c:forEach var="projectEmployee" items="${projectDTO.employees}">
+									
+									<c:if test="${employeeDTO.id eq projectEmployee.id}">
+										checked
+									</c:if>
+									
+								</c:forEach>
+							
+							 /> ${projectDTO.name}
 						</c:forEach>
 					<p />
 					<button type="submit">修改</button>
