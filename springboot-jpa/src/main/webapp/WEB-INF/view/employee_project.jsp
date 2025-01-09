@@ -18,7 +18,7 @@
 		<!-- body content -->
 		<div style="padding: 15px">
 			<!-- 員工專案維護 -->
-			<sp:form class="pure-form" method="post" action="/employee/project">
+			<sp:form class="pure-form" modelAttribute="employeeDTO" method="post" action="/employee/project">
 				<fieldset>
 					<legend>員工專案維護</legend>
 					員工編號: ${employeeDTO.id}<p />

@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.leave.model.dto.EmployeeDTO;
+import com.example.leave.model.dto.ProjectDTO;
 import com.example.leave.service.EmployeeService;
+import com.example.leave.service.ProjectService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/employee")
@@ -21,6 +25,9 @@ public class EmployeeController {
 	
 	@Autowired
 	private EmployeeService employeeService;
+	
+	@Autowired
+	private ProjectService projectService;
 	
 	// 員工註冊 register / 新增員工
 	@GetMapping("/register")
@@ -52,6 +59,20 @@ public class EmployeeController {
 		model.addAttribute("message", "員工註冊成功");
 		return "result";
 	}
+	
+	// 取得員工(已登入)專案
+	@GetMapping("/project")
+	public String employeeProject(Model model, HttpSession session) {
+		// 員工資料
+		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
+		// 所有專案資料
+		List<ProjectDTO> projectDTOs = projectService.findAllProjectDTOs();
+		
+		model.addAttribute("employeeDTO", employeeDTO); // 給表單的 modelAttribute 使用
+		model.addAttribute("projectDTOs", projectDTOs);
+		return "employee_project"; // <-- jsp file
+	}
+	
 	
 	
 }
