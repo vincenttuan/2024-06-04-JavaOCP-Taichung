@@ -43,6 +43,8 @@
 										<td>${ projectDTO.name }</td>
 									</c:forEach>
 								</table>
+								<!-- 加入修改 button link -->
+								<a href="/employee/project" class="button-success pure-button">修改</a>
 							</td>
 							<td>
 								<table>
