@@ -86,6 +86,11 @@ public class EmployeeController {
 		return "redirect:/employee";
 	}
 	
+	// 取得員工(已登入)薪資
+	@GetMapping("/salary")
+	public String getEmployeeSalary(Model model) {
+		return "employee_salary";
+	}
 	
 	
 }
