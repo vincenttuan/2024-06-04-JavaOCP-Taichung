@@ -88,7 +88,13 @@ public class EmployeeController {
 	
 	// 取得員工(已登入)薪資
 	@GetMapping("/salary")
-	public String getEmployeeSalary(Model model) {
+	public String getEmployeeSalary(Model model, HttpSession session) {
+		// 取得當前登入的員工資料
+		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
+		Integer employeeId = employeeDTO.getId();
+		// 取得最新員工資訊
+		employeeDTO = employeeService.getEmployeeDTOById(employeeId);
+		model.addAttribute("employeeDTO", employeeDTO);
 		return "employee_salary";
 	}
 	
