@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.example.leave.model.dto.EmployeeDTO;
 import com.example.leave.model.entity.Employee;
+import com.example.leave.model.entity.Project;
 import com.example.leave.model.entity.Salary;
 import com.example.leave.repository.EmployeeRepository;
+import com.example.leave.repository.ProjectRepository;
 import com.example.leave.repository.SalaryRepository;
 
 /**
@@ -19,6 +21,7 @@ import com.example.leave.repository.SalaryRepository;
  * 2.查找單筆員工資料
  * 3.新增員工(註冊)
  * 4.員工登入
+ * 5.修改員工專案
  * */
 
 @Service
@@ -29,6 +32,9 @@ public class EmployeeService {
 	
 	@Autowired
 	private SalaryRepository salaryRepository;
+	
+	@Autowired
+	private ProjectRepository projectRepository;
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -88,6 +94,23 @@ public class EmployeeService {
 		// 將 Employee 轉 EmployeeDTO
 		EmployeeDTO employeeDTO = modelMapper.map(employee, EmployeeDTO.class);
 		return employeeDTO;
+	}
+	
+	// 5.修改員工專案
+	public void updateProject(Integer employeeId, List<Integer> projectIds) {
+		// 查詢員工
+		Employee employee = employeeRepository.findById(employeeId)
+				.orElseThrow(() -> new IllegalArgumentException("無此員編:" + employeeId));
+		
+		// 找到 projectIds 符合的 projects
+		List<Project> projects = projectRepository.findAllById(projectIds);
+		
+		// 設置專案關聯
+		employee.setProjects(projects);
+		
+		// 保存更新
+		employeeRepository.save(employee);
+				
 	}
 	
 }
