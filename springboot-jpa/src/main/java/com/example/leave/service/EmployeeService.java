@@ -22,6 +22,7 @@ import com.example.leave.repository.SalaryRepository;
  * 3.新增員工(註冊)
  * 4.員工登入
  * 5.修改員工專案
+ * 6.修改員工薪資
  * */
 
 @Service
@@ -114,6 +115,11 @@ public class EmployeeService {
 		// 保存更新
 		employeeRepository.save(employee);
 				
+	}
+	
+	// 6. 修改員工薪資
+	public void updateSalary(Integer employeeId, Integer amount) {
+		
 	}
 	
 }
