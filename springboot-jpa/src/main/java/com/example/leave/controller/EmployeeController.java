@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,7 +63,7 @@ public class EmployeeController {
 	
 	// 取得員工(已登入)專案
 	@GetMapping("/project")
-	public String employeeProject(Model model, HttpSession session) {
+	public String getEmployeeProject(Model model, HttpSession session) {
 		// 員工資料
 		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
 		// 所有專案資料
@@ -71,6 +72,15 @@ public class EmployeeController {
 		model.addAttribute("employeeDTO", employeeDTO); // 給表單的 modelAttribute 使用
 		model.addAttribute("projectDTOs", projectDTOs);
 		return "employee_project"; // <-- jsp file
+	}
+	
+	// 修改員工專案
+	@PostMapping("/project")
+	public String updateEmployeeProject(@RequestParam(name = "projectIds") List<Integer> projectIds) {
+		
+		projectIds.forEach(System.out::println);
+		
+		return "redirect:/employee";
 	}
 	
 	
