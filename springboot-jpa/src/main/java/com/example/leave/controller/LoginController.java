@@ -2,6 +2,7 @@ package com.example.leave.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +20,9 @@ public class LoginController {
 	
 	// 得到一個 login 網頁
 	@GetMapping("/login")
-	public String login() {
+	public String login(Model model, HttpSession session) {
+		//session.setAttribute("name", "Rose"); // session scope 變數
+		//model.addAttribute("name", "Jack");   // request scope 變數
 		return "login"; // 登入畫面 jsp
 	}
 	
