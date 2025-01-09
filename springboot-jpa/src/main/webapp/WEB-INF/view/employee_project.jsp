@@ -25,7 +25,7 @@
 					員工姓名: ${employeeDTO.username}<p />
 					專案項目: 
 						<c:forEach var="projectDTO" items="${projectDTOs}">
-							<input type="checkbox" value="${projectDTO.id}"> ${projectDTO.name}
+							<input type="checkbox" value="${projectDTO.id}" /> ${projectDTO.name}
 						</c:forEach>
 					<p />
 					<button type="submit">修改</button>
