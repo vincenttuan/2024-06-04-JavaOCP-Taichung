@@ -23,7 +23,7 @@
 					<legend>員工專案維護</legend>
 					員工編號: ${employeeDTO.id}<p />
 					員工姓名: ${employeeDTO.username}<p />
-					專案項目: <sp:checkboxes items="${projectDTOs}" path="projects" itemLabel="name" itemValue="id" />
+					專案項目: <sp:checkboxes items="${projectDTOs}" path="projects" itemLabel="name" itemValue="id" /><p />
 					<button type="submit">修改</button>
 				</fieldset>
 			</sp:form>

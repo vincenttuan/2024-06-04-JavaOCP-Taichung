@@ -12,4 +12,7 @@ import lombok.Setter;
 public class ProjectDTO {
 	private Integer id;
 	private String name;
+	
+	private List<EmployeeDTO> employees;
+	
 }
