@@ -35,7 +35,11 @@
 							<td align="right">
 								<fmt:formatNumber var="amount" value="${employeeDTO.salary.amount}" pattern="#,###" />
 								$${amount}
-								
+								<!-- 判斷登入者的 id -->
+								<c:if test="${ sessionScope.employeeDTO.id eq employeeDTO.id }">
+									<!-- 加入修改 button link -->
+									<a href="/employee/salary" class="button-success pure-button">修改</a>
+								</c:if>
 							</td>
 							<td>
 								<table class="pure-table">
