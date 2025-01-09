@@ -76,10 +76,13 @@ public class EmployeeController {
 	
 	// 修改員工專案
 	@PostMapping("/project")
-	public String updateEmployeeProject(@RequestParam(name = "projectIds") List<Integer> projectIds) {
-		
-		projectIds.forEach(System.out::println);
-		
+	public String updateEmployeeProject(@RequestParam(name = "projectIds") List<Integer> projectIds, HttpSession session) {
+		//projectIds.forEach(System.out::println);
+		// 員工資料
+		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
+		Integer employeeId = employeeDTO.getId();
+		// 更新員工專案
+		employeeService.updateProject(employeeId, projectIds);
 		return "redirect:/employee";
 	}
 	
