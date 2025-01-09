@@ -119,6 +119,25 @@ public class EmployeeService {
 	
 	// 6. 修改員工薪資
 	public void updateSalary(Integer employeeId, Integer amount) {
+		// 查詢員工
+		Employee employee = employeeRepository.findById(employeeId)
+				.orElseThrow(() -> new IllegalArgumentException("無此員編:" + employeeId));
+		
+		// 取得當前員工薪資物件
+		Salary salary = employee.getSalary();
+		if(salary == null) {
+			salary = new Salary();
+		}
+		
+		// 設定薪資
+		salary.setAmount(amount);
+		// 保存
+		salaryRepository.save(salary);
+		
+		// 設定關聯(將該薪資給此員工)
+		employee.setSalary(salary);
+		// 保存
+		employeeRepository.save(employee);
 		
 	}
 	
