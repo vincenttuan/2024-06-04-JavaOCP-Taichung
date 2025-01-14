@@ -63,6 +63,12 @@
 											<td>${ leaveRequestDTO.status }</td>
 										</tr>
 									</c:forEach>
+									<!-- 新增假單 -->
+									<tr>
+										<td>
+											<a href="/employee/leave_request" class="button-secondary pure-button">新增假單</a>
+										</td>
+									</tr>
 								</table>
 							</td>
 						</tr>
