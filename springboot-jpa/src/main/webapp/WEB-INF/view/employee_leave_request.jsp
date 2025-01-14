@@ -18,7 +18,7 @@
 		<!-- body content -->
 		<div style="padding: 15px">
 			<!-- 員工請假 -->
-			<form class="pure-form" method="post" action="/employee/leave_request">
+			<form class="pure-form" method="post" action="/leave_request">
 			    <input type="hidden" name="_method" value="${ _method }" >
 			    <fieldset>
 			    	請假類別: <input type="text" name="type" value="${ leaveRequestDTO.type }" /><p />
