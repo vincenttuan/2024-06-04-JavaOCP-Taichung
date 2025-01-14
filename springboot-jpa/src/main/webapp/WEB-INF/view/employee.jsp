@@ -62,9 +62,12 @@
 											<td>${ leaveRequestDTO.reason }</td>
 											<td>${ leaveRequestDTO.status }</td>
 											<c:if test="${ sessionScope.employeeDTO.id eq employeeDTO.id }">
+												<!-- 修改假單 -->
 												<td>
 													<a href="/employee/leave_request" class="button-success pure-button">修改假單</a>
 												</td>
+												<
+												<!-- 刪除假單 -->
 												<td>
 													<a href="/employee/leave_request" class="button-error pure-button">刪除假單</a>
 												</td>
