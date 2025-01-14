@@ -1,11 +1,7 @@
 package com.example.leave.model.dto;
 
 import java.util.Date;
-import java.util.List;
-
 import org.springframework.format.annotation.DateTimeFormat;
-
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
