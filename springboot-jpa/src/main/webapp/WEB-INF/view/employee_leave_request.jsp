@@ -21,7 +21,11 @@
 			<form class="pure-form" method="post" action="/employee/leave_request">
 			    <input type="hidden" name="_method" value="${ _method }" >
 			    <fieldset>
-			    	
+			    	請假類別: <input type="text" name="${ leaveRequestDTO.type }" /><p />
+			    	開始日期: <input type="date" name="${ leaveRequestDTO.startDate }" /><p />
+			    	結束日期: <input type="date" name="${ leaveRequestDTO.endDate }" /><p />
+			    	請假理由: <input type="text" name="${ leaveRequestDTO.reason }" /><p />
+			    	假單狀態: <input type="text" name="${ leaveRequestDTO.status }" /><p />
 			    	<button type="submit">${ _method eq 'POST' ? '新增' : (_method eq 'PUT' ? '修改' : '刪除') }</button>
 			    </fieldset>
 			</form>
