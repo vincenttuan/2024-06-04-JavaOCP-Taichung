@@ -61,20 +61,24 @@
 											<td>${ leaveRequestDTO.startDate } ~ ${ leaveRequestDTO.endDate }</td>
 											<td>${ leaveRequestDTO.reason }</td>
 											<td>${ leaveRequestDTO.status }</td>
-											<td>
-												<a href="/employee/leave_request" class="button-success pure-button">修改假單</a>
-											</td>
-											<td>
-												<a href="/employee/leave_request" class="button-error pure-button">刪除假單</a>
-											</td>
+											<c:if test="${ sessionScope.employeeDTO.id eq employeeDTO.id }">
+												<td>
+													<a href="/employee/leave_request" class="button-success pure-button">修改假單</a>
+												</td>
+												<td>
+													<a href="/employee/leave_request" class="button-error pure-button">刪除假單</a>
+												</td>
+											</c:if>
 										</tr>
 									</c:forEach>
 									<!-- 新增假單 -->
-									<tr>
-										<td>
-											<a href="/employee/leave_request" class="button-secondary pure-button">新增假單</a>
-										</td>
-									</tr>
+									<c:if test="${ sessionScope.employeeDTO.id eq employeeDTO.id }">
+										<tr>
+											<td>
+												<a href="/employee/leave_request" class="button-secondary pure-button">新增假單</a>
+											</td>
+										</tr>
+									</c:if>
 								</table>
 							</td>
 						</tr>
