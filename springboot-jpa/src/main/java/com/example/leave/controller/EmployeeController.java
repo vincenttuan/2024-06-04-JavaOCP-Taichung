@@ -8,12 +8,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.leave.model.dto.EmployeeDTO;
+import com.example.leave.model.dto.LeaveRequestDTO;
 import com.example.leave.model.dto.ProjectDTO;
 import com.example.leave.service.EmployeeService;
 import com.example.leave.service.ProjectService;
@@ -43,6 +45,20 @@ public class EmployeeController {
 		
 		model.addAttribute("employeeDTOs", employeeDTOs);
 		return "employee";
+	}
+	
+	// 取得請假資訊
+	@GetMapping("/leave_request")
+	public String getLeaveRequest(@RequestParam(name = "_method") String _method, Model model, HttpSession session) {
+		LeaveRequestDTO leaveRequestDTO = null; // 請假 DTO
+		switch (_method) {
+			case "POST": // 新增
+				leaveRequestDTO = new LeaveRequestDTO();
+				break;	
+		}
+		model.addAttribute("_method", _method);
+		model.addAttribute("leaveRequestDTO", leaveRequestDTO);
+		return "employee_leave_request";
 	}
 	
 	
