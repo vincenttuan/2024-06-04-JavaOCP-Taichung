@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -99,7 +100,7 @@ public class EmployeeController {
 	}
 	
 	// 修改員工薪資
-	@PostMapping("/salary")
+	@PutMapping("/salary")
 	public String updateEmployeeSalary(@RequestParam(name = "amount") Integer amount, HttpSession session) {
 		// 員工資料
 		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");

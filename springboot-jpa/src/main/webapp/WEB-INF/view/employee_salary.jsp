@@ -19,6 +19,8 @@
 		<div style="padding: 15px">
 			<!-- 員工薪資維護 -->
 			<form class="pure-form" method="post" action="/employee/salary">
+				<!-- 隱藏欄位 -->
+				<input type="hidden" name="_method" value="PUT">
 				<fieldset>
 					<legend>員工薪資維護</legend>
 					員工編號: ${employeeDTO.id}<p />
