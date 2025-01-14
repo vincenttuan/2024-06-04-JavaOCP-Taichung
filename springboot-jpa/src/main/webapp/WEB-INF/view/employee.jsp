@@ -64,12 +64,12 @@
 											<c:if test="${ sessionScope.employeeDTO.id eq employeeDTO.id }">
 												<!-- 修改假單 -->
 												<td>
-													<a href="/employee/leave_request" class="button-success pure-button">修改假單</a>
+													<a href="/employee/leave_request?_method=PUT" class="button-success pure-button">修改假單</a>
 												</td>
 												<
 												<!-- 刪除假單 -->
 												<td>
-													<a href="/employee/leave_request" class="button-error pure-button">刪除假單</a>
+													<a href="/employee/leave_request?_method=DELETE" class="button-error pure-button">刪除假單</a>
 												</td>
 											</c:if>
 										</tr>
@@ -78,7 +78,7 @@
 									<c:if test="${ sessionScope.employeeDTO.id eq employeeDTO.id }">
 										<tr>
 											<td>
-												<a href="/employee/leave_request" class="button-secondary pure-button">新增假單</a>
+												<a href="/employee/leave_request?_method=POST" class="button-secondary pure-button">新增假單</a>
 											</td>
 										</tr>
 									</c:if>
