@@ -9,13 +9,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.leave.model.dto.EmployeeDTO;
 import com.example.leave.model.dto.LeaveRequestDTO;
+import com.example.leave.service.LeaveRequestService;
 
 import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/leave_request")
 public class LeaveRequestController {
+	
+	@Autowired
+	private LeaveRequestService leaveRequestService;
 	
 	// 取得請假資訊
 	@GetMapping
@@ -35,8 +40,9 @@ public class LeaveRequestController {
 	
 	// 新增請假資訊
 	@PostMapping
-	public String addLeaveRequest(LeaveRequestDTO leaveRequestDTO) {
-		
+	public String addLeaveRequest(LeaveRequestDTO leaveRequestDTO, HttpSession session) {
+		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
+		leaveRequestService.addLeaveRequest(leaveRequestDTO, employeeDTO.getId());
 		return "redirect:/employee";
 	}
 }
