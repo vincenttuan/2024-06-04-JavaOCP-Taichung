@@ -19,6 +19,7 @@
 		<div style="padding: 15px">
 			<!-- 員工專案維護 -->
 			<form class="pure-form" method="post" action="/employee/project">
+				<input type="hidden" name="_method" value="PUT">
 				<fieldset>
 					<legend>員工專案維護</legend>
 					員工編號: ${employeeDTO.id}<p />

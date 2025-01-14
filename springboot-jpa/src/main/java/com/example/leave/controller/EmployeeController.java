@@ -75,7 +75,7 @@ public class EmployeeController {
 	}
 	
 	// 修改員工專案
-	@PostMapping("/project")
+	@PutMapping("/project")
 	public String updateEmployeeProject(@RequestParam(name = "projectIds", required = false) List<Integer> projectIds, HttpSession session) {
 		//projectIds.forEach(System.out::println);
 		// 員工資料
