@@ -47,23 +47,6 @@ public class EmployeeController {
 		return "employee";
 	}
 	
-	// 取得請假資訊
-	@GetMapping("/leave_request")
-	public String getLeaveRequest(@RequestParam(name = "_method") String _method, Model model, HttpSession session) {
-		LeaveRequestDTO leaveRequestDTO = null; // 請假 DTO
-		switch (_method) {
-			case "POST": // 新增
-				leaveRequestDTO = new LeaveRequestDTO();
-				leaveRequestDTO.setType("特休");
-				leaveRequestDTO.setStatus("PENDING");
-				break;	
-		}
-		model.addAttribute("_method", _method);
-		model.addAttribute("leaveRequestDTO", leaveRequestDTO);
-		return "employee_leave_request";
-	}
-	
-	
 	// 員工註冊 (接收 employee_register.jsp 員工註冊 jsp 表單傳來的資訊)
 	@PostMapping("/register")
 	public String addEmployee(@RequestParam(name = "username") String username, 

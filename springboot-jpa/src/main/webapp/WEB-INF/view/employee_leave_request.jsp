@@ -26,7 +26,7 @@
 			    	結束日期: <input type="date" name="endDate" value="${ leaveRequestDTO.endDate }" /><p />
 			    	請假理由: <input type="text" name="reason" value="${ leaveRequestDTO.reason }" /><p />
 			    	假單狀態: <input type="text" name="status" value="${ leaveRequestDTO.status }" /><p />
-			    	<button type="submit">${ _method eq 'POST' ? '新增' : (_method eq 'PUT' ? '修改' : '刪除') }</button>
+			    	<button class="button-secondary pure-button" type="submit">${ _method eq 'POST' ? '新增' : (_method eq 'PUT' ? '修改' : '刪除') }</button>
 			    </fieldset>
 			</form>
 		</div>
