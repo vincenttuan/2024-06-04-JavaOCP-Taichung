@@ -66,7 +66,6 @@
 												<td>
 													<a href="/leave_request?_method=PUT" class="button-success pure-button">修改假單</a>
 												</td>
-												<
 												<!-- 刪除假單 -->
 												<td>
 													<a href="/leave_request?_method=DELETE" class="button-error pure-button">刪除假單</a>
