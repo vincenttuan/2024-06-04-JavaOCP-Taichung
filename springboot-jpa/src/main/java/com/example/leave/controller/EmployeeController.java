@@ -54,6 +54,8 @@ public class EmployeeController {
 		switch (_method) {
 			case "POST": // 新增
 				leaveRequestDTO = new LeaveRequestDTO();
+				leaveRequestDTO.setType("特休");
+				leaveRequestDTO.setStatus("PENDING");
 				break;	
 		}
 		model.addAttribute("_method", _method);
