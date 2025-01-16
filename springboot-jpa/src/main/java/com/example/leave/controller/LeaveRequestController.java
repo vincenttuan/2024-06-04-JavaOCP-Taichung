@@ -35,7 +35,7 @@ public class LeaveRequestController {
 				leaveRequestDTO.setStatus("PENDING");
 				break;	
 			case "PUT": // 修改
-			case "DELETE": // 修改	
+			case "DELETE": // 刪除	
 				// 根據 id 找到請假紀錄
 				leaveRequestDTO = leaveRequestService.getLeaveRequestDTO(id);
 				break;
