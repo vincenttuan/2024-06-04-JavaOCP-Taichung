@@ -1,15 +1,15 @@
-.button-success, .button-error, .button-warning, .button-secondary {
+.button-success, .button-error, .button-warning, .button-secondary, .button-POST, .button-PUT, .button-DELETE {
 	color: white;
 	border-radius: 4px;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.button-success {
+.button-success, .button-PUT {
 	background: rgb(28, 184, 65);
 	/* this is a green */
 }
 
-.button-error {
+.button-error, .button-DELETE {
 	background: rgb(202, 60, 60);
 	/* this is a maroon */
 }
@@ -19,7 +19,7 @@
 	/* this is an orange */
 }
 
-.button-secondary {
+.button-secondary, .button-POST {
 	background: rgb(66, 184, 221);
 	/* this is a light blue */
 }
