@@ -69,7 +69,7 @@
 												</td>
 												<!-- 刪除假單 -->
 												<td>
-													<a href="/leave_request?_method=DELETE" class="button-error pure-button">刪除假單</a>
+													<a href="/leave_request?_method=DELETE&id=${ leaveRequestDTO.id }" class="button-error pure-button">刪除假單</a>
 												</td>
 											</c:if>
 										</tr>
