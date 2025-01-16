@@ -27,7 +27,7 @@
 			    	結束日期: <sp:input type="date" path="endDate"  /><p />
 			    	請假理由: <sp:input type="text" path="reason"  /><p />
 			    	假單狀態: <sp:input type="text" path="status"  /><p />
-			    	<button class="button-${ _method eq 'POST' ? 'secondary' : (_method eq 'PUT' ? 'success' : 'error') } pure-button" 
+			    	<button class="button-${ _method } pure-button" 
 			    			type="submit">
 			    			${ _method eq 'POST' ? '新增' : (_method eq 'PUT' ? '修改' : '刪除') }
 			    	</button>
