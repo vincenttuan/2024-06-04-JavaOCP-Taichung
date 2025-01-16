@@ -32,7 +32,7 @@ public class LeaveRequestService {
 		// 設定員工
 		leaveRequest.setEmployee(employee);
 		
-		// 保存
+		// 保存(因為 leaveRequest 裡面沒有 id 值所以 save 會進行新增程序)
 		leaveRequestRepository.save(leaveRequest);
 	}
 	
@@ -43,6 +43,21 @@ public class LeaveRequestService {
 		// 請假紀錄 Entity 轉 DTO
 		LeaveRequestDTO leaveRequestDTO = modelMapper.map(leaveRequest, LeaveRequestDTO.class);
 		return leaveRequestDTO;
+	}
+	
+	// 修改請假紀錄
+	public void updateLeaveRequest(LeaveRequestDTO leaveRequestDTO, Integer employeeId) {
+		// leaveRequestDTO 轉 leaveRequest(entity)
+		LeaveRequest leaveRequest = modelMapper.map(leaveRequestDTO, LeaveRequest.class);
+				
+		// 根據 employeeId 取得 employee 物件
+		Employee employee = employeeRepository.findById(employeeId).get();
+		
+		// 設定員工
+		leaveRequest.setEmployee(employee);
+		
+		// 保存(因為 leaveRequest 裡面有 id 值所以 save 會進行修改程序)
+		leaveRequestRepository.save(leaveRequest);
 	}
 	
 }

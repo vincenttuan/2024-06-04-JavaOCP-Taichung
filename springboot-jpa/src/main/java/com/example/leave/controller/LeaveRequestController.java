@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -55,6 +56,14 @@ public class LeaveRequestController {
 	public String addLeaveRequest(LeaveRequestDTO leaveRequestDTO, HttpSession session) {
 		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
 		leaveRequestService.addLeaveRequest(leaveRequestDTO, employeeDTO.getId());
+		return "redirect:/employee";
+	}
+	
+	// 修改請假資訊
+	@PutMapping
+	public String updateLeaveRequest(LeaveRequestDTO leaveRequestDTO) {
+		// 要進行修改時一定要有 id
+		
 		return "redirect:/employee";
 	}
 }
