@@ -23,12 +23,15 @@ public class LeaveRequestService {
 	private ModelMapper modelMapper;
 	
 	public void addLeaveRequest(LeaveRequestDTO leaveRequestDTO, Integer employeeId) {
+		// leaveRequestDTO 轉 leaveRequest(entity)
+		LeaveRequest leaveRequest = modelMapper.map(leaveRequestDTO, LeaveRequest.class);
+				
 		// 根據 employeeId 取得 employee 物件
 		Employee employee = employeeRepository.findById(employeeId).get();
-		// leaveRequestDTO 轉 leaveRequest
-		LeaveRequest leaveRequest = modelMapper.map(leaveRequestDTO, LeaveRequest.class);
+		
 		// 設定員工
 		leaveRequest.setEmployee(employee);
+		
 		// 保存
 		leaveRequestRepository.save(leaveRequest);
 	}
