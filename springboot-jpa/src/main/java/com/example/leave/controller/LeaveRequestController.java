@@ -24,7 +24,9 @@ public class LeaveRequestController {
 	
 	// 取得請假資訊
 	@GetMapping
-	public String getLeaveRequest(@RequestParam(name = "_method") String _method, Model model, HttpSession session) {
+	public String getLeaveRequest(@RequestParam(name = "_method") String _method, 
+								  @RequestParam(name = "id", required = false) Integer id,
+								  Model model, HttpSession session) {
 		LeaveRequestDTO leaveRequestDTO = null; // 請假 DTO
 		switch (_method) {
 			case "POST": // 新增
@@ -32,6 +34,11 @@ public class LeaveRequestController {
 				leaveRequestDTO.setType("特休");
 				leaveRequestDTO.setStatus("PENDING");
 				break;	
+			case "PUT": // 修改
+				// 根據 id 找到請假紀錄
+				
+				break;
+				
 		}
 		model.addAttribute("_method", _method);
 		model.addAttribute("leaveRequestDTO", leaveRequestDTO);

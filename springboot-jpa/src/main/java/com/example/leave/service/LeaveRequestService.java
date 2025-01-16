@@ -36,4 +36,13 @@ public class LeaveRequestService {
 		leaveRequestRepository.save(leaveRequest);
 	}
 	
+	// 查詢請假紀錄
+	public LeaveRequestDTO getLeaveRequestDTO(Integer id) {
+		// 取得請假紀錄 Entity
+		LeaveRequest leaveRequest = leaveRequestRepository.findById(id).get();
+		// 請假紀錄 Entity 轉 DTO
+		LeaveRequestDTO leaveRequestDTO = modelMapper.map(leaveRequest, LeaveRequestDTO.class);
+		return leaveRequestDTO;
+	}
+	
 }
