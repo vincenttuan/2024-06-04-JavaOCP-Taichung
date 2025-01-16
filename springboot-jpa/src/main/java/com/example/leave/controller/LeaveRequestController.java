@@ -63,6 +63,7 @@ public class LeaveRequestController {
 	@PutMapping
 	public String updateLeaveRequest(LeaveRequestDTO leaveRequestDTO, HttpSession session) {
 		// 注意:要進行修改時 LeaveRequestDTO 裡面一定要有 id
+		System.out.println("修改 LeaveRequestDTO.id = " + leaveRequestDTO.getId());
 		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
 		leaveRequestService.updateLeaveRequest(leaveRequestDTO, employeeDTO.getId());
 		return "redirect:/employee";
