@@ -60,4 +60,9 @@ public class LeaveRequestService {
 		leaveRequestRepository.save(leaveRequest);
 	}
 	
+	// 刪除請假紀錄
+	public void deleteLeaveRequest(Integer id) {
+		leaveRequestRepository.deleteById(id);
+	}
+	
 }
