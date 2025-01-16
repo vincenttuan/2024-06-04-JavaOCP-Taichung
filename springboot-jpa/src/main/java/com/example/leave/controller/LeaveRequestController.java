@@ -61,9 +61,10 @@ public class LeaveRequestController {
 	
 	// 修改請假資訊
 	@PutMapping
-	public String updateLeaveRequest(LeaveRequestDTO leaveRequestDTO) {
-		// 要進行修改時一定要有 id
-		
+	public String updateLeaveRequest(LeaveRequestDTO leaveRequestDTO, HttpSession session) {
+		// 注意:要進行修改時 LeaveRequestDTO 裡面一定要有 id
+		EmployeeDTO employeeDTO = (EmployeeDTO)session.getAttribute("employeeDTO");
+		leaveRequestService.updateLeaveRequest(leaveRequestDTO, employeeDTO.getId());
 		return "redirect:/employee";
 	}
 }
