@@ -11,6 +11,6 @@ import com.example.leave.model.entity.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	// 根據 username 取得 Employee, 使用 JPQL 語法 (entity 結合 sql)
-	@Query("select e from Employee where e.username = :username")
+	@Query("select e from Employee e where e.username = :username")
 	Employee findByUsername(@Param("username") String username);
 }
