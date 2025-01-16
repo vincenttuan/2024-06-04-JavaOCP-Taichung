@@ -3,6 +3,7 @@ package com.example.leave.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -68,4 +69,11 @@ public class LeaveRequestController {
 		leaveRequestService.updateLeaveRequest(leaveRequestDTO, employeeDTO.getId());
 		return "redirect:/employee";
 	}
+	
+	// 刪除請假紀錄
+	@DeleteMapping
+	public String deleteLeaveRequest(@RequestParam(name = "id") Integer id) {
+		leaveRequestService.deleteLeaveRequest(id);
+		return "redirect:/employee";
+	} 
 }
