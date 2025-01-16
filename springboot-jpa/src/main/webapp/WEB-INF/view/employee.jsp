@@ -57,6 +57,7 @@
 								<table>
 									<c:forEach var="leaveRequestDTO" items="${ employeeDTO.leaveRequests }">
 										<tr>
+											<td>${ leaveRequestDTO.id }</td>
 											<td>${ leaveRequestDTO.type }</td>
 											<td>${ leaveRequestDTO.startDate } ~ ${ leaveRequestDTO.endDate }</td>
 											<td>${ leaveRequestDTO.reason }</td>
@@ -64,7 +65,7 @@
 											<c:if test="${ sessionScope.employeeDTO.id eq employeeDTO.id }">
 												<!-- 修改假單 -->
 												<td>
-													<a href="/leave_request?_method=PUT" class="button-success pure-button">修改假單</a>
+													<a href="/leave_request?_method=PUT&id=${ leaveRequestDTO.id }" class="button-success pure-button">修改假單</a>
 												</td>
 												<!-- 刪除假單 -->
 												<td>
