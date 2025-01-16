@@ -36,7 +36,7 @@ public class LeaveRequestController {
 				break;	
 			case "PUT": // 修改
 				// 根據 id 找到請假紀錄
-				
+				leaveRequestDTO = leaveRequestService.getLeaveRequestDTO(id);
 				break;
 				
 		}
