@@ -29,7 +29,7 @@
 			    	假單狀態: <sp:input type="text" path="status"  /><p />
 			    	<button class="button-${ _method } pure-button" 
 			    			type="submit">
-			    			${ _method eq 'POST' ? '新增' : (_method eq 'PUT' ? '修改' : '刪除') }
+			    			${ submitButtonName }
 			    	</button>
 			    </fieldset>
 			</sp:form>

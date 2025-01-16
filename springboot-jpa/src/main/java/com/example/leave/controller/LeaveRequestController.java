@@ -41,7 +41,11 @@ public class LeaveRequestController {
 				break;
 				
 		}
+		
+		String submitButtonName = _method.equals("POST") ? "新增" : _method.equals("PUT") ? "修改" : "刪除";
+		
 		model.addAttribute("_method", _method);
+		model.addAttribute("submitButtonName", submitButtonName);
 		model.addAttribute("leaveRequestDTO", leaveRequestDTO);
 		return "employee_leave_request";
 	}
