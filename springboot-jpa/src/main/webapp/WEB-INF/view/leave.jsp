@@ -36,7 +36,7 @@
 						<input type="date" name="endDate" value="${ endDate }" />
 						<button type="submit">查詢</button>
 					</form>
-					
+					<p />
 					<table class="pure-table pure-table-bordered">
 						<thead>
 							<tr>
