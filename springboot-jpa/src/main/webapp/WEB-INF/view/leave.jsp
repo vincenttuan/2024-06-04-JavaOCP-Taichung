@@ -39,7 +39,12 @@
 										${ employeeDTO.username }
 									</td>
 									<td valign="top">
-										${ employeeDTO.leaveRequests }
+										<c:forEach var="leaveRequestDTO" items="${ employeeDTO.leaveRequests }">
+											[ ${leaveRequestDTO.type} ]
+											[ ${leaveRequestDTO.status} ]
+											請假日期: ${ leaveRequestDTO.startDate } ~ ${ leaveRequestDTO.endDate }
+											請假理由: ${ leaveRequestDTO.reason }
+										</c:forEach> 
 									</td>
 								</tr>
 							</c:forEach>
