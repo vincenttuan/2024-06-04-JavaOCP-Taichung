@@ -91,7 +91,7 @@ public class LeaveRequestService {
 				.map(leaveRequest -> leaveRequest.getEmployee()) // ... Employee
 				.distinct() // 避免重複
 				.map(employee -> modelMapper.map(employee, EmployeeDTO.class))
-				.toList();
+				.toList(); // [... EmployeeDTO]
 		
 	}
 	
