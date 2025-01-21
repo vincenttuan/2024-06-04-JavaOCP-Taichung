@@ -1,5 +1,8 @@
 package com.example.leave.service;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -67,12 +70,23 @@ public class LeaveRequestService {
 	
 	// 查詢今天有哪些員工請假
 	
-	
 	// 查詢指定日期有哪些員工請假
 	
-	
 	// 查詢指定日期區間有哪些員工請假
-	
+	public List<EmployeeDTO> getEmployeesOnLeave(LocalDate startDate, LocalDate endDate) {
+		// 取得在此區間中有請假的紀錄
+		List<LeaveRequest> leaveRequests = leaveRequestRepository
+				.queryByDate(startDate, endDate);
+				//.findByStartDateLessThanEqualAndEndDateGreaterThanEqual(startDate, endDate);
+		
+		// 收集請假紀錄的員工資料(Employee)並轉成(EmployeeDTO)
+		return leaveRequests.stream() // ... LeaveRequest
+				.map(leaveRequest -> leaveRequest.getEmployee()) // ... Employee
+				.distinct() // 避免重複
+				.map(employee -> modelMapper.map(employee, EmployeeDTO.class))
+				.toList();
+		
+	}
 	
 	
 }
