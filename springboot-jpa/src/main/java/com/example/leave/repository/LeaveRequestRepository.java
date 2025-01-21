@@ -26,10 +26,10 @@ public interface LeaveRequestRepository extends JpaRepository<LeaveRequest, Inte
 	List<LeaveRequest> findByEmployeeId(Integer employeeId);
 	
 	// 查詢在指定日期間的請假資料
-	@Query(value = "select * from leave_request where start_date <= :date1 and end_date >= :date2", nativeQuery=true)
+	@Query(value = "select * from leave_request where start_date >= :date1 and end_date <= :date2", nativeQuery=true)
 	List<LeaveRequest> queryByDate(LocalDate date1, LocalDate date2);
 	
 	// Homework 把 JPQL 與 簡易方法命名寫出
-	List<LeaveRequest> findByStartDateLessThanEqualAndEndDateGreaterThanEqual(LocalDate date1, LocalDate date2);
+	List<LeaveRequest> findByStartDateGreaterThanEqualAndEndDateLessThanEqual(LocalDate date1, LocalDate date2);
 
 }
