@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="sp" uri="http://www.springframework.org/tags/form" %>    
 <!DOCTYPE html>
 <html>
@@ -18,7 +19,15 @@
 		<!-- body content -->
 		<div style="padding: 15px">
 			<!-- 查詢請假 -->
+			<div class="pure-form">
+				<fieldset>
+					<legend>
+						查詢 ${ startDate } ~ ${ endDate } 間的請假人員: ${ fn:length(employeeDTOs) } 人 
+					</legend>
+					${ employeeDTOs }
+				</fieldset>
 			
+			</div>
 		</div>
 	</body>
 </html>
