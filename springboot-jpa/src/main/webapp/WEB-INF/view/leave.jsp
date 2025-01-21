@@ -11,6 +11,32 @@
 		<title>查詢請假</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
 		<link rel="stylesheet" href="/css/buttons.css">
+		<script type="text/javascript">
+			function validateDates() {
+				// 取得 startDate 與 endDate 的值
+				const startDate = document.getElementById('startDate').value;
+				const endDate = document.getElementById('endDate').value;
+				
+				// 如果任一日期是空的則不進行驗證
+				if(!startDate || !endDate) {
+					alert('請輸入完整的日期範圍');
+					return false; // 阻止表單提交到後端
+				}
+				
+				// 將日期字串轉為 javascript date 物件
+				const start = new Date(startDate);
+				const end = new Date(endDate);
+				
+				// 比較日期
+				if(end < start) {
+					alert('結束日期必須大於開始日期');
+					return false; // 阻止表單提交到後端
+				}
+				
+				return true; // 允許表單提交到後端
+				
+			}
+		</script>
 	</head>
 	<body>
 		<!-- menu bar include -->
@@ -31,7 +57,7 @@
 					</form>
 					<p />
 					日期區間:
-					<form method="get" action="/leave_request/find" onsubmit="return false">
+					<form method="get" action="/leave_request/find" onsubmit="return validateDates()">
 						<input type="date" id="startDate" name="startDate" value="${ startDate }" />
 						<input type="date" id="endDate" name="endDate" value="${ endDate }" />
 						<button type="submit">查詢</button>
