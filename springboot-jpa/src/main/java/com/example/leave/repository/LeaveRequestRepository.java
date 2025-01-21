@@ -19,7 +19,7 @@ public interface LeaveRequestRepository extends JpaRepository<LeaveRequest, Inte
 	List<LeaveRequest> query1(Integer employeeId);
 	
 	// 使用 JPA 所提供的 JPQL 語言
-	@Query("select r from LeaveRequest r where r.employeeId = :employeeId")
+	@Query("select r from LeaveRequest r where r.employee.id = :employeeId")
 	List<LeaveRequest> query2(Integer employeeId);
 	
 	// 使用 JPA 提供的簡易方法命名(不需要 SQL 或 JPQL)
@@ -30,4 +30,6 @@ public interface LeaveRequestRepository extends JpaRepository<LeaveRequest, Inte
 	List<LeaveRequest> query3(LocalDate date1, LocalDate date2);
 	
 	// Homework 把 JPQL 與 簡易方法命名寫出
+	List<LeaveRequest> findByStartDateLessThanEqualAndEndDateGreaterThanEqual(LocalDate date1, LocalDate date2);
+
 }

@@ -65,4 +65,14 @@ public class LeaveRequestService {
 		leaveRequestRepository.deleteById(id);
 	}
 	
+	// 查詢今天有哪些員工請假
+	
+	
+	// 查詢指定日期有哪些員工請假
+	
+	
+	// 查詢指定日期區間有哪些員工請假
+	
+	
+	
 }
