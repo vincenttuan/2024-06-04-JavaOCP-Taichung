@@ -69,8 +69,15 @@ public class LeaveRequestService {
 	}
 	
 	// 查詢今天有哪些員工請假
+	public List<EmployeeDTO> getEmployeesOnLeaveToday() {
+		LocalDate today = LocalDate.now();
+		return getEmployeeOnLeave(today);
+	}
 	
 	// 查詢指定日期有哪些員工請假
+	public List<EmployeeDTO> getEmployeeOnLeave(LocalDate targetDate) {
+		return getEmployeesOnLeave(targetDate, targetDate);
+	}
 	
 	// 查詢指定日期區間有哪些員工請假
 	public List<EmployeeDTO> getEmployeesOnLeave(LocalDate startDate, LocalDate endDate) {
