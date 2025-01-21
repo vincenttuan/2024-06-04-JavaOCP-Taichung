@@ -30,6 +30,6 @@ public interface LeaveRequestRepository extends JpaRepository<LeaveRequest, Inte
 	List<LeaveRequest> queryByDate(LocalDate date1, LocalDate date2);
 	
 	// Homework 把 JPQL 與 簡易方法命名寫出
-	List<LeaveRequest> findByStartDateGreaterThanEqualAndEndDateLessThanEqual(LocalDate date1, LocalDate date2);
+	List<LeaveRequest> findByEndDateGreaterThanEqualAndStartDateLessThanEqual(LocalDate date1, LocalDate date2);
 
 }
