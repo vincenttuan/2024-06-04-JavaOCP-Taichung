@@ -24,6 +24,11 @@
 					<legend>
 						查詢 ${ startDate } ~ ${ endDate } 間的請假人員: ${ fn:length(employeeDTOs) } 人 
 					</legend>
+					指定日期:
+					<form model="get" action="/leave_request/find">
+						<input type="date" name="startDate" value="${ startDate }" />
+						<button type="submit">查詢</button>
+					</form>
 					<p />
 					<table class="pure-table pure-table-bordered">
 						<thead>
