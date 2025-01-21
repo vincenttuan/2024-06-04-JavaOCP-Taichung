@@ -1,5 +1,8 @@
 package com.example.leave.controller;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +26,26 @@ public class LeaveRequestController {
 	
 	@Autowired
 	private LeaveRequestService leaveRequestService;
+	
+	// 查詢請假資訊
+	@GetMapping("/find")
+	public String findLeaveRequest(@RequestParam(name = "startDate", required = false) LocalDate startDate,
+								   @RequestParam(name = "endDate", required = false) LocalDate endDate,	
+								   Model model) {
+		
+		List<EmployeeDTO> employeeDTOs = null; // 請假人員集合
+		// 若 startDate == null 與 endDate == null 表示要取得今日請假人員
+		if(startDate == null && endDate == null) {
+			startDate = LocalDate.now();
+			employeeDTOs = leaveRequestService.getEmployeesOnLeaveToday();
+		}
+		
+		model.addAttribute("startDate", startDate);
+		model.addAttribute("endDate", endDate);
+		model.addAttribute("employeeDTOs", employeeDTOs);
+		
+		return "leave";
+	}
 	
 	// 取得請假資訊
 	@GetMapping
