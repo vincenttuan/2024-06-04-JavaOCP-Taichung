@@ -31,9 +31,9 @@
 					</form>
 					<p />
 					日期區間:
-					<form method="get" action="/leave_request/find">
-						<input type="date" name="startDate" value="${ startDate }" />
-						<input type="date" name="endDate" value="${ endDate }" />
+					<form method="get" action="/leave_request/find" onsubmit="return false">
+						<input type="date" id="startDate" name="startDate" value="${ startDate }" />
+						<input type="date" id="endDate" name="endDate" value="${ endDate }" />
 						<button type="submit">查詢</button>
 					</form>
 					<p />
