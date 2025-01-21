@@ -30,6 +30,13 @@
 						<button type="submit">查詢</button>
 					</form>
 					<p />
+					日期區間:
+					<form method="get" action="/leave_request/find">
+						<input type="date" name="startDate" value="${ startDate }" />
+						<input type="date" name="endDate" value="${ endDate }" />
+						<button type="submit">查詢</button>
+					</form>
+					
 					<table class="pure-table pure-table-bordered">
 						<thead>
 							<tr>
