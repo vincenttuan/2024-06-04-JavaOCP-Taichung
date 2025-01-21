@@ -38,6 +38,10 @@ public class LeaveRequestController {
 		if(startDate == null && endDate == null) {
 			startDate = LocalDate.now();
 			employeeDTOs = leaveRequestService.getEmployeesOnLeaveToday();
+		} else if(startDate != null && endDate == null) {
+			employeeDTOs = leaveRequestService.getEmployeesOnLeave(startDate);
+		} else {
+			employeeDTOs = leaveRequestService.getEmployeesOnLeave(startDate, endDate);
 		}
 		
 		model.addAttribute("startDate", startDate);
