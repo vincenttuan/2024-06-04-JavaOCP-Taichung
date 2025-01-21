@@ -23,13 +23,11 @@
 			    <input type="hidden" name="_method" value="${ _method }" >
 			    <sp:hidden path="id" />
 			    <fieldset>
-			    	請假類別: 
-			    		<sp:select items="${ types }" path="type" />
-			    	<p />
+			    	請假類別: <sp:select items="${ typeInfo }" path="type" /><p />
 			    	開始日期: <sp:input type="date" path="startDate" /><p />
 			    	結束日期: <sp:input type="date" path="endDate"  /><p />
 			    	請假理由: <sp:input type="text" path="reason"  /><p />
-			    	假單狀態: <sp:input type="text" path="status"  /><p />
+			    	假單狀態: <sp:select items="${ statusInfo }" path="status"  /><p />
 			    	<button class="button-${ _method } pure-button" 
 			    			type="submit">
 			    			${ submitButtonName }

@@ -72,12 +72,14 @@ public class LeaveRequestController {
 		}
 		
 		String submitButtonName = _method.equals("POST") ? "新增" : _method.equals("PUT") ? "修改" : "刪除";
-		String[] types = {"特休", "病假", "事假", "公假"};
+		String[] typeInfo = {"特休", "病假", "事假", "公假"};
+		String[] statusInfo = {"PENDING", "APPROVED", "REJECTED"};
 		
 		model.addAttribute("_method", _method);
 		model.addAttribute("submitButtonName", submitButtonName);
 		model.addAttribute("leaveRequestDTO", leaveRequestDTO);
-		model.addAttribute("types", types);
+		model.addAttribute("typeInfo", typeInfo);
+		model.addAttribute("statusInfo", statusInfo);
 		return "employee_leave_request";
 	}
 	
