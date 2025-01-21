@@ -43,7 +43,7 @@
 											[ ${leaveRequestDTO.type} ]
 											[ ${leaveRequestDTO.status} ]
 											請假日期: ${ leaveRequestDTO.startDate } ~ ${ leaveRequestDTO.endDate }
-											請假理由: ${ leaveRequestDTO.reason }
+											請假理由: ${ leaveRequestDTO.reason }<p />
 										</c:forEach> 
 									</td>
 								</tr>
