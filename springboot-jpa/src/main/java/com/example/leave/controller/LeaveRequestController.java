@@ -35,12 +35,12 @@ public class LeaveRequestController {
 		
 		List<EmployeeDTO> employeeDTOs = null; // 請假人員集合
 		// 若 startDate == null 與 endDate == null 表示要取得今日請假人員
-		if(startDate == null && endDate == null) {
+		if(startDate == null && endDate == null) { // 今日
 			startDate = LocalDate.now();
 			employeeDTOs = leaveRequestService.getEmployeesOnLeaveToday();
-		} else if(startDate != null && endDate == null) {
+		} else if(startDate != null && endDate == null) { // 指定日期
 			employeeDTOs = leaveRequestService.getEmployeesOnLeave(startDate);
-		} else {
+		} else { // 指定日期區間
 			employeeDTOs = leaveRequestService.getEmployeesOnLeave(startDate, endDate);
 		}
 		
