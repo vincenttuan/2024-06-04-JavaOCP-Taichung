@@ -14,7 +14,7 @@
 			</c:otherwise>
 		</c:choose>
 		<a href="/project" class="button-secondary pure-button">專案資訊</a>
-		<a href="/leave_request" class="button-secondary pure-button">請假資訊</a>
+		<a href="/leave_request/find" class="button-secondary pure-button">查詢請假</a>
 		<a href="/employee" class="button-secondary pure-button">員工管理</a>
 		<a href="/employee/register" class="button-secondary pure-button">員工註冊</a>
 	</div>
