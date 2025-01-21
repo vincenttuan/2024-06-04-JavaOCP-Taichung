@@ -24,7 +24,27 @@
 					<legend>
 						查詢 ${ startDate } ~ ${ endDate } 間的請假人員: ${ fn:length(employeeDTOs) } 人 
 					</legend>
-					${ employeeDTOs }
+					<p />
+					<table class="pure-table pure-table-bordered">
+						<thead>
+							<tr>
+								<th>請假人員</th>
+								<th>請假資訊</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="employeeDTO" items="${ employeeDTOs }">
+								<tr>
+									<td valign="top">
+										${ employeeDTO.username }
+									</td>
+									<td valign="top">
+										${ employeeDTO.leaveRequests }
+									</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 				</fieldset>
 			
 			</div>
