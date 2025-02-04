@@ -23,7 +23,7 @@ public class ChatChannel {
 	// 利用 Set + synchronized 來保存所有的 sessin 物件
 	private static final Set<Session> sessions = Collections.synchronizedSet(new HashSet<>());
 	
-	// 
+	// 廣播發送
 	public void broadcast(String message) {
 		// 逐筆發送
 		sessions.forEach((session) -> {
