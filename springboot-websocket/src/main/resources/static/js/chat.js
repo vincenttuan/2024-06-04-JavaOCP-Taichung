@@ -25,7 +25,7 @@ connectButton.onclick = () => {
 	};
 	
 	webSocket.onmessage = (event) => {
-			
+		addLog("收到消息: " + event.data);	
 	};
 	
 	webSocket.onclose = (event) => {
@@ -44,7 +44,8 @@ connectButton.onclick = () => {
 
 // 廣播-發送按鈕
 sendButton.onclick = () => {
-	
+	const message = messageInput.value;
+	webSocket.send(message);
 };
 
 // 斷開按鈕
