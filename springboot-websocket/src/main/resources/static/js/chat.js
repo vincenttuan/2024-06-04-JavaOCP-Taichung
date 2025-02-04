@@ -8,15 +8,15 @@ const log = document.getElementById('log');
 
 // 更新對話紀錄
 const addLog = (message) => {
-	log.textContent += `${message}\n`; 
-};
+	log.textContent += `${message}\n`;
+	//log.textContent += (message + '\n');
 
 // 連接按鈕
 connectButton.onclick = () => {
 	webSocket = new WebSocket(url);
 	
 	webSocket.onopen = () => {
-		
+		addLog('WebSocket 連接成功');
 	};
 	
 	webSocket.onmessage = (event) => {
