@@ -1,5 +1,6 @@
 package com.example.websocket.channel;
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.websocket.CloseReason;
 import jakarta.websocket.OnClose;
 import jakarta.websocket.OnError;
