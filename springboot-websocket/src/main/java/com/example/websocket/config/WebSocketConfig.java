@@ -11,7 +11,7 @@ import com.example.websocket.channel.ChatChannel;
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Bean  
-    public ServerEndpointExporter serverEndpointExporter (){
+    ServerEndpointExporter serverEndpointExporter (){
         
         ServerEndpointExporter exporter = new ServerEndpointExporter();
         
