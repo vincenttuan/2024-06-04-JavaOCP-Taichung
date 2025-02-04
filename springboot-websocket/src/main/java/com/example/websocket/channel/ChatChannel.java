@@ -38,6 +38,8 @@ public class ChatChannel {
 	public void onOpen(Session session) {
 		// session id: 每一個連線都有獨立的 session id 值, 以便區隔來源
 		System.out.println("有人連進來了 session id = " + session.getId());
+		// 將 session 保存在 sessions 中
+		sessions.add(session);
 		broadcast("有人上線了 id: " + session.getId());
 	}
 	
@@ -47,8 +49,6 @@ public class ChatChannel {
 		System.out.println("session id = " + session.getId() + " 說(message): " + message);
 		// 單筆發送
 		//session.getAsyncRemote().sendText(message);
-		// 將 session 保存在 sessions 中
-		sessions.add(session);
 		// 進行廣播發送
 		broadcast("[" + session.getId() + "] 說: " + message);
 	}
