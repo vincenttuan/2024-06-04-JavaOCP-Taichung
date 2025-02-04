@@ -38,6 +38,7 @@ public class ChatChannel {
 	public void onOpen(Session session) {
 		// session id: 每一個連線都有獨立的 session id 值, 以便區隔來源
 		System.out.println("有人連進來了 session id = " + session.getId());
+		broadcast("有人上線了 id: " + session.getId());
 	}
 	
 	// 當客戶端傳送字串資料到伺服端時觸發
@@ -49,13 +50,14 @@ public class ChatChannel {
 		// 將 session 保存在 sessions 中
 		sessions.add(session);
 		// 進行廣播發送
-		broadcast(message);
+		broadcast("[" + session.getId() + "] 說: " + message);
 	}
 	
 	// 當客戶端與伺服端關閉連接時會自動觸發
 	@OnClose
 	public void onClose(Session session, CloseReason closeReason) {
 		System.out.println("session id = " + session.getId() + " 已關閉連線, 原因: " + closeReason);
+		broadcast("有人離線了 id: " + session.getId());
 	}
 	
 	// 當客戶端與伺服端通訊過程中發生錯誤時會自動觸發
