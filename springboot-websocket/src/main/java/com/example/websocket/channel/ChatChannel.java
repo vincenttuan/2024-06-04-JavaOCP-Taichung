@@ -57,6 +57,8 @@ public class ChatChannel {
 	@OnClose
 	public void onClose(Session session, CloseReason closeReason) {
 		System.out.println("session id = " + session.getId() + " 已關閉連線, 原因: " + closeReason);
+		// 將該 session 從 sessions 中移除
+		sessions.remove(session);
 		broadcast("有人離線了 id: " + session.getId());
 	}
 	
