@@ -18,6 +18,10 @@ connectButton.onclick = () => {
 	
 	webSocket.onopen = () => {
 		addLog('WebSocket 連接成功');
+		connectButton.disabled = true;
+		closeButton.disabled = false;
+		messageInput.disabled = false;
+		sendButton.disabled = false;
 	};
 	
 	webSocket.onmessage = (event) => {
@@ -25,7 +29,11 @@ connectButton.onclick = () => {
 	};
 	
 	webSocket.onclose = (event) => {
-			
+		addLog('WebSocket 離線成功');
+		connectButton.disabled = false;
+		closeButton.disabled = true;
+		messageInput.disabled = true;
+		sendButton.disabled = true;	
 	};
 	
 	webSocket.onerror = (event) => {
@@ -42,7 +50,7 @@ sendButton.onclick = () => {
 // 斷開按鈕
 closeButton.onclick = () => {
 	if(webSocket) { // 是否在 open 狀態
-		
+		webSocket.close();
 	}
 };
 
