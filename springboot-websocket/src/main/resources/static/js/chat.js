@@ -10,6 +10,7 @@ const log = document.getElementById('log');
 const addLog = (message) => {
 	log.textContent += `${message}\n`;
 	//log.textContent += (message + '\n');
+}
 
 // 連接按鈕
 connectButton.onclick = () => {
